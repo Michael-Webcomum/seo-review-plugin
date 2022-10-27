@@ -49,8 +49,6 @@ export default {
               'Access-Control-Allow-Origin': '*',
               // https://developer.chrome.com/blog/private-network-access-preflight/#new-in-pna
               'Access-Control-Allow-Private-Network': 'true',
-
-              'Access-Control-Allow-Private-Network': 'true',
             },
           }),
         ]
