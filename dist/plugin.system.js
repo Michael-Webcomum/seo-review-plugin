@@ -34071,7 +34071,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         }
       }
 
-      registerCommercePlugin({
+      registerPlugin({
         name: "SEO Review",
         id: pkg.name,
         settings: [

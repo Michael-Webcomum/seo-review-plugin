@@ -22,7 +22,7 @@ registerPlugin(
 			{
 				name: "apiKey",
 				type: "string",
-				helperText: "get the api key from your builder.io account settings",
+				helperText: "Obtain the api key from your builder.io account settings",
 				required: true,
 			},
 		],
@@ -86,6 +86,7 @@ registerPlugin(
 
 				//Display notification of review completion
 				showReviewNotifications(seoReviewEntry.id);
+
 				//Displays modal/popup with detailed and visualised data
 				expandSeoReview(seoAPIDataFormatted);
 			},
