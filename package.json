@@ -1,12 +1,15 @@
 {
   "name": "seo-review-plugin",
-  "version": "0.0.0",
-  "description": "",
-  "keywords": [],
+  "version": "0.0.1",
+  "description": "SEO Review Plugin for Builder.io",
+  "keywords": [
+    "SEO",
+    "Search Engine Optimization"
+  ],
   "main": "dist/plugin.system.js",
   "unpkg": "dist/plugin.system.js",
   "files": [
-    "dist"
+    "src"
   ],
   "author": "Michael Dixon <michael@webcomum.com>",
   "repository": {
@@ -126,9 +129,15 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "@builder.io/data-plugin-tools": "0.0.3-0",
-    "@chec/commerce.js": "^2.7.2",
-    "contentful": "^9.0.0",
-    "qs": "^6.10.1"
+    "@builder.io/commerce-plugin-tools": "^0.3.0",
+    "@chakra-ui/react": "^2.3.4",
+    "@emotion/react": "^11.10.4",
+    "@mui/material": "^5.10.6",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "axios": "^0.27.2",
+    "framer-motion": "^7.3.6",
+    "lodash": "^4.17.21",
+    "traverse": "^0.6.6",
+    "uuid": "^8.3.2"
   }
 }

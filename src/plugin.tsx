@@ -16,7 +16,7 @@ import { prepareSeoData } from "./prepareSeoData";
  */
 registerPlugin(
 	{
-		name: "SEOReview",
+		name: "SEO Review",
 		id: pkg.name,
 		settings: [
 			{
