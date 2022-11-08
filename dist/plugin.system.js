@@ -33935,15 +33935,14 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         transform: "translate(-50%, -54%)",
         height: "85vh",
         width: "50vw",
-        border: "2px solid #000",
-        borderRadius: "25px",
+        border: "1px solid #4e4d4d",
         background: "#f2fcfe",
         boxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
-        opacity: "0.8",
+        opacity: "0.9",
         padding: 10,
         paddingLeft: "30px",
         marginBottom: "50px",
-        fontFamily: "Ubuntu",
+        fontFamily: "Inter",
         lineHeight: 1.8
       };
       const modalText = {
@@ -34071,14 +34070,14 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         }
       }
 
-      registerPlugin({
+      registerCommercePlugin({
         name: "SEO Review",
         id: pkg.name,
         settings: [
           {
             name: "apiKey",
             type: "string",
-            helperText: "get the api key from your builder.io account settings",
+            helperText: "Obtain the api key from your builder.io account settings",
             required: true
           }
         ],

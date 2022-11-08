@@ -721,15 +721,14 @@ const modalStyles = {
 	transform: "translate(-50%, -54%)",
 	height: "85vh",
 	width: "50vw",
-	border: "2px solid #000",
-	borderRadius: "25px",
+	border: "1px solid #4e4d4d",
 	background: "#f2fcfe",
 	boxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
-	opacity: "0.8",
+	opacity: "0.9",
 	padding: 10,
 	paddingLeft: "30px",
 	marginBottom: "50px",
-	fontFamily: "Ubuntu",
+	fontFamily: "Inter",
 	lineHeight: 1.8,
 } as const;
 
