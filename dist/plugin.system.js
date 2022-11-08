@@ -33320,6 +33320,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	axios: "^0.27.2",
       	"framer-motion": "^7.3.6",
       	lodash: "^4.17.21",
+      	"rollup-plugin-styles": "^4.0.0",
       	traverse: "^0.6.6",
       	uuid: "^8.3.2"
       };
@@ -33517,6 +33518,11 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         return formattedData;
       }
 
+      var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
+
+      var css = ".modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4d;\n\tbackground: #f2fcfe;\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 0px 10px 30px 20px;\n\tmargin-bottom: 50px;\n\tfont-family: Inter;\n\tline-height: 1.8;\n}\n\n::-webkit-scrollbar {\n\twidth: 15px;\n}\n\n::-webkit-scrollbar-thumb {\n\tbackground: #1a73e8;\n\tborder-radius: 20px;\n}\n\n::-webkit-scrollbar-track {\n\tbackground-color: #d2e3fc;\n}\n\n.modalText {\n\tdisplay: flex;\n\tflex-direction: column;\n\tfont-size: 18px;\n}\n\n.modalTitle {\n\ttext-align: center;\n\tfont-size: 30px;\n\tfont-weight: 600;\n}\n\n.subTitles {\n\ttext-align: justify;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\n.feedbackDetailTitle {\n\ttext-indent: 20px;\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\ttext-indent: 20px;\n\tfont-size: 16px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 40vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 3.5vh;\n\twidth: 100%;\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#0546e0,\n\t\t#1172f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n}\n\n.spanTag {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\twidth: 34.5vw;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ff0909;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #00ab66;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\ttop: 0.2vw;\n}\n";
+      n(css,{});
+
       const registerContentAction = (contentAction) => {
         Builder.register("content.action", contentAction);
       };
@@ -33553,10 +33559,10 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       });
       const showReviewNotifications = (jobId) => {
         appState.snackBar.show(/* @__PURE__ */ React.createElement("div", {
-          css: { display: "flex", alignItems: "center" }
+          style: { display: "flex", alignItems: "center" }
         }, "Done!"), 1e5, /* @__PURE__ */ React.createElement(Button, {
           color: "primary",
-          css: {
+          style: {
             pointerEvents: "auto",
             ...appState.document.small && {
               width: "calc(100vw - 90px)",
@@ -33575,460 +33581,356 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       const expandSeoReview = (dataToFormat) => {
         const data = formatSeoData(dataToFormat);
         appState.globalState.openDialog(/* @__PURE__ */ React.createElement("div", {
-          style: modalStyles
+          className: "modalStyles"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: modalTitle
+          className: "modalTitle"
         }, "SEO Review Results"), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Overview:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.overview.keyword)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "Overall SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.overview.overallSeoScore, "/100"))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Available SEO Points ", /* @__PURE__ */ React.createElement("span", null, data.overview.availableSeoPoints)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "Earned SEO Points"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.overview.earnedSeoPoints, "/", data.overview.availableSeoPoints))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Summary: "), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, /* @__PURE__ */ React.createElement("span", null, "Errors - ", data.overview.summary.errors, /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("span", null, "Warnings - ", data.overview.summary.warnings, /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotYellow
+          className: "summaryDotYellow"
         })), /* @__PURE__ */ React.createElement("span", null, "Optimized - ", data.overview.summary.optimized, /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         })))))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Title Tag:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Result ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.Result)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Title Found ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.titleFound)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Input URL ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.inputUrl)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Title Tag ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.titleTag)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Title Length ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.titleLength)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Title Tag Number ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.titleTagNumber)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Focus Keywords Position", " ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.focusKeywordsPosition)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Focus Keywords Found ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.focusKeywordsFound)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.titleTag.keyword)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, data.titleTag.feedbackDetails.found.text == data.titleTag.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Title Tag Not Found") : /* @__PURE__ */ React.createElement("div", null, "Found: ", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.titleTag.feedbackDetails.found.class, data.titleTag.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Length:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.length.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.titleTag.feedbackDetails.length.class, data.titleTag.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Focus Keyword:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.titleTag.feedbackDetails.focusKeyword.class, data.titleTag.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Focus Keyword Position:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeywordsPosition.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.titleTag.feedbackDetails.focusKeywordsPosition.class, data.titleTag.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.titleTag.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Meta Description:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Result ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.result)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Meta Description Found", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.metaDescriptionFound)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Meta Description ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.metaDescription)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Meta Description Length", " ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.metaDescriptionLength)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Meta Description Number", " ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.metaDescriptionNumber)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Focus Keywords Position", " ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.focusKeywordsPosition)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Focus Keywords Found", " ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.focusKeywordsPosition)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.keyword)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, data.metaDescription.feedbackDetails.found.text == data.metaDescription.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Meta Description Not Found") : /* @__PURE__ */ React.createElement("div", null, "Found: ", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.metaDescription.feedbackDetails.found.class, data.metaDescription.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Length:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.metaDescription.feedbackDetails.length.class, data.metaDescription.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Focus Keyword:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.metaDescription.feedbackDetails.focusKeyword.class, data.metaDescription.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Focus Keywords Position:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.metaDescription.feedbackDetails.focusKeywordsPosition.class, data.metaDescription.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Page Headings Summary:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Result ", /* @__PURE__ */ React.createElement("span", null, data.metaDescription.result)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H1 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h1)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H2 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h2), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H3 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h3), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H4 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h4), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H5 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h5), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H6 ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h6), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H1 Count ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h1Count), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "H1 Content ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.h1Content), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Focus Keywords Found", " ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.focusKeywordsFound), " "), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.keyword), " "), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Not Found:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Focus Keyword:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.pageHeadingsSummary.feedbackDetails.focusKeyword.class, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.pageHeadingsSummary.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Word Count:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Input URL ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.inputUrl)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Word Count Total ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.wordCountTotal)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Corrected Word Count ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.correctedWordCount)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Anchor Text Words ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.anchorTextWords)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Anchor Percentage ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.anchorPercentage)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.wordCount.feedbackDetails.found.class, data.wordCount.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.wordCount.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "On Page Links Summary:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Input URL ", /* @__PURE__ */ React.createElement("span", null, data.wordCount.inputUrl)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Total Links ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.totalLinks)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "External Links ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.externalLinks)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Internal Links ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.internalLinks)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "No Follow Count ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.noFollowCount)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Duplicate Links ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.duplicateLinks)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "No Alt Tag ", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.noAltTag)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Found:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.onPageLinksSummary.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.onPageLinksSummary.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Image Analysis:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Number of Images ", /* @__PURE__ */ React.createElement("span", null, data.imageAnalysis.numberOfImages)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Image Name Contains Keyword", " ", /* @__PURE__ */ React.createElement("span", null, data.imageAnalysis.imageNameContainsKeyword)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Image Alt Tag Contains Keyword", " ", /* @__PURE__ */ React.createElement("span", null, data.imageAnalysis.imageAltTagContainsKeyword)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.imageAnalysis.keyword)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Found:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Image Name Contains Keyword:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         })))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetails
+          className: "feedbackDetails"
         }, "Image Alt Tag Contains Keyword:"), /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.imageAnalysis.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
-          style: modalText
+          className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: subTitles
+          className: "subTitles"
         }, "Keyword Density:"), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword ", /* @__PURE__ */ React.createElement("span", null, data.keywordDensity.keyword)), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Keyword Density ", /* @__PURE__ */ React.createElement("span", null, data.keywordDensity.keywordDensity)), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailTitle
+          className: "feedbackDetailTitle"
         }, "Feedback Details:"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          style: feedbackDetailExtra
+          className: "feedbackDetailExtra"
         }, /* @__PURE__ */ React.createElement("p", null, data.keywordDensity.feedbackDetails.found.text), /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotGreen
+          className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("span", {
-          style: summaryDotRed
+          className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
-          style: spanTag
+          className: "spanTag"
         }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.keywordDensity.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          style: pbwrapper
+          className: "pbwrapper"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          style: progressBar
+          className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
-          style: progressBarFill
+          className: "progressBarFill"
         }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable))))), console.log("I am a working modal"), 1e4);
-      };
-      const modalStyles = {
-        position: "fixed",
-        zIndex: 1,
-        top: "50%",
-        left: "50%",
-        overflowY: "scroll",
-        transform: "translate(-50%, -54%)",
-        height: "85vh",
-        width: "50vw",
-        border: "1px solid #4e4d4d",
-        background: "#f2fcfe",
-        boxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
-        opacity: "0.9",
-        padding: 10,
-        paddingLeft: "30px",
-        marginBottom: "50px",
-        fontFamily: "Inter",
-        lineHeight: 1.8
-      };
-      const modalText = {
-        display: "flex",
-        flexDirection: "column",
-        fontSize: "18px"
-      };
-      const modalTitle = {
-        textAlign: "center",
-        fontSize: "30px",
-        fontWeight: 600
-      };
-      const subTitles = {
-        textAlign: "justify",
-        fontSize: "24px",
-        fontWeight: 500
-      };
-      const feedbackDetailTitle = {
-        textIndent: "20px",
-        fontSize: "18px",
-        fontWeight: 500
-      };
-      const feedbackDetails = {
-        textIndent: "20px",
-        fontsize: "16px"
-      };
-      const feedbackDetailExtra = {
-        textIndent: "30px",
-        fontSize: "16px",
-        width: "40vh",
-        display: "inline"
-      };
-      const pbwrapper = {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        maxWidth: "55vw",
-        textAlign: "center"
-      };
-      const progressBar = {
-        maxWidth: "27vw",
-        width: "100%",
-        backgroundColor: "#e0e0e0",
-        borderRadius: "20px"
-      };
-      const progressBarFill = {
-        display: "block",
-        height: "3.5vh",
-        width: "100%",
-        backgroundImage: "repeating-linear-gradient(to left, #0546e0, #1172f9, #4892f9)",
-        borderRadius: "20px"
-      };
-      const spanTag = {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "34.2vw"
-      };
-      const summaryDotRed = {
-        height: "25px",
-        width: "25px",
-        backgroundColor: "#ff0909",
-        borderRadius: "50%",
-        display: "inline-block",
-        position: "relative",
-        left: "0.3vw",
-        top: "0.2vw"
-      };
-      const summaryDotYellow = {
-        height: "25px",
-        width: "25px",
-        backgroundColor: "#FFCC00",
-        borderRadius: "50%",
-        display: "inline-block",
-        position: "relative",
-        left: "0.3vw",
-        top: "0.2vw"
-      };
-      const summaryDotGreen = {
-        height: "25px",
-        width: "25px",
-        backgroundColor: "#00ab66",
-        borderRadius: "50%",
-        display: "inline-block",
-        position: "relative",
-        right: "-0.3vw",
-        top: "0.2vw"
       };
       const getIframeHTMLContent = () => {
         return appState.designerState.evaluateInFrame(() => new XMLSerializer().serializeToString(document));

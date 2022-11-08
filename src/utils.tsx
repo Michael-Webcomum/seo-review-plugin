@@ -1,9 +1,9 @@
 import React from "react";
-import { css } from "@emotion/core";
 import appState, { globalState } from "@builder.io/app-context";
 import { Builder } from "@builder.io/react";
 import { Button } from "@material-ui/core";
 import { formatSeoData } from "./formatSeoData";
+import "./styles.css";
 
 export const registerContentAction = (contentAction: {
 	label: string;
@@ -51,11 +51,11 @@ export const getSEOReviewModelTemplate = () => ({
 //Displays popup confirming the review has been completed and provides path to review details.
 export const showReviewNotifications = (jobId: string) => {
 	appState.snackBar.show(
-		<div css={{ display: "flex", alignItems: "center" }}>Done!</div>,
+		<div style={{ display: "flex", alignItems: "center" }}>Done!</div>,
 		100000,
 		<Button
 			color="primary"
-			css={{
+			style={{
 				pointerEvents: "auto",
 				...(appState.document.small && {
 					width: "calc(100vw - 90px)",
@@ -79,52 +79,52 @@ export const expandSeoReview = (dataToFormat: any) => {
 	const data = formatSeoData(dataToFormat);
 
 	appState.globalState.openDialog(
-		<div style={modalStyles}>
-			<div style={modalTitle}>SEO Review Results</div>
-			<div style={modalText}>
-				<div style={subTitles}>Overview:</div>
+		<div className="modalStyles">
+			<div className="modalTitle">SEO Review Results</div>
+			<div className="modalText">
+				<div className="subTitles">Overview:</div>
 
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword <span>{data.overview.keyword}</span>
 				</div>
 
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>Overall SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.overview.overallSeoScore}/100
 						</div>
 					</div>
 				</div>
 
-				<div style={spanTag}>
+				<div className="spanTag">
 					Available SEO Points <span>{data.overview.availableSeoPoints}</span>
 				</div>
 
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>Earned SEO Points</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.overview.earnedSeoPoints}/{data.overview.availableSeoPoints}
 						</div>
 					</div>
 				</div>
 
 				<div>
-					<div style={feedbackDetailTitle}>Summary: </div>
-					<div style={feedbackDetails}>
-						<div style={spanTag}>
+					<div className="feedbackDetailTitle">Summary: </div>
+					<div className="feedbackDetails">
+						<div className="spanTag">
 							<span>
 								Errors - {data.overview.summary.errors}
-								<span style={summaryDotRed}></span>
+								<span className="summaryDotRed"></span>
 							</span>
 							<span>
 								Warnings - {data.overview.summary.warnings}
-								<span style={summaryDotYellow}></span>
+								<span className="summaryDotYellow"></span>
 							</span>
 							<span>
 								Optimized - {data.overview.summary.optimized}
-								<span style={summaryDotGreen}></span>
+								<span className="summaryDotGreen"></span>
 							</span>
 						</div>
 					</div>
@@ -133,41 +133,41 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Title Tag:</div>
+			<div className="modalText">
+				<div className="subTitles">Title Tag:</div>
 
-				<div style={spanTag}>
+				<div className="spanTag">
 					Result <span>{data.titleTag.Result}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Title Found <span>{data.titleTag.titleFound}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Input URL <span>{data.titleTag.inputUrl}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Title Tag <span>{data.titleTag.titleTag}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Title Length <span>{data.titleTag.titleLength}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Title Tag Number <span>{data.titleTag.titleTagNumber}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Focus Keywords Position{" "}
 					<span>{data.titleTag.focusKeywordsPosition}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Focus Keywords Found <span>{data.titleTag.focusKeywordsFound}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword <span>{data.titleTag.keyword}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetails}>
+						<div className="feedbackDetails">
 							{data.titleTag.feedbackDetails.found.text ==
 							data.titleTag.feedbackDetails.found.text ? (
 								<div>Title Tag Not Found</div>
@@ -175,75 +175,75 @@ export const expandSeoReview = (dataToFormat: any) => {
 								<div>Found: {data.titleTag.feedbackDetails.found.text}</div>
 							)}
 						</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetailExtra">
 							<p>{data.titleTag.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.titleTag.feedbackDetails.found.class}
 								{data.titleTag.feedbackDetails.found.class == "positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Length:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Length:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.titleTag.feedbackDetails.length.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.titleTag.feedbackDetails.length.class}
 								{data.titleTag.feedbackDetails.length.class == "positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Focus Keyword:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Focus Keyword:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.titleTag.feedbackDetails.focusKeyword.class}
 								{data.titleTag.feedbackDetails.focusKeyword.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Focus Keyword Position:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Focus Keyword Position:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class}
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.titleTag.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.titleTag.seoScore}/{data.titleTag.maxSeoScoreAvailable}
 						</div>
 					</div>
@@ -252,41 +252,41 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Meta Description:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">Meta Description:</div>
+				<div className="spanTag">
 					Result <span>{data.metaDescription.result}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Meta Description Found
 					<span>{data.metaDescription.metaDescriptionFound}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Meta Description <span>{data.metaDescription.metaDescription}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Meta Description Length{" "}
 					<span>{data.metaDescription.metaDescriptionLength}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Meta Description Number{" "}
 					<span>{data.metaDescription.metaDescriptionNumber}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Focus Keywords Position{" "}
 					<span>{data.metaDescription.focusKeywordsPosition}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Focus Keywords Found{" "}
 					<span>{data.metaDescription.focusKeywordsPosition}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword <span>{data.metaDescription.keyword}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetails}>
+						<div className="feedbackDetails">
 							{data.metaDescription.feedbackDetails.found.text ==
 							data.metaDescription.feedbackDetails.found.text ? (
 								<div>Meta Description Not Found</div>
@@ -294,55 +294,55 @@ export const expandSeoReview = (dataToFormat: any) => {
 								<div>Found: {data.titleTag.feedbackDetails.found.text}</div>
 							)}
 						</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetailExtra">
 							<p>{data.metaDescription.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.metaDescription.feedbackDetails.found.class}
 								{data.metaDescription.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Length:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Length:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.metaDescription.feedbackDetails.length.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.metaDescription.feedbackDetails.length.class}
 								{data.metaDescription.feedbackDetails.length.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Focus Keyword:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Focus Keyword:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.metaDescription.feedbackDetails.focusKeyword.class}
 								{data.metaDescription.feedbackDetails.focusKeyword.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Focus Keywords Position:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Focus Keywords Position:</div>
+						<div className="feedbackDetailExtra">
 							<p>
 								{
 									data.metaDescription.feedbackDetails.focusKeywordsPosition
@@ -357,22 +357,22 @@ export const expandSeoReview = (dataToFormat: any) => {
 								}
 								{data.metaDescription.feedbackDetails.focusKeywordsPosition
 									.class == "positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.metaDescription.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.metaDescription.seoScore}/
 							{data.metaDescription.maxSeoScoreAvailable}
 						</div>
@@ -382,63 +382,63 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Page Headings Summary:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">Page Headings Summary:</div>
+				<div className="spanTag">
 					Result <span>{data.metaDescription.result}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H1 <span>{data.pageHeadingsSummary.h1}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H2 <span>{data.pageHeadingsSummary.h2}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H3 <span>{data.pageHeadingsSummary.h3}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H4 <span>{data.pageHeadingsSummary.h4}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H5 <span>{data.pageHeadingsSummary.h5}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H6 <span>{data.pageHeadingsSummary.h6}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H1 Count <span>{data.pageHeadingsSummary.h1Count}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					H1 Content <span>{data.pageHeadingsSummary.h1Content}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Focus Keywords Found{" "}
 					<span>{data.pageHeadingsSummary.focusKeywordsFound}</span>{" "}
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword <span>{data.pageHeadingsSummary.keyword}</span>{" "}
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetails}>Not Found:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Not Found:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.pageHeadingsSummary.feedbackDetails.notFound.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.pageHeadingsSummary.feedbackDetails.notFound.class}
 								{data.pageHeadingsSummary.feedbackDetails.notFound.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Focus Keyword:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Focus Keyword:</div>
+						<div className="feedbackDetailExtra">
 							<p>
 								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.text}
 							</p>
@@ -447,22 +447,22 @@ export const expandSeoReview = (dataToFormat: any) => {
 								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
 								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.pageHeadingsSummary.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.pageHeadingsSummary.seoScore}/
 							{data.pageHeadingsSummary.maxSeoScoreAvailable}
 						</div>
@@ -472,48 +472,48 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Word Count:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">Word Count:</div>
+				<div className="spanTag">
 					Input URL <span>{data.wordCount.inputUrl}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Word Count Total <span>{data.wordCount.wordCountTotal}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Corrected Word Count <span>{data.wordCount.correctedWordCount}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Anchor Text Words <span>{data.wordCount.anchorTextWords}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Anchor Percentage <span>{data.wordCount.anchorPercentage}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetailExtra">
 							<p>{data.wordCount.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.wordCount.feedbackDetails.found.class}
 								{data.wordCount.feedbackDetails.found.class == "positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.wordCount.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
 						</div>
 					</div>
@@ -522,56 +522,56 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>On Page Links Summary:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">On Page Links Summary:</div>
+				<div className="spanTag">
 					Input URL <span>{data.wordCount.inputUrl}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Total Links <span>{data.onPageLinksSummary.totalLinks}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					External Links <span>{data.onPageLinksSummary.externalLinks}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Internal Links <span>{data.onPageLinksSummary.internalLinks}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					No Follow Count <span>{data.onPageLinksSummary.noFollowCount}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Duplicate Links <span>{data.onPageLinksSummary.duplicateLinks}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					No Alt Tag <span>{data.onPageLinksSummary.noAltTag}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetails}>Found:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Found:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.onPageLinksSummary.feedbackDetails.found.class}
 								{data.onPageLinksSummary.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.onPageLinksSummary.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.onPageLinksSummary.seoScore}/
 							{data.onPageLinksSummary.maxSeoScoreAvailable}
 						</div>
@@ -581,82 +581,84 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Image Analysis:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">Image Analysis:</div>
+				<div className="spanTag">
 					Number of Images <span>{data.imageAnalysis.numberOfImages}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Image Name Contains Keyword{" "}
 					<span>{data.imageAnalysis.imageNameContainsKeyword}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Image Alt Tag Contains Keyword{" "}
 					<span>{data.imageAnalysis.imageAltTagContainsKeyword}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword <span>{data.imageAnalysis.keyword}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetails}>Found:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Found:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.imageAnalysis.feedbackDetails.found.class}
 								{data.imageAnalysis.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 
 					<div>
-						<div style={feedbackDetails}>Image Name Contains Keyword:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">Image Name Contains Keyword:</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.imageAnalysis.feedbackDetails.found.class}
 								{data.imageAnalysis.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 					<div>
-						<div style={feedbackDetails}>Image Alt Tag Contains Keyword:</div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetails">
+							Image Alt Tag Contains Keyword:
+						</div>
+						<div className="feedbackDetailExtra">
 							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.imageAnalysis.feedbackDetails.found.class}
 								{data.imageAnalysis.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.imageAnalysis.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.imageAnalysis.seoScore}/
 							{data.imageAnalysis.maxSeoScoreAvailable}
 						</div>
@@ -666,40 +668,40 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 			<br />
 
-			<div style={modalText}>
-				<div style={subTitles}>Keyword Density:</div>
-				<div style={spanTag}>
+			<div className="modalText">
+				<div className="subTitles">Keyword Density:</div>
+				<div className="spanTag">
 					Keyword <span>{data.keywordDensity.keyword}</span>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Keyword Density <span>{data.keywordDensity.keywordDensity}</span>
 				</div>
 				<div>
-					<div style={feedbackDetailTitle}>Feedback Details:</div>
+					<div className="feedbackDetailTitle">Feedback Details:</div>
 					<div>
-						<div style={feedbackDetailExtra}>
+						<div className="feedbackDetailExtra">
 							<p>{data.keywordDensity.feedbackDetails.found.text}</p>
 							<p>
 								Positive or Negative? -{" "}
 								{data.keywordDensity.feedbackDetails.found.class}
 								{data.keywordDensity.feedbackDetails.found.class ==
 								"positive" ? (
-									<span style={summaryDotGreen}></span>
+									<span className="summaryDotGreen"></span>
 								) : (
-									<span style={summaryDotRed}></span>
+									<span className="summaryDotRed"></span>
 								)}
 							</p>
 						</div>
 					</div>
 				</div>
-				<div style={spanTag}>
+				<div className="spanTag">
 					Max SEO Score Available
 					<span>{data.keywordDensity.maxSeoScoreAvailable}</span>
 				</div>
-				<div style={pbwrapper}>
+				<div className="pbwrapper">
 					<div>SEO Score</div>
-					<div style={progressBar}>
-						<div style={progressBarFill}>
+					<div className="progressBar">
+						<div className="progressBarFill">
 							{data.keywordDensity.seoScore}/
 							{data.keywordDensity.maxSeoScoreAvailable}
 						</div>
@@ -711,125 +713,6 @@ export const expandSeoReview = (dataToFormat: any) => {
 		10000
 	);
 };
-
-const modalStyles = {
-	position: "fixed",
-	zIndex: 1,
-	top: "50%",
-	left: "50%",
-	overflowY: "scroll",
-	transform: "translate(-50%, -54%)",
-	height: "85vh",
-	width: "50vw",
-	border: "1px solid #4e4d4d",
-	background: "#f2fcfe",
-	boxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
-	opacity: "0.9",
-	padding: 10,
-	paddingLeft: "30px",
-	marginBottom: "50px",
-	fontFamily: "Inter",
-	lineHeight: 1.8,
-} as const;
-
-const modalText = {
-	display: "flex",
-	flexDirection: "column",
-	fontSize: "18px",
-} as const;
-
-const modalTitle = {
-	textAlign: "center",
-	fontSize: "30px",
-	fontWeight: 600,
-} as const;
-
-const subTitles = {
-	textAlign: "justify",
-	fontSize: "24px",
-	fontWeight: 500,
-} as const;
-
-const feedbackDetailTitle = {
-	textIndent: "20px",
-	fontSize: "18px",
-	fontWeight: 500,
-} as const;
-
-const feedbackDetails = {
-	textIndent: "20px",
-	fontsize: "16px",
-};
-
-const feedbackDetailExtra = {
-	textIndent: "30px",
-	fontSize: "16px",
-	width: "40vh",
-	display: "inline",
-};
-
-const pbwrapper = {
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "space-between",
-	maxWidth: "55vw",
-	textAlign: "center" as "center",
-};
-
-const progressBar = {
-	maxWidth: "27vw",
-	width: "100%",
-	backgroundColor: "#e0e0e0",
-	borderRadius: "20px",
-};
-
-const progressBarFill = {
-	display: "block",
-	height: "3.5vh",
-	width: "100%",
-	backgroundImage:
-		"repeating-linear-gradient(to left, #0546e0, #1172f9, #4892f9)",
-	borderRadius: "20px",
-};
-
-const spanTag = {
-	display: "flex",
-	justifyContent: "space-between",
-	width: "34.2vw",
-};
-
-const summaryDotRed = {
-	height: "25px",
-	width: "25px",
-	backgroundColor: "#ff0909",
-	borderRadius: "50%",
-	display: "inline-block",
-	position: "relative",
-	left: "0.3vw",
-	top: "0.2vw",
-} as const;
-
-const summaryDotYellow = {
-	height: "25px",
-	width: "25px",
-	backgroundColor: "#FFCC00",
-	borderRadius: "50%",
-	display: "inline-block",
-	position: "relative",
-	left: "0.3vw",
-	top: "0.2vw",
-} as const;
-
-const summaryDotGreen = {
-	height: "25px",
-	width: "25px",
-	backgroundColor: "#00ab66",
-	borderRadius: "50%",
-	display: "inline-block",
-	position: "relative",
-	right: "-0.3vw",
-	top: "0.2vw",
-} as const;
 
 export const getIframeHTMLContent = (): Promise<string> => {
 	return appState.designerState.evaluateInFrame(() =>

@@ -1,0 +1,134 @@
+.modalStyles {
+	position: fixed;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	overflow-y: scroll;
+	transform: translate(-50%, -54%);
+	height: 85vh;
+	width: 50vw;
+	border: 1px solid #4e4d4d;
+	background: #f2fcfe;
+	box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);
+	opacity: 0.9;
+	padding: 0px 10px 30px 20px;
+	margin-bottom: 50px;
+	font-family: Inter;
+	line-height: 1.8;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #1a73e8;
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #d2e3fc;
+}
+
+.modalText {
+	display: flex;
+	flex-direction: column;
+	font-size: 18px;
+}
+
+.modalTitle {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.subTitles {
+	text-align: justify;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.feedbackDetailTitle {
+	text-indent: 20px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.feedbackDetails {
+	text-indent: 20px;
+	font-size: 16px;
+}
+
+.feedbackDetailExtra {
+	text-indent: 30px;
+	font-size: 16px;
+	width: 40vh;
+	display: inline;
+}
+
+.pbwrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 55vw;
+	text-align: center;
+}
+
+.progressBar {
+	max-width: 27vw;
+	width: 100%;
+	background-color: #e0e0e0;
+	border-radius: 20px;
+}
+
+.progressBarFill {
+	display: block;
+	height: 3.5vh;
+	width: 100%;
+	background-image: repeating-linear-gradient(
+		to left,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
+	border-radius: 20px;
+}
+
+.spanTag {
+	display: flex;
+	justify-content: space-between;
+	width: 34.5vw;
+}
+
+.summaryDotRed {
+	height: 25px;
+	width: 25px;
+	background-color: #ff0909;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	left: 0.3vw;
+	top: 0.2vw;
+}
+
+.summaryDotYellow {
+	height: 25px;
+	width: 25px;
+	background-color: #ffcc00;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	left: 0.3vw;
+	top: 0.2vw;
+}
+
+.summaryDotGreen {
+	height: 25px;
+	width: 25px;
+	background-color: #00ab66;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	right: -0.3vw;
+	top: 0.2vw;
+}
