@@ -90,11 +90,18 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 				<div className="pbwrapper">
 					<div>Overall SEO Score</div>
-					<div className="progressBar">
+					<progress
+						className="progressBar"
+						// value={data.overview.overallSeoScore}
+						data-before={data.overview.overallSeoScore}
+					>
+						<span className="progressBarFill"></span>
+					</progress>
+					{/* <div className="progressBar">
 						<div className="progressBarFill">
 							{data.overview.overallSeoScore}/100
 						</div>
-					</div>
+					</div> */}
 				</div>
 
 				<div className="spanTag">

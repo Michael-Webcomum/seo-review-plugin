@@ -1,14 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .modalStyles {
 	position: fixed;
 	z-index: 1;
 	top: 50%;
 	left: 50%;
 	overflow-y: scroll;
+	-webkit-transform: translate(-50%, -54%);
+	-ms-transform: translate(-50%, -54%);
 	transform: translate(-50%, -54%);
 	height: 85vh;
 	width: 50vw;
 	border: 1px solid #4e4d4d;
 	background: #f2fcfe;
+	-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);
 	box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);
 	opacity: 0.9;
 	padding: 0px 10px 30px 20px;
@@ -31,7 +41,12 @@
 }
 
 .modalText {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	font-size: 18px;
 }
@@ -66,9 +81,51 @@
 	display: inline;
 }
 
+progress {
+	position: relative;
+	height: 3.5vh;
+}
+
+progress::before {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: -o-repeating-linear-gradient(
+		right,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
+	background-image: repeating-linear-gradient(
+		to left,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
+	border-radius: 20px;
+	content: attr(data-before);
+	left: 0;
+}
+
+/* Progress Bar Container */
+progress::-webkit-progress-bar {
+	border-radius: 20px;
+}
+
+/* Inner Progress Bar */
+/* progress::-webkit-progress-value {
+	content: attr(data-before);
+} */
+
 .pbwrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	max-width: 55vw;
 	text-align: center;
@@ -82,9 +139,23 @@
 }
 
 .progressBarFill {
+	max-width: 27vw;
+	width: 100%;
+	background-color: #42c51a;
+	border-radius: 20px;
+}
+
+/* 
+.progressBarFill {
 	display: block;
 	height: 3.5vh;
 	width: 100%;
+	background-image: -o-repeating-linear-gradient(
+		right,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
 	background-image: repeating-linear-gradient(
 		to left,
 		#0546e0,
@@ -92,10 +163,14 @@
 		#4892f9
 	);
 	border-radius: 20px;
-}
+} */
 
 .spanTag {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	width: 34.5vw;
 }
