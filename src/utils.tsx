@@ -74,12 +74,30 @@ export const showReviewNotifications = (jobId: string) => {
 		</Button>
 	);
 };
+
 //Modal/Popup function with visualised data
 export const expandSeoReview = (dataToFormat: any) => {
 	const data = formatSeoData(dataToFormat);
 
+	const progress_bars: HTMLElement = document.querySelector(
+		"myProgressBar"
+	) as HTMLElement;
+
+	let width = 1;
+	let id = setInterval(frame, 10);
+	function frame() {
+		if (width >= 100) {
+			clearInterval(id);
+		} else {
+			width++;
+			progress_bars.style.width = width + "%";
+		}
+	}
+
+	// const close =
+
 	appState.globalState.openDialog(
-		<div className="modalStyles">
+		<div className="modalStyles" onClick={() => close()}>
 			<div className="modalTitle">SEO Review Results</div>
 			<div className="modalText">
 				<div className="subTitles">Overview:</div>
@@ -90,18 +108,12 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 				<div className="pbwrapper">
 					<div>Overall SEO Score</div>
-					<progress
-						className="progressBar"
-						// value={data.overview.overallSeoScore}
-						data-before={data.overview.overallSeoScore}
-					>
-						<span className="progressBarFill"></span>
-					</progress>
-					{/* <div className="progressBar">
-						<div className="progressBarFill">
+
+					<div className="progressBar">
+						<div className="progressBarFill" id="myProgressBar">
 							{data.overview.overallSeoScore}/100
 						</div>
-					</div> */}
+					</div>
 				</div>
 
 				<div className="spanTag">
