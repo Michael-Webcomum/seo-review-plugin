@@ -1,4 +1,5 @@
 import React from "react";
+// import * as ReactDOM from 'react-dom';
 import appState, { globalState } from "@builder.io/app-context";
 import { Builder } from "@builder.io/react";
 import { Button } from "@material-ui/core";
@@ -79,25 +80,18 @@ export const showReviewNotifications = (jobId: string) => {
 export const expandSeoReview = (dataToFormat: any) => {
 	const data = formatSeoData(dataToFormat);
 
-	const progress_bars: HTMLElement = document.querySelector(
-		"myProgressBar"
-	) as HTMLElement;
-
-	let width = 1;
-	let id = setInterval(frame, 10);
-	function frame() {
-		if (width >= 100) {
-			clearInterval(id);
-		} else {
-			width++;
-			progress_bars.style.width = width + "%";
-		}
-	}
-
-	// const close =
+	const closeModal = () => {
+		console.log(1);
+		const elementModal: any = document.getElementById("element0");
+		console.log(elementModal);
+		elementModal.setAttribute("style", "display: none");
+	};
 
 	appState.globalState.openDialog(
-		<div className="modalStyles" onClick={() => close()}>
+		<div className="modalStyles" id="element0">
+			<button className="button-default" onClick={closeModal}>
+				Show Modal
+			</button>
 			<div className="modalTitle">SEO Review Results</div>
 			<div className="modalText">
 				<div className="subTitles">Overview:</div>
@@ -150,7 +144,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Title Tag:</div>
@@ -269,7 +263,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Meta Description:</div>
@@ -399,7 +393,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Page Headings Summary:</div>
@@ -489,7 +483,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Word Count:</div>
@@ -539,7 +533,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">On Page Links Summary:</div>
@@ -598,7 +592,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Image Analysis:</div>
@@ -685,7 +679,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 				</div>
 			</div>
 
-			<br />
+			<hr />
 
 			<div className="modalText">
 				<div className="subTitles">Keyword Density:</div>
@@ -727,10 +721,10 @@ export const expandSeoReview = (dataToFormat: any) => {
 					</div>
 				</div>
 			</div>
-		</div>,
+		</div>
+	),
 		console.log("I am a working modal"),
-		10000
-	);
+		10000;
 };
 
 export const getIframeHTMLContent = (): Promise<string> => {

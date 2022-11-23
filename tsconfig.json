@@ -20,5 +20,5 @@
     "noUnusedParameters": false,
     "noImplicitAny": false,
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

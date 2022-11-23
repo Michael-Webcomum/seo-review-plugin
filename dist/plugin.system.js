@@ -1,6 +1,6 @@
-System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'react', 'mobx', 'mobx-react', '@builder.io/app-context'], function () {
+System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'react', 'mobx', 'mobx-react', '@builder.io/app-context'], (function () {
   'use strict';
-  var Builder, jsx, CircularProgress, Paper, IconButton, Button, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, Tooltip, TextField, InputAdornment, React, createElement, Component, useEffect, action, runInAction, useLocalStore, useObserver, appState;
+  var Builder, jsx, CircularProgress, Paper, IconButton, Button, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, Tooltip, TextField, InputAdornment, createElement, React, Component, useEffect, action, runInAction, useLocalStore, useObserver, appState;
   return {
     setters: [function (module) {
       Builder = module.Builder;
@@ -20,8 +20,8 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       TextField = module.TextField;
       InputAdornment = module.InputAdornment;
     }, function (module) {
-      React = module.default;
       createElement = module.createElement;
+      React = module["default"];
       Component = module.Component;
       useEffect = module.useEffect;
     }, function (module) {
@@ -31,9 +31,9 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       useLocalStore = module.useLocalStore;
       useObserver = module.useObserver;
     }, function (module) {
-      appState = module.default;
+      appState = module["default"];
     }],
-    execute: function () {
+    execute: (function () {
 
       /******************************************************************************
       Copyright (c) Microsoft Corporation.
@@ -33274,7 +33274,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	"@types/jest": "^23.3.2",
       	"@types/node": "^10.17.5",
       	"@types/qs": "^6.9.7",
-      	"@types/react": "^16.9.11",
+      	"@types/react": "^16.14.34",
       	"@types/shopify-buy": "^2.10.4",
       	colors: "^1.3.2",
       	commitizen: "^3.0.0",
@@ -33291,6 +33291,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	"patch-package": "^6.4.7",
       	prettier: "^1.14.3",
       	prompt: "^1.0.0",
+      	"react-dom": "^18.2.0",
       	"replace-in-file": "^3.4.2",
       	rimraf: "^2.6.2",
       	rollup: "^2.53.2",
@@ -33320,6 +33321,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	axios: "^0.27.2",
       	"framer-motion": "^7.3.6",
       	lodash: "^4.17.21",
+      	react: "^18.2.0",
       	"rollup-plugin-styles": "^4.0.0",
       	traverse: "^0.6.6",
       	uuid: "^8.3.2"
@@ -33520,7 +33522,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
 
       var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
 
-      var css = "/*\n* Prefixed by https://autoprefixer.github.io\n* PostCSS: v8.4.14,\n* Autoprefixer: v10.4.7\n* Browsers: last 4 version\n*/\n\n.modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\t-webkit-transform: translate(-50%, -54%);\n\t-ms-transform: translate(-50%, -54%);\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4d;\n\tbackground: #f2fcfe;\n\t-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 0px 10px 30px 20px;\n\tmargin-bottom: 50px;\n\tfont-family: Inter;\n\tline-height: 1.8;\n}\n\n::-webkit-scrollbar {\n\twidth: 15px;\n}\n\n::-webkit-scrollbar-thumb {\n\tbackground: #1a73e8;\n\tborder-radius: 20px;\n}\n\n::-webkit-scrollbar-track {\n\tbackground-color: #d2e3fc;\n}\n\n.modalText {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-ms-flex-direction: column;\n\tflex-direction: column;\n\tfont-size: 18px;\n}\n\n.modalTitle {\n\ttext-align: center;\n\tfont-size: 30px;\n\tfont-weight: 600;\n}\n\n.subTitles {\n\ttext-align: justify;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\n.feedbackDetailTitle {\n\ttext-indent: 20px;\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\ttext-indent: 20px;\n\tfont-size: 16px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 40vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-ms-flex-align: center;\n\talign-items: center;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 3.5vh;\n\t/* width: 100%; */\n\twidth: 0;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#0546e0,\n\t\t#1172f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#0546e0,\n\t\t#1172f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.spanTag {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\twidth: 34.5vw;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ff0909;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #00ab66;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\ttop: 0.2vw;\n}\n";
+      var css = "/*\n* Prefixed by https://autoprefixer.github.io\n* PostCSS: v8.4.14,\n* Autoprefixer: v10.4.7\n* Browsers: last 4 version\n*/\n\n/* @font-face {\n\tfont-family: \"Walkway Black\";\n\tsrc: url(\"fonts/Walkway.ttf\");\n} */\n\n.modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\t-webkit-transform: translate(-50%, -54%);\n\t-ms-transform: translate(-50%, -54%);\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4d;\n\tbackground: #f2fcfe;\n\t-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 20px 30px 30px 30px;\n\tmargin-bottom: 50px;\n\tfont-family: Ubuntu;\n\tline-height: 1.8;\n}\n\n::-webkit-scrollbar {\n\twidth: 10px;\n}\n\n::-webkit-scrollbar-thumb {\n\tbackground: #6f91bd;\n\tborder-radius: 20px;\n}\n\n.modalText {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-ms-flex-direction: column;\n\tflex-direction: column;\n\tfont-size: 18px;\n}\n\n.modalTitle {\n\ttext-align: center;\n\tfont-size: 40px;\n\tfont-weight: 600;\n}\n\n.subTitles {\n\ttext-align: left;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\n.feedbackDetailTitle {\n\ttext-indent: 20px;\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\ttext-indent: 20px;\n\tfont-size: 16px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 40vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-ms-flex-align: center;\n\talign-items: center;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 3.5vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#0546e0,\n\t\t#1172f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#0546e0,\n\t\t#1172f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.spanTag {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\twidth: 34.5vw;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ff0909;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\ttop: 0.2vw;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 25px;\n\tbackground-color: #00ab66;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\ttop: 0.2vw;\n}\n\nbutton {\n\tposition: relative;\n\theight: 30px;\n\tbackground: #1a73e8;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tborder: 1px solid black;\n\tright: 10px;\n\ttop: 8px;\n}\n\n/* MODAL STYLING */\n\n.modal-overlay {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1040;\n\twidth: 100vw;\n\theight: 100vh;\n\tbackground-color: #000;\n\topacity: 0.5;\n}\n\n.modal-wrapper {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1050;\n\twidth: 100%;\n\theight: 100%;\n\toverflow-x: hidden;\n\toverflow-y: auto;\n\toutline: 0;\n}\n\n.modal {\n\tz-index: 100;\n\tbackground: white;\n\tposition: relative;\n\tmargin: 1.75rem auto;\n\tborder-radius: 3px;\n\tmax-width: 500px;\n\tpadding: 2rem;\n}\n\n.modal-header {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n}\n\n.modal-close-button {\n\tfont-size: 1.4rem;\n\tfont-weight: 700;\n\tline-height: 1;\n\tcolor: #000;\n\topacity: 0.3;\n\tcursor: pointer;\n\tborder: none;\n}\n\nbutton {\n\tfont-size: 0.9rem;\n\tfont-weight: 700;\n\tborder: none;\n\tborder-radius: 3px;\n\tpadding: 0.3rem 1rem;\n\tmargin-left: 0.5rem;\n}\n\n.button-default {\n\tbackground: #247ba0;\n\tcolor: #fff;\n}\n";
       n(css,{});
 
       const registerContentAction = (contentAction) => {
@@ -33580,21 +33582,19 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       };
       const expandSeoReview = (dataToFormat) => {
         const data = formatSeoData(dataToFormat);
-        const progress_bars = document.querySelector("myProgressBar");
-        let width = 1;
-        let id = setInterval(frame, 10);
-        function frame() {
-          if (width >= 100) {
-            clearInterval(id);
-          } else {
-            width++;
-            progress_bars.style.width = width + "%";
-          }
-        }
+        const closeModal = () => {
+          console.log(1);
+          const elementModal = document.getElementById("element0");
+          console.log(elementModal);
+          elementModal.setAttribute("style", "display: none");
+        };
         appState.globalState.openDialog(/* @__PURE__ */ React.createElement("div", {
           className: "modalStyles",
-          onClick: () => close()
-        }, /* @__PURE__ */ React.createElement("div", {
+          id: "element0"
+        }, /* @__PURE__ */ React.createElement("button", {
+          className: "button-default",
+          onClick: closeModal
+        }, "Show Modal"), /* @__PURE__ */ React.createElement("div", {
           className: "modalTitle"
         }, "SEO Review Results"), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
@@ -33629,7 +33629,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "summaryDotYellow"
         })), /* @__PURE__ */ React.createElement("span", null, "Optimized - ", data.overview.summary.optimized, /* @__PURE__ */ React.createElement("span", {
           className: "summaryDotGreen"
-        })))))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        })))))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33693,7 +33693,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33755,7 +33755,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33807,7 +33807,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33837,7 +33837,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33873,7 +33873,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33919,7 +33919,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("div", {
+        }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("hr", null), /* @__PURE__ */ React.createElement("div", {
           className: "modalText"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "subTitles"
@@ -33943,7 +33943,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "progressBar"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "progressBarFill"
-        }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable))))), console.log("I am a working modal"), 1e4);
+        }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable)))))), console.log("I am a working modal");
       };
       const getIframeHTMLContent = () => {
         return appState.designerState.evaluateInFrame(() => new XMLSerializer().serializeToString(document));
@@ -34036,7 +34036,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         return {};
       });
 
-    }
+    })
   };
-});
+}));
 //# sourceMappingURL=plugin.system.js.map
