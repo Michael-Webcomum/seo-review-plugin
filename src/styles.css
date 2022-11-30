@@ -10,6 +10,12 @@
 	src: url("fonts/Walkway.ttf");
 } */
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .modalStyles {
 	position: fixed;
 	z-index: 1;
@@ -21,7 +27,7 @@
 	transform: translate(-50%, -54%);
 	height: 85vh;
 	width: 50vw;
-	border: 1px solid #4e4d4d;
+	border: 1px solid #4e4d4db0;
 	background: #f2fcfe;
 	-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);
 	box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);
@@ -41,44 +47,101 @@
 	border-radius: 20px;
 }
 
-.modalText {
+.container {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-wrap: wrap;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	font-size: 18px;
+	width: 100%;
+	background: #e5e5e5e0;
+	margin: 0px 0px 10px 0px;
+	border-radius: 20px;
+}
+
+.container::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.leftContainer {
+	float: left;
+	width: 30%;
+	padding: 10px 10px 10px 23px;
+}
+
+.rightContainer {
+	position: relative;
+	height: 149px;
+	left: 14px;
+	width: 60%;
+	padding: 11px 10px 10px 10px;
+	text-align: justify;
+}
+
+.bottomContainer {
+	position: relative;
+	width: 886px;
+	margin: 20px 0px 0px 20px;
+}
+
+.borderBox {
+	border-right: 1px solid #999999;
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		width: 100%;
+	}
+}
+
+.feedbackSummary {
+	float: right;
+	position: relative;
+	top: -35%;
+	left: 11%;
 }
 
 .modalTitle {
-	text-align: center;
 	font-size: 40px;
 	font-weight: 600;
+	padding: 0px 0px 10px 0px;
 }
 
-.subTitles {
+h1 {
 	text-align: left;
 	font-size: 24px;
 	font-weight: 500;
 }
 
+p {
+	position: relative;
+	line-height: 21px;
+}
+
 .feedbackDetailTitle {
-	text-indent: 20px;
 	font-size: 18px;
 	font-weight: 500;
 }
 
 .feedbackDetails {
-	text-indent: 20px;
-	font-size: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 17px;
+	height: 110px;
 }
 
 .feedbackDetailExtra {
 	text-indent: 30px;
 	font-size: 16px;
-	width: 40vh;
+	width: 70vh;
 	display: inline;
 }
 
@@ -105,7 +168,7 @@
 
 .progressBarFill {
 	display: block;
-	height: 3.5vh;
+	height: 2.4vh;
 
 	/* remove this width to test the progress bar filling */
 	width: 100%;
@@ -125,47 +188,86 @@
 	transition: width 0.5s ease-in;
 }
 
-.spanTag {
-	display: -webkit-box;
-	display: -ms-flexbox;
+.maxSeoScore {
 	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
 	justify-content: space-between;
+	align-items: center;
 	width: 34.5vw;
+	padding: 0px 0px 0px 20px;
+}
+
+.maxSeoScoreProgress {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 55vw;
+	width: 225px;
+	text-align: center;
+	right: 200px;
+}
+
+.maxSeoScoreProgressBar {
+	max-width: 27vw;
+	width: 100%;
+	background-color: #e0e0e0;
+	border-radius: 20px;
+}
+
+.maxSeoScoreProgressBarFill {
+	display: block;
+	height: 3.4vh;
+
+	/* remove this width to test the progress bar filling */
+	width: 100%;
+	background-image: -o-repeating-linear-gradient(
+		right,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
+	background-image: repeating-linear-gradient(
+		to left,
+		#0546e0,
+		#1172f9,
+		#4892f9
+	);
+	border-radius: 20px;
+	transition: width 0.5s ease-in;
 }
 
 .summaryDotRed {
 	height: 25px;
-	width: 25px;
-	background-color: #ff0909;
+	width: 28px;
+	background-color: #ff3333;
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
 	left: 0.3vw;
-	top: 0.2vw;
+	padding: 0px 0px 30px 4px;
 }
 
 .summaryDotYellow {
 	height: 25px;
-	width: 25px;
+	width: 28px;
 	background-color: #ffcc00;
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
 	left: 0.3vw;
-	top: 0.2vw;
+	padding-left: 7.5px;
+	padding: 0px 0px 29px 7.5px;
 }
 
 .summaryDotGreen {
 	height: 25px;
-	width: 25px;
-	background-color: #00ab66;
+	width: 28px;
+	background-color: #4bb543;
 	border-radius: 50%;
 	display: inline-block;
 	position: relative;
 	right: -0.3vw;
-	top: 0.2vw;
+	padding: 0px 0px 28px 7.5px;
 }
 
 button {
@@ -241,4 +343,8 @@ button {
 .button-default {
 	background: #247ba0;
 	color: #fff;
+}
+
+span {
+	letter-spacing: 5px;
 }

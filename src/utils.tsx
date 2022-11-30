@@ -89,109 +89,119 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 	appState.globalState.openDialog(
 		<div className="modalStyles" id="element0">
-			<button className="button-default" onClick={closeModal}>
+			{/* <button className="button-default" onClick={closeModal}>
 				Show Modal
-			</button>
+			</button> */}
 			<div className="modalTitle">SEO Review Results</div>
-			<div className="modalText">
-				<div className="subTitles">Overview:</div>
-
-				<div className="spanTag">
-					Keyword <span>{data.overview.keyword}</span>
-				</div>
-
-				<div className="pbwrapper">
-					<div>Overall SEO Score</div>
-
-					<div className="progressBar">
-						<div className="progressBarFill" id="myProgressBar">
-							{data.overview.overallSeoScore}/100
-						</div>
+			<h1>Overview</h1>
+			<div className="container">
+				<div className="leftContainer">
+					<div className="borderBox">
+						<h2>Category</h2>
+						<div>Keyword</div>
+						<div>Overall SEO Score</div>
+						<div>Available SEO Points</div>
+						<div>Earned SEO Points</div>
 					</div>
 				</div>
 
-				<div className="spanTag">
-					Available SEO Points <span>{data.overview.availableSeoPoints}</span>
-				</div>
+				<div className="rightContainer">
+					<h2>Results</h2>
+					<div className="feedbackSummary">
+						<div className="feedbackDetailTitle">Feedback Summary</div>
 
-				<div className="pbwrapper">
-					<div>Earned SEO Points</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.overview.earnedSeoPoints}/{data.overview.availableSeoPoints}
+						<div>
+							<div>
+								Optimized
+								<div className="summaryDotGreen">
+									{data.overview.summary.optimized}
+								</div>
+							</div>
+							<div>
+								Warnings
+								<div className="summaryDotYellow">
+									{data.overview.summary.warnings}
+								</div>
+							</div>
+							<div>
+								Errors
+								<div className="summaryDotRed">
+									{data.overview.summary.errors}
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div>
-					<div className="feedbackDetailTitle">Summary: </div>
-					<div className="feedbackDetails">
-						<div className="spanTag">
-							<span>
-								Errors - {data.overview.summary.errors}
-								<span className="summaryDotRed"></span>
-							</span>
-							<span>
-								Warnings - {data.overview.summary.warnings}
-								<span className="summaryDotYellow"></span>
-							</span>
-							<span>
-								Optimized - {data.overview.summary.optimized}
-								<span className="summaryDotGreen"></span>
-							</span>
+					<div>{data.overview.keyword}</div>
+					<div className="pbwrapper">
+						<div className="progressBar">
+							<p className="progressBarFill" id="myProgressBar">
+								{data.overview.overallSeoScore}/100
+							</p>
+						</div>
+					</div>
+					<div>{data.overview.availableSeoPoints}</div>
+					<div className="pbwrapper">
+						<div className="progressBar">
+							<p className="progressBarFill">
+								{data.overview.earnedSeoPoints}/
+								{data.overview.availableSeoPoints}
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<hr />
+			<h1>Title Tag</h1>
+			<div className="container">
+				<div className="leftContainer">
+					<div className="borderBox">
+						<h2>Category</h2>
+						<div>Result</div>
+						<div>Title Found</div>
+						<div>Title Tag</div>
+						<div>Title Length</div>
+						<div>Title Tag Number</div>
+						<div>Focus Keywords Position</div>
+						<div>Focus Keywords Found</div>
+						<div>Keyword</div>
+					</div>
+				</div>
 
-			<div className="modalText">
-				<div className="subTitles">Title Tag:</div>
+				<div className="rightContainer">
+					<h2>Results</h2>
+					<div>{data.titleTag.Result}</div>
+					<div>{data.titleTag.titleFound}</div>
+					<div>{data.titleTag.titleTag}</div>
+					<div>{data.titleTag.titleLength}</div>
+					<div>{data.titleTag.titleTagNumber}</div>
+					<div>{data.titleTag.focusKeywordsPosition}</div>
+					<div>{data.titleTag.focusKeywordsFound}</div>
+					<div>{data.titleTag.keyword}</div>
+				</div>
 
-				<div className="spanTag">
-					Result <span>{data.titleTag.Result}</span>
-				</div>
-				<div className="spanTag">
-					Title Found <span>{data.titleTag.titleFound}</span>
-				</div>
-				<div className="spanTag">
-					Input URL <span>{data.titleTag.inputUrl}</span>
-				</div>
-				<div className="spanTag">
-					Title Tag <span>{data.titleTag.titleTag}</span>
-				</div>
-				<div className="spanTag">
-					Title Length <span>{data.titleTag.titleLength}</span>
-				</div>
-				<div className="spanTag">
-					Title Tag Number <span>{data.titleTag.titleTagNumber}</span>
-				</div>
-				<div className="spanTag">
-					Focus Keywords Position{" "}
-					<span>{data.titleTag.focusKeywordsPosition}</span>
-				</div>
-				<div className="spanTag">
-					Focus Keywords Found <span>{data.titleTag.focusKeywordsFound}</span>
-				</div>
-				<div className="spanTag">
-					Keyword <span>{data.titleTag.keyword}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
+				<div className="bottomContainer">
+					<h3>Feedback Details</h3>
+					<h5>Positive or Negative?</h5>
 					<div>
-						<div className="feedbackDetails">
+						<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+						<span className="summaryDotRed"></span>
+					</div>
+
+					<div className="feedbackDetails">
+						<div>
 							{data.titleTag.feedbackDetails.found.text ==
 							data.titleTag.feedbackDetails.found.text ? (
 								<div>Title Tag Not Found</div>
 							) : (
-								<div>Found: {data.titleTag.feedbackDetails.found.text}</div>
+								<div>
+									Title Tag Found - {data.titleTag.feedbackDetails.found.text}
+								</div>
 							)}
 						</div>
 						<div className="feedbackDetailExtra">
-							<p>{data.titleTag.feedbackDetails.found.text}</p>
 							<p>
-								Positive or Negative? -{" "}
+								{" "}
 								{data.titleTag.feedbackDetails.found.class}
 								{data.titleTag.feedbackDetails.found.class == "positive" ? (
 									<span className="summaryDotGreen"></span>
@@ -199,14 +209,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 									<span className="summaryDotRed"></span>
 								)}
 							</p>
+							<p>{data.titleTag.feedbackDetails.found.text}</p>
 						</div>
 					</div>
-					<div>
-						<div className="feedbackDetails">Length:</div>
+					<div className="feedbackDetails">
+						<div>Length</div>
 						<div className="feedbackDetailExtra">
-							<p>{data.titleTag.feedbackDetails.length.text}</p>
 							<p>
-								Positive or Negative? -{" "}
+								{" "}
 								{data.titleTag.feedbackDetails.length.class}
 								{data.titleTag.feedbackDetails.length.class == "positive" ? (
 									<span className="summaryDotGreen"></span>
@@ -214,14 +224,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 									<span className="summaryDotRed"></span>
 								)}
 							</p>
+							<p>{data.titleTag.feedbackDetails.length.text}</p>
 						</div>
 					</div>
-					<div>
-						<div className="feedbackDetails">Focus Keyword:</div>
+					<div className="feedbackDetails">
+						<div>Focus Keyword</div>
 						<div className="feedbackDetailExtra">
-							<p>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
 							<p>
-								Positive or Negative? -{" "}
+								{" "}
 								{data.titleTag.feedbackDetails.focusKeyword.class}
 								{data.titleTag.feedbackDetails.focusKeyword.class ==
 								"positive" ? (
@@ -230,14 +240,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 									<span className="summaryDotRed"></span>
 								)}
 							</p>
+							<p>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
 						</div>
 					</div>
-					<div>
-						<div className="feedbackDetails">Focus Keyword Position:</div>
+					<div className="feedbackDetails">
+						<div>Focus Keyword Position</div>
 						<div className="feedbackDetailExtra">
-							<p>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
 							<p>
-								Positive or Negative? -{" "}
+								{" "}
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class}
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class ==
 								"positive" ? (
@@ -246,477 +256,514 @@ export const expandSeoReview = (dataToFormat: any) => {
 									<span className="summaryDotRed"></span>
 								)}
 							</p>
+							<p>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
 						</div>
 					</div>
 				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.titleTag.maxSeoScoreAvailable}</span>
+				<div className="maxSeoScore">
+					Max SEO Score Available = {data.titleTag.maxSeoScoreAvailable}
 				</div>
-				<div className="pbwrapper">
+				<div className="maxSeoScoreProgress">
 					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
+					<div className="maxSeoScoreProgressBar">
+						<div className="maxSeoScoreProgressBarFill">
 							{data.titleTag.seoScore}/{data.titleTag.maxSeoScoreAvailable}
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<hr />
+			<div>
+				<h1>Meta Description</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>Result</div>
+							<div>Meta Description Found?</div>
+							<div>Meta Description</div>
+							<div>Meta Description Length</div>
+							<div>Meta Description Number</div>
+							<div>Focus Keywords Position</div>
+							<div>Focus Keywords Found</div>
+							<div>Keyword</div>
+						</div>
+					</div>
 
-			<div className="modalText">
-				<div className="subTitles">Meta Description:</div>
-				<div className="spanTag">
-					Result <span>{data.metaDescription.result}</span>
-				</div>
-				<div className="spanTag">
-					Meta Description Found
-					<span>{data.metaDescription.metaDescriptionFound}</span>
-				</div>
-				<div className="spanTag">
-					Meta Description <span>{data.metaDescription.metaDescription}</span>
-				</div>
-				<div className="spanTag">
-					Meta Description Length{" "}
-					<span>{data.metaDescription.metaDescriptionLength}</span>
-				</div>
-				<div className="spanTag">
-					Meta Description Number{" "}
-					<span>{data.metaDescription.metaDescriptionNumber}</span>
-				</div>
-				<div className="spanTag">
-					Focus Keywords Position{" "}
-					<span>{data.metaDescription.focusKeywordsPosition}</span>
-				</div>
-				<div className="spanTag">
-					Focus Keywords Found{" "}
-					<span>{data.metaDescription.focusKeywordsPosition}</span>
-				</div>
-				<div className="spanTag">
-					Keyword <span>{data.metaDescription.keyword}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.metaDescription.result}</div>
+						<div>{data.metaDescription.metaDescriptionFound}</div>
+						<div>{data.metaDescription.metaDescription}</div>
+						<div>{data.metaDescription.metaDescriptionLength}</div>
+						<div>{data.metaDescription.metaDescriptionNumber}</div>
+						<div>{data.metaDescription.focusKeywordsPosition}</div>
+						<div>{data.metaDescription.focusKeywordsFound}</div>
+						<div>{data.metaDescription.keyword}</div>
+					</div>
+
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative?</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+
 						<div className="feedbackDetails">
-							{data.metaDescription.feedbackDetails.found.text ==
-							data.metaDescription.feedbackDetails.found.text ? (
-								<div>Meta Description Not Found</div>
-							) : (
-								<div>Found: {data.titleTag.feedbackDetails.found.text}</div>
-							)}
-						</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.metaDescription.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.metaDescription.feedbackDetails.found.class}
-								{data.metaDescription.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
+							<div>
+								{data.metaDescription.feedbackDetails.found.text ==
+								data.metaDescription.feedbackDetails.found.text ? (
+									<div>Meta Description Not Found</div>
 								) : (
-									<span className="summaryDotRed"></span>
+									<div>
+										Meta Description Found -
+										{data.titleTag.feedbackDetails.found.text}
+									</div>
 								)}
-							</p>
+							</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.metaDescription.feedbackDetails.found.class}
+									{data.metaDescription.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.metaDescription.feedbackDetails.found.text}</p>
+							</div>
 						</div>
-					</div>
-					<div>
-						<div className="feedbackDetails">Length:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.metaDescription.feedbackDetails.length.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.metaDescription.feedbackDetails.length.class}
-								{data.metaDescription.feedbackDetails.length.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-					<div>
-						<div className="feedbackDetails">Focus Keyword:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.metaDescription.feedbackDetails.focusKeyword.class}
-								{data.metaDescription.feedbackDetails.focusKeyword.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-					<div>
-						<div className="feedbackDetails">Focus Keywords Position:</div>
-						<div className="feedbackDetailExtra">
-							<p>
-								{
-									data.metaDescription.feedbackDetails.focusKeywordsPosition
-										.text
-								}
-							</p>
-							<p>
-								Positive or Negative? -{" "}
-								{
-									data.metaDescription.feedbackDetails.focusKeywordsPosition
-										.class
-								}
-								{data.metaDescription.feedbackDetails.focusKeywordsPosition
-									.class == "positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.metaDescription.maxSeoScoreAvailable}</span>
-				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.metaDescription.seoScore}/
-							{data.metaDescription.maxSeoScoreAvailable}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr />
-
-			<div className="modalText">
-				<div className="subTitles">Page Headings Summary:</div>
-				<div className="spanTag">
-					Result <span>{data.metaDescription.result}</span>
-				</div>
-				<div className="spanTag">
-					H1 <span>{data.pageHeadingsSummary.h1}</span>
-				</div>
-				<div className="spanTag">
-					H2 <span>{data.pageHeadingsSummary.h2}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H3 <span>{data.pageHeadingsSummary.h3}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H4 <span>{data.pageHeadingsSummary.h4}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H5 <span>{data.pageHeadingsSummary.h5}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H6 <span>{data.pageHeadingsSummary.h6}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H1 Count <span>{data.pageHeadingsSummary.h1Count}</span>{" "}
-				</div>
-				<div className="spanTag">
-					H1 Content <span>{data.pageHeadingsSummary.h1Content}</span>{" "}
-				</div>
-				<div className="spanTag">
-					Focus Keywords Found{" "}
-					<span>{data.pageHeadingsSummary.focusKeywordsFound}</span>{" "}
-				</div>
-				<div className="spanTag">
-					Keyword <span>{data.pageHeadingsSummary.keyword}</span>{" "}
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
-						<div className="feedbackDetails">Not Found:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.pageHeadingsSummary.feedbackDetails.notFound.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.pageHeadingsSummary.feedbackDetails.notFound.class}
-								{data.pageHeadingsSummary.feedbackDetails.notFound.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-					<div>
-						<div className="feedbackDetails">Focus Keyword:</div>
-						<div className="feedbackDetailExtra">
-							<p>
-								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.text}
-							</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
-								{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.pageHeadingsSummary.maxSeoScoreAvailable}</span>
-				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.pageHeadingsSummary.seoScore}/
-							{data.pageHeadingsSummary.maxSeoScoreAvailable}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr />
-
-			<div className="modalText">
-				<div className="subTitles">Word Count:</div>
-				<div className="spanTag">
-					Input URL <span>{data.wordCount.inputUrl}</span>
-				</div>
-				<div className="spanTag">
-					Word Count Total <span>{data.wordCount.wordCountTotal}</span>
-				</div>
-				<div className="spanTag">
-					Corrected Word Count <span>{data.wordCount.correctedWordCount}</span>
-				</div>
-				<div className="spanTag">
-					Anchor Text Words <span>{data.wordCount.anchorTextWords}</span>
-				</div>
-				<div className="spanTag">
-					Anchor Percentage <span>{data.wordCount.anchorPercentage}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
-						<div className="feedbackDetailExtra">
-							<p>{data.wordCount.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.wordCount.feedbackDetails.found.class}
-								{data.wordCount.feedbackDetails.found.class == "positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.wordCount.maxSeoScoreAvailable}</span>
-				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr />
-
-			<div className="modalText">
-				<div className="subTitles">On Page Links Summary:</div>
-				<div className="spanTag">
-					Input URL <span>{data.wordCount.inputUrl}</span>
-				</div>
-				<div className="spanTag">
-					Total Links <span>{data.onPageLinksSummary.totalLinks}</span>
-				</div>
-				<div className="spanTag">
-					External Links <span>{data.onPageLinksSummary.externalLinks}</span>
-				</div>
-				<div className="spanTag">
-					Internal Links <span>{data.onPageLinksSummary.internalLinks}</span>
-				</div>
-				<div className="spanTag">
-					No Follow Count <span>{data.onPageLinksSummary.noFollowCount}</span>
-				</div>
-				<div className="spanTag">
-					Duplicate Links <span>{data.onPageLinksSummary.duplicateLinks}</span>
-				</div>
-				<div className="spanTag">
-					No Alt Tag <span>{data.onPageLinksSummary.noAltTag}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
-						<div className="feedbackDetails">Found:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.onPageLinksSummary.feedbackDetails.found.class}
-								{data.onPageLinksSummary.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.onPageLinksSummary.maxSeoScoreAvailable}</span>
-				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.onPageLinksSummary.seoScore}/
-							{data.onPageLinksSummary.maxSeoScoreAvailable}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr />
-
-			<div className="modalText">
-				<div className="subTitles">Image Analysis:</div>
-				<div className="spanTag">
-					Number of Images <span>{data.imageAnalysis.numberOfImages}</span>
-				</div>
-				<div className="spanTag">
-					Image Name Contains Keyword{" "}
-					<span>{data.imageAnalysis.imageNameContainsKeyword}</span>
-				</div>
-				<div className="spanTag">
-					Image Alt Tag Contains Keyword{" "}
-					<span>{data.imageAnalysis.imageAltTagContainsKeyword}</span>
-				</div>
-				<div className="spanTag">
-					Keyword <span>{data.imageAnalysis.keyword}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
-						<div className="feedbackDetails">Found:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.imageAnalysis.feedbackDetails.found.class}
-								{data.imageAnalysis.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-
-					<div>
-						<div className="feedbackDetails">Image Name Contains Keyword:</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.imageAnalysis.feedbackDetails.found.class}
-								{data.imageAnalysis.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
-						</div>
-					</div>
-					<div>
 						<div className="feedbackDetails">
-							Image Alt Tag Contains Keyword:
+							<div>Length</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.metaDescription.feedbackDetails.length.class}
+									{data.metaDescription.feedbackDetails.length.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.metaDescription.feedbackDetails.length.text}</p>
+							</div>
 						</div>
-						<div className="feedbackDetailExtra">
-							<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.imageAnalysis.feedbackDetails.found.class}
-								{data.imageAnalysis.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
+						<div className="feedbackDetails">
+							<div>Focus Keyword</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.metaDescription.feedbackDetails.focusKeyword.class}
+									{data.metaDescription.feedbackDetails.focusKeyword.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
+							</div>
+						</div>
+						<div className="feedbackDetails">
+							<div>Focus Keywords Position</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{
+										data.metaDescription.feedbackDetails.focusKeywordsPosition
+											.class
+									}
+									{data.metaDescription.feedbackDetails.focusKeywordsPosition
+										.class == "positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>
+									{
+										data.metaDescription.feedbackDetails.focusKeywordsPosition
+											.text
+									}
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.imageAnalysis.maxSeoScoreAvailable}</span>
-				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.imageAnalysis.seoScore}/
-							{data.imageAnalysis.maxSeoScoreAvailable}
+
+					<div className="maxSeoScore">
+						Max SEO Score Available ={" "}
+						{data.metaDescription.maxSeoScoreAvailable}
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.metaDescription.seoScore}/
+								{data.metaDescription.maxSeoScoreAvailable}
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<hr />
+			<div>
+				<h1>Page Headings Summary</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>H1</div>
+							<div>H2</div>
+							<div>H3</div>
+							<div>H4</div>
+							<div>H5</div>
+							<div>H6</div>
+							<div>H1 Count</div>
+							<div>H1 Content</div>
+							<div>Focus Keywords Found</div>
+							<div>Keyword</div>
+						</div>
+					</div>
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.pageHeadingsSummary.h1}</div>
+						<div>{data.pageHeadingsSummary.h2}</div>
+						<div>{data.pageHeadingsSummary.h3}</div>
+						<div>{data.pageHeadingsSummary.h4}</div>
+						<div>{data.pageHeadingsSummary.h5}</div>
+						<div>{data.pageHeadingsSummary.h6}</div>
+						<div>{data.pageHeadingsSummary.h1Count}</div>
+						<div>{data.pageHeadingsSummary.h1Content}</div>
+						<div>{data.pageHeadingsSummary.focusKeywordsFound}</div>
+						<div>{data.pageHeadingsSummary.keyword}</div>
+					</div>
 
-			<div className="modalText">
-				<div className="subTitles">Keyword Density:</div>
-				<div className="spanTag">
-					Keyword <span>{data.keywordDensity.keyword}</span>
-				</div>
-				<div className="spanTag">
-					Keyword Density <span>{data.keywordDensity.keywordDensity}</span>
-				</div>
-				<div>
-					<div className="feedbackDetailTitle">Feedback Details:</div>
-					<div>
-						<div className="feedbackDetailExtra">
-							<p>{data.keywordDensity.feedbackDetails.found.text}</p>
-							<p>
-								Positive or Negative? -{" "}
-								{data.keywordDensity.feedbackDetails.found.class}
-								{data.keywordDensity.feedbackDetails.found.class ==
-								"positive" ? (
-									<span className="summaryDotGreen"></span>
-								) : (
-									<span className="summaryDotRed"></span>
-								)}
-							</p>
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative?</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+						<div className="feedbackDetails">
+							<div>Page Headings Summary</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.pageHeadingsSummary.feedbackDetails.notFound.class}
+									{data.pageHeadingsSummary.feedbackDetails.notFound.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.pageHeadingsSummary.feedbackDetails.notFound.text}</p>
+							</div>
+						</div>
+						<div className="feedbackDetails">
+							<div>Focus Keyword</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.pageHeadingsSummary.feedbackDetails.focusKeyword.text}
+								</p>
+								<p>
+									{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
+									{data.pageHeadingsSummary.feedbackDetails.focusKeyword
+										.class == "positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className="maxSeoScore">
+						Max SEO Score Available
+						{data.pageHeadingsSummary.maxSeoScoreAvailable}
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.pageHeadingsSummary.seoScore}/
+								{data.pageHeadingsSummary.maxSeoScoreAvailable}
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className="spanTag">
-					Max SEO Score Available
-					<span>{data.keywordDensity.maxSeoScoreAvailable}</span>
+			</div>
+
+			<div>
+				<h1>Word Count</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>Word Count Total</div>
+							<div>Corrected Word Count</div>
+							<div>Anchor Text Words</div>
+							<div>Anchor Percentage</div>
+						</div>
+					</div>
+
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.wordCount.wordCountTotal}</div>
+						<div>{data.wordCount.correctedWordCount}</div>
+						<div>{data.wordCount.anchorTextWords}</div>
+						<div>{data.wordCount.anchorPercentage}</div>
+					</div>
+
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative?</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+						<div className="feedbackDetails">
+							<div>Word Count</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.wordCount.feedbackDetails.found.class}
+									{data.wordCount.feedbackDetails.found.class == "positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.wordCount.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="maxSeoScore">
+						Max SEO Score Available
+						{data.wordCount.maxSeoScoreAvailable}
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="pbwrapper">
-					<div>SEO Score</div>
-					<div className="progressBar">
-						<div className="progressBarFill">
-							{data.keywordDensity.seoScore}/
-							{data.keywordDensity.maxSeoScoreAvailable}
+			</div>
+
+			<div>
+				<h1>On Page Links Summary</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>Total Links</div>
+							<div>External Links</div>
+							<div>Internal Links</div>
+							<div>No Follow Count</div>
+							<div>Duplicate Links</div>
+							<div>No Alt Tag</div>
+						</div>
+					</div>
+
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.onPageLinksSummary.totalLinks}</div>
+						<div>{data.onPageLinksSummary.externalLinks}</div>
+						<div>{data.onPageLinksSummary.internalLinks}</div>
+						<div>{data.onPageLinksSummary.noFollowCount}</div>
+						<div>{data.onPageLinksSummary.duplicateLinks}</div>
+						<div>{data.onPageLinksSummary.noAltTag}</div>
+					</div>
+
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative?</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+						<div className="feedbackDetails">
+							<div>On Page Links Summary</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									Positive or Negative? -{" "}
+									{data.onPageLinksSummary.feedbackDetails.found.class}
+									{data.onPageLinksSummary.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="maxSeoScore">
+						Max SEO Score Available
+						{data.onPageLinksSummary.maxSeoScoreAvailable}
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.onPageLinksSummary.seoScore}/
+								{data.onPageLinksSummary.maxSeoScoreAvailable}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h1>Image Analysis</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>Number of Images</div>
+							<div>Image Contains Keyword</div>
+							<div>Alt Tag Contains Keyword</div>
+							<div>Keyword</div>
+						</div>
+					</div>
+
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.imageAnalysis.numberOfImages}</div>
+						<div>{data.imageAnalysis.imageNameContainsKeyword}</div>
+						<div>{data.imageAnalysis.imageAltTagContainsKeyword}</div>
+						<div>{data.imageAnalysis.keyword}</div>
+					</div>
+
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+						<div className="feedbackDetails">
+							<div>Image Analysis</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.imageAnalysis.feedbackDetails.found.class}
+									{data.imageAnalysis.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+
+						<div className="feedbackDetails">
+							<div>Image Name Contains Keyword</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.imageAnalysis.feedbackDetails.found.class}
+									{data.imageAnalysis.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+						<div className="feedbackDetails">
+							<div>Image Alt Tag Contains Keyword</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									{data.imageAnalysis.feedbackDetails.found.class}
+									{data.imageAnalysis.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="maxSeoScore">
+						Max SEO Score Available
+						{data.imageAnalysis.maxSeoScoreAvailable}
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.imageAnalysis.seoScore}/
+								{data.imageAnalysis.maxSeoScoreAvailable}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h1>Keyword Density</h1>
+				<div className="container">
+					<div className="leftContainer">
+						<div className="borderBox">
+							<h2>Category</h2>
+							<div>Keyword</div>
+							<div>Keyword Density</div>
+						</div>
+					</div>
+
+					<div className="rightContainer">
+						<h2>Results</h2>
+						<div>{data.keywordDensity.keyword}</div>
+						<div>{data.keywordDensity.keywordDensity}</div>
+					</div>
+
+					<div className="bottomContainer">
+						<h3>Feedback Details</h3>
+						<h5>Positive or Negative?</h5>
+						<div>
+							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
+							<span className="summaryDotRed"></span>
+						</div>
+						<div className="feedbackDetails">
+							<div>Keyword Density</div>
+							<div className="feedbackDetailExtra">
+								<p>
+									Positive or Negative? -{" "}
+									{data.keywordDensity.feedbackDetails.found.class}
+									{data.keywordDensity.feedbackDetails.found.class ==
+									"positive" ? (
+										<span className="summaryDotGreen"></span>
+									) : (
+										<span className="summaryDotRed"></span>
+									)}
+								</p>
+								<p>{data.keywordDensity.feedbackDetails.found.text}</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="maxSeoScore">
+						Max SEO Score Available
+						<span>{data.keywordDensity.maxSeoScoreAvailable}</span>
+					</div>
+					<div className="maxSeoScoreProgress">
+						<div>SEO Score</div>
+						<div className="maxSeoScoreProgressBar">
+							<div className="maxSeoScoreProgressBarFill">
+								{data.keywordDensity.seoScore}/
+								{data.keywordDensity.maxSeoScoreAvailable}
+							</div>
 						</div>
 					</div>
 				</div>
