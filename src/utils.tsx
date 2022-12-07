@@ -184,8 +184,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 					<h3>Feedback Details</h3>
 					<h5>Positive or Negative?</h5>
 					<div>
-						<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-						<span className="summaryDotRed"></span>
+						<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+						<div className="summaryDotRed"></div>
 					</div>
 
 					<div className="feedbackDetails">
@@ -204,9 +204,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 								{" "}
 								{data.titleTag.feedbackDetails.found.class}
 								{data.titleTag.feedbackDetails.found.class == "positive" ? (
-									<span className="summaryDotGreen"></span>
+									<div className="summaryDotGreen"></div>
 								) : (
-									<span className="summaryDotRed"></span>
+									<div className="summaryDotRed"></div>
 								)}
 							</p>
 							<p>{data.titleTag.feedbackDetails.found.text}</p>
@@ -219,9 +219,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 								{" "}
 								{data.titleTag.feedbackDetails.length.class}
 								{data.titleTag.feedbackDetails.length.class == "positive" ? (
-									<span className="summaryDotGreen"></span>
+									<div className="summaryDotGreen"></div>
 								) : (
-									<span className="summaryDotRed"></span>
+									<div className="summaryDotRed"></div>
 								)}
 							</p>
 							<p>{data.titleTag.feedbackDetails.length.text}</p>
@@ -235,9 +235,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 								{data.titleTag.feedbackDetails.focusKeyword.class}
 								{data.titleTag.feedbackDetails.focusKeyword.class ==
 								"positive" ? (
-									<span className="summaryDotGreen"></span>
+									<div className="summaryDotGreen"></div>
 								) : (
-									<span className="summaryDotRed"></span>
+									<div className="summaryDotRed"></div>
 								)}
 							</p>
 							<p>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
@@ -251,9 +251,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class}
 								{data.titleTag.feedbackDetails.focusKeywordsPosition.class ==
 								"positive" ? (
-									<span className="summaryDotGreen"></span>
+									<div className="summaryDotGreen"></div>
 								) : (
-									<span className="summaryDotRed"></span>
+									<div className="summaryDotRed"></div>
 								)}
 							</p>
 							<p>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
@@ -306,8 +306,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative?</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 
 						<div className="feedbackDetails">
@@ -327,9 +327,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.metaDescription.feedbackDetails.found.class}
 									{data.metaDescription.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.metaDescription.feedbackDetails.found.text}</p>
@@ -342,9 +342,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.metaDescription.feedbackDetails.length.class}
 									{data.metaDescription.feedbackDetails.length.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.metaDescription.feedbackDetails.length.text}</p>
@@ -357,9 +357,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.metaDescription.feedbackDetails.focusKeyword.class}
 									{data.metaDescription.feedbackDetails.focusKeyword.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
@@ -375,9 +375,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									}
 									{data.metaDescription.feedbackDetails.focusKeywordsPosition
 										.class == "positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>
@@ -442,8 +442,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative?</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 						<div className="feedbackDetails">
 							<div>Page Headings Summary</div>
@@ -452,9 +452,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.pageHeadingsSummary.feedbackDetails.notFound.class}
 									{data.pageHeadingsSummary.feedbackDetails.notFound.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.pageHeadingsSummary.feedbackDetails.notFound.text}</p>
@@ -470,9 +470,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
 									{data.pageHeadingsSummary.feedbackDetails.focusKeyword
 										.class == "positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 							</div>
@@ -519,8 +519,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative?</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 						<div className="feedbackDetails">
 							<div>Word Count</div>
@@ -528,9 +528,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 								<p>
 									{data.wordCount.feedbackDetails.found.class}
 									{data.wordCount.feedbackDetails.found.class == "positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.wordCount.feedbackDetails.found.text}</p>
@@ -582,8 +582,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative?</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 						<div className="feedbackDetails">
 							<div>On Page Links Summary</div>
@@ -593,9 +593,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.onPageLinksSummary.feedbackDetails.found.class}
 									{data.onPageLinksSummary.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
@@ -644,8 +644,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 						<div className="feedbackDetails">
 							<div>Image Analysis</div>
@@ -654,9 +654,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.imageAnalysis.feedbackDetails.found.class}
 									{data.imageAnalysis.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
@@ -670,9 +670,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.imageAnalysis.feedbackDetails.found.class}
 									{data.imageAnalysis.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
@@ -685,9 +685,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.imageAnalysis.feedbackDetails.found.class}
 									{data.imageAnalysis.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.imageAnalysis.feedbackDetails.found.text}</p>
@@ -732,8 +732,8 @@ export const expandSeoReview = (dataToFormat: any) => {
 						<h3>Feedback Details</h3>
 						<h5>Positive or Negative?</h5>
 						<div>
-							<span className="summaryDotGreen"></span>&nbsp;&nbsp; or &nbsp;
-							<span className="summaryDotRed"></span>
+							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
+							<div className="summaryDotRed"></div>
 						</div>
 						<div className="feedbackDetails">
 							<div>Keyword Density</div>
@@ -743,9 +743,9 @@ export const expandSeoReview = (dataToFormat: any) => {
 									{data.keywordDensity.feedbackDetails.found.class}
 									{data.keywordDensity.feedbackDetails.found.class ==
 									"positive" ? (
-										<span className="summaryDotGreen"></span>
+										<div className="summaryDotGreen"></div>
 									) : (
-										<span className="summaryDotRed"></span>
+										<div className="summaryDotRed"></div>
 									)}
 								</p>
 								<p>{data.keywordDensity.feedbackDetails.found.text}</p>
@@ -755,7 +755,7 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 					<div className="maxSeoScore">
 						Max SEO Score Available
-						<span>{data.keywordDensity.maxSeoScoreAvailable}</span>
+						<div>{data.keywordDensity.maxSeoScoreAvailable}</div>
 					</div>
 					<div className="maxSeoScoreProgress">
 						<div>SEO Score</div>

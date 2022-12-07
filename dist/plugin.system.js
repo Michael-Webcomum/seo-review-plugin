@@ -33522,7 +33522,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
 
       var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
 
-      var css = "/*\n* Prefixed by https://autoprefixer.github.io\n* PostCSS: v8.4.14,\n* Autoprefixer: v10.4.7\n* Browsers: last 4 version\n*/\n\n/* @font-face {\n\tfont-family: \"Walkway Black\";\n\tsrc: url(\"fonts/Walkway.ttf\");\n} */\n\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n}\n\n.modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\t-webkit-transform: translate(-50%, -54%);\n\t-ms-transform: translate(-50%, -54%);\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4db0;\n\tbackground: #f2fcfe;\n\t-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 20px 30px 30px 30px;\n\tmargin-bottom: 50px;\n\tfont-family: Ubuntu;\n\tline-height: 1.8;\n}\n\n::-webkit-scrollbar {\n\twidth: 10px;\n}\n\n::-webkit-scrollbar-thumb {\n\tbackground: #6f91bd;\n\tborder-radius: 20px;\n}\n\n.container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-ms-flex-direction: row;\n\tflex-direction: row;\n\tfont-size: 18px;\n\twidth: 100%;\n\tbackground: #e5e5e5e0;\n\tmargin: 0px 0px 10px 0px;\n\tborder-radius: 20px;\n}\n\n.container::after {\n\tcontent: \"\";\n\tdisplay: table;\n\tclear: both;\n}\n\n.leftContainer {\n\tfloat: left;\n\twidth: 30%;\n\tpadding: 10px 10px 10px 23px;\n}\n\n.rightContainer {\n\tposition: relative;\n\theight: 149px;\n\tleft: 14px;\n\twidth: 60%;\n\tpadding: 11px 10px 10px 10px;\n\ttext-align: justify;\n}\n\n.bottomContainer {\n\tposition: relative;\n\twidth: 886px;\n\tmargin: 20px 0px 0px 20px;\n}\n\n.borderBox {\n\tborder-right: 1px solid #999999;\n}\n\n@media screen and (max-width: 600px) {\n\t.container {\n\t\twidth: 100%;\n\t}\n}\n\n.feedbackSummary {\n\tfloat: right;\n\tposition: relative;\n\ttop: -35%;\n\tleft: 11%;\n}\n\n.modalTitle {\n\tfont-size: 40px;\n\tfont-weight: 600;\n\tpadding: 0px 0px 10px 0px;\n}\n\nh1 {\n\ttext-align: left;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\np {\n\tposition: relative;\n\tline-height: 21px;\n}\n\n.feedbackDetailTitle {\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: space-between;\n\tfont-size: 17px;\n\theight: 110px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 70vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-ms-flex-align: center;\n\talign-items: center;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 2.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.maxSeoScore {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\twidth: 34.5vw;\n\tpadding: 0px 0px 0px 20px;\n}\n\n.maxSeoScoreProgress {\n\tdisplay: flex;\n\tposition: relative;\n\talign-items: center;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\twidth: 225px;\n\ttext-align: center;\n\tright: 200px;\n}\n\n.maxSeoScoreProgressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.maxSeoScoreProgressBarFill {\n\tdisplay: block;\n\theight: 3.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ff3333;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding: 0px 0px 30px 4px;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding-left: 7.5px;\n\tpadding: 0px 0px 29px 7.5px;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #4bb543;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\tpadding: 0px 0px 28px 7.5px;\n}\n\nbutton {\n\tposition: relative;\n\theight: 30px;\n\tbackground: #1a73e8;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tborder: 1px solid black;\n\tright: 10px;\n\ttop: 8px;\n}\n\n/* MODAL STYLING */\n\n.modal-overlay {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1040;\n\twidth: 100vw;\n\theight: 100vh;\n\tbackground-color: #000;\n\topacity: 0.5;\n}\n\n.modal-wrapper {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1050;\n\twidth: 100%;\n\theight: 100%;\n\toverflow-x: hidden;\n\toverflow-y: auto;\n\toutline: 0;\n}\n\n.modal {\n\tz-index: 100;\n\tbackground: white;\n\tposition: relative;\n\tmargin: 1.75rem auto;\n\tborder-radius: 3px;\n\tmax-width: 500px;\n\tpadding: 2rem;\n}\n\n.modal-header {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n}\n\n.modal-close-button {\n\tfont-size: 1.4rem;\n\tfont-weight: 700;\n\tline-height: 1;\n\tcolor: #000;\n\topacity: 0.3;\n\tcursor: pointer;\n\tborder: none;\n}\n\nbutton {\n\tfont-size: 0.9rem;\n\tfont-weight: 700;\n\tborder: none;\n\tborder-radius: 3px;\n\tpadding: 0.3rem 1rem;\n\tmargin-left: 0.5rem;\n}\n\n.button-default {\n\tbackground: #247ba0;\n\tcolor: #fff;\n}\n\nspan {\n\tletter-spacing: 5px;\n}\n";
+      var css = "/*\n* Prefixed by https://autoprefixer.github.io\n* PostCSS: v8.4.14,\n* Autoprefixer: v10.4.7\n* Browsers: last 4 version\n*/\n\n/* @font-face {\n\tfont-family: \"Walkway Black\";\n\tsrc: url(\"fonts/Walkway.ttf\");\n} */\n\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n}\n\n.modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\t-webkit-transform: translate(-50%, -54%);\n\t-ms-transform: translate(-50%, -54%);\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4db0;\n\tbackground: #f2fcfe;\n\t-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 20px 30px 30px 30px;\n\tmargin-bottom: 50px;\n\tfont-family: Ubuntu;\n\tline-height: 1.8;\n}\n\n.modalStyles::-webkit-scrollbar {\n\twidth: 10px;\n}\n\n.modalStyles::-webkit-scrollbar-thumb {\n\tbackground: #6f91bd;\n\tborder-radius: 20px;\n}\n\n.container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-ms-flex-direction: row;\n\tflex-direction: row;\n\tfont-size: 18px;\n\twidth: 100%;\n\tbackground: #e5e5e5e0;\n\tmargin: 0px 0px 10px 0px;\n\tborder-radius: 20px;\n}\n\n.container::after {\n\tcontent: \"\";\n\tdisplay: table;\n\tclear: both;\n}\n\n.leftContainer {\n\tfloat: left;\n\twidth: 30%;\n\tpadding: 10px 10px 10px 23px;\n}\n\n.rightContainer {\n\tposition: relative;\n\theight: 149px;\n\tleft: 14px;\n\twidth: 60%;\n\tpadding: 11px 10px 10px 10px;\n\ttext-align: justify;\n}\n\n.bottomContainer {\n\tposition: relative;\n\twidth: 886px;\n\tmargin: 20px 0px 0px 20px;\n}\n\n.borderBox {\n\tborder-right: 1px solid #999999;\n}\n\n@media screen and (max-width: 600px) {\n\t.container {\n\t\twidth: 100%;\n\t}\n}\n\n.feedbackSummary {\n\tfloat: right;\n\tposition: relative;\n\ttop: -35%;\n\tleft: 11%;\n}\n\n.modalTitle {\n\tfont-size: 40px;\n\tfont-weight: 600;\n\tpadding: 0px 0px 10px 0px;\n}\n\nh1 {\n\ttext-align: left;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\np {\n\tposition: relative;\n\tline-height: 21px;\n}\n\n.feedbackDetailTitle {\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: space-between;\n\tfont-size: 17px;\n\theight: 110px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 70vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-ms-flex-align: center;\n\talign-items: center;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 2.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.maxSeoScore {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\twidth: 34.5vw;\n\tpadding: 0px 0px 0px 20px;\n}\n\n.maxSeoScoreProgress {\n\tdisplay: flex;\n\tposition: relative;\n\talign-items: center;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\twidth: 225px;\n\ttext-align: center;\n\tright: 200px;\n}\n\n.maxSeoScoreProgressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.maxSeoScoreProgressBarFill {\n\tdisplay: block;\n\theight: 3.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ff3333;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding: 0px 0px 30px 4px;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding-left: 7.5px;\n\tpadding: 0px 0px 29px 7.5px;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #4bb543;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\tpadding: 0px 0px 28px 7.5px;\n}\n\n/* button {\n\tposition: relative;\n\theight: 30px;\n\tbackground: #1a73e8;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tborder: 1px solid black;\n\tright: 10px;\n\ttop: 8px;\n} */\n\n/* MODAL STYLING */\n\n.modal-overlay {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1040;\n\twidth: 100vw;\n\theight: 100vh;\n\tbackground-color: #000;\n\topacity: 0.5;\n}\n\n.modal-wrapper {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1050;\n\twidth: 100%;\n\theight: 100%;\n\toverflow-x: hidden;\n\toverflow-y: auto;\n\toutline: 0;\n}\n\n.modal {\n\tz-index: 100;\n\tbackground: white;\n\tposition: relative;\n\tmargin: 1.75rem auto;\n\tborder-radius: 3px;\n\tmax-width: 500px;\n\tpadding: 2rem;\n}\n\n.modal-header {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n}\n\n.modal-close-button {\n\tfont-size: 1.4rem;\n\tfont-weight: 700;\n\tline-height: 1;\n\tcolor: #000;\n\topacity: 0.3;\n\tcursor: pointer;\n\tborder: none;\n}\n\n/* button {\n\tfont-size: 0.9rem;\n\tfont-weight: 700;\n\tborder: none;\n\tborder-radius: 3px;\n\tpadding: 0.3rem 1rem;\n\tmargin-left: 0.5rem;\n} */\n\n.button-default {\n\tbackground: #247ba0;\n\tcolor: #fff;\n}\n";
       n(css,{});
 
       const registerContentAction = (contentAction) => {
@@ -33628,41 +33628,41 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.titleTag.Result), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleFound), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleTag), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleLength), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleTagNumber), /* @__PURE__ */ React.createElement("div", null, data.titleTag.focusKeywordsPosition), /* @__PURE__ */ React.createElement("div", null, data.titleTag.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.titleTag.keyword)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, data.titleTag.feedbackDetails.found.text == data.titleTag.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Title Tag Not Found") : /* @__PURE__ */ React.createElement("div", null, "Title Tag Found - ", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.found.class, data.titleTag.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.found.class, data.titleTag.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Length"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.length.class, data.titleTag.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.length.class, data.titleTag.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.length.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeyword.class, data.titleTag.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeyword.class, data.titleTag.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword Position"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeywordsPosition.class, data.titleTag.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeywordsPosition.class, data.titleTag.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33682,41 +33682,41 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.result), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionFound), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescription), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionLength), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionNumber), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.focusKeywordsPosition), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.keyword)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, data.metaDescription.feedbackDetails.found.text == data.metaDescription.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Meta Description Not Found") : /* @__PURE__ */ React.createElement("div", null, "Meta Description Found -", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.class, data.metaDescription.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.class, data.metaDescription.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Length"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.class, data.metaDescription.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.class, data.metaDescription.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.class, data.metaDescription.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.class, data.metaDescription.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Position"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.class, data.metaDescription.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.class, data.metaDescription.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33736,25 +33736,25 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h2), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h3), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h4), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h5), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h6), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1Count), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1Content), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.keyword)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Page Headings Summary"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         }))))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33774,17 +33774,17 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.wordCount.wordCountTotal), /* @__PURE__ */ React.createElement("div", null, data.wordCount.correctedWordCount), /* @__PURE__ */ React.createElement("div", null, data.wordCount.anchorTextWords), /* @__PURE__ */ React.createElement("div", null, data.wordCount.anchorPercentage)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Word Count"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.class, data.wordCount.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.class, data.wordCount.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33804,17 +33804,17 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.totalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.externalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.internalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noFollowCount), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.duplicateLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noAltTag)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "On Page Links Summary"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.onPageLinksSummary.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33834,33 +33834,33 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.numberOfImages), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.imageNameContainsKeyword), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.imageAltTagContainsKeyword), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.keyword)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Image Analysis"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Image Name Contains Keyword"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Image Alt Tag Contains Keyword"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
@@ -33880,21 +33880,21 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.keyword), /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.keywordDensity)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("span", {
+        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Keyword Density"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("span", {
+        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("span", {
+        }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.keywordDensity.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
-        }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("span", null, data.keywordDensity.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
+        }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScoreProgress"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScoreProgressBar"

@@ -38,11 +38,11 @@
 	line-height: 1.8;
 }
 
-::-webkit-scrollbar {
+.modalStyles::-webkit-scrollbar {
 	width: 10px;
 }
 
-::-webkit-scrollbar-thumb {
+.modalStyles::-webkit-scrollbar-thumb {
 	background: #6f91bd;
 	border-radius: 20px;
 }
@@ -270,17 +270,6 @@ p {
 	padding: 0px 0px 28px 7.5px;
 }
 
-button {
-	position: relative;
-	height: 30px;
-	background: #1a73e8;
-	font-size: 14px;
-	font-weight: 600;
-	border: 1px solid black;
-	right: 10px;
-	top: 8px;
-}
-
 /* MODAL STYLING */
 
 .modal-overlay {
@@ -331,20 +320,7 @@ button {
 	border: none;
 }
 
-button {
-	font-size: 0.9rem;
-	font-weight: 700;
-	border: none;
-	border-radius: 3px;
-	padding: 0.3rem 1rem;
-	margin-left: 0.5rem;
-}
-
 .button-default {
 	background: #247ba0;
 	color: #fff;
-}
-
-span {
-	letter-spacing: 5px;
 }
