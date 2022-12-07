@@ -1,6 +1,6 @@
 {
-  "name": "seo-review-tools-plugin",
-  "version": "0.0.2",
+  "name": "seo-review-plugin",
+  "version": "0.0.1",
   "description": "SEO Review Plugin for Builder.io",
   "keywords": [
     "SEO",
