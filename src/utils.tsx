@@ -580,7 +580,6 @@ export const expandSeoReview = (dataToFormat: any) => {
 
 					<div className="bottomContainer">
 						<h3>Feedback Details</h3>
-						<h5>Positive or Negative?</h5>
 						<div>
 							<div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
 							<div className="summaryDotRed"></div>
@@ -739,7 +738,6 @@ export const expandSeoReview = (dataToFormat: any) => {
 							<div>Keyword Density</div>
 							<div className="feedbackDetailExtra">
 								<p>
-									Positive or Negative? -{" "}
 									{data.keywordDensity.feedbackDetails.found.class}
 									{data.keywordDensity.feedbackDetails.found.class ==
 									"positive" ? (
