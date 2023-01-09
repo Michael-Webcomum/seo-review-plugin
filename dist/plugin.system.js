@@ -33804,7 +33804,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.totalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.externalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.internalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noFollowCount), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.duplicateLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noAltTag)), /* @__PURE__ */ React.createElement("div", {
           className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
+        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
         }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
@@ -33888,7 +33888,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "Keyword Density"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
+        }, /* @__PURE__ */ React.createElement("p", null, data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
