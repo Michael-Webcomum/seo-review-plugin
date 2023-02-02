@@ -4,8 +4,8 @@ import esbuild from 'rollup-plugin-esbuild';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import common from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import styles from "rollup-plugin-styles";
 const SERVE = process.env.SERVE === 'true';
+import css from 'rollup-plugin-import-css';
 
 const pkg = require('./package.json');
 
@@ -43,7 +43,7 @@ export default {
     nodeResolve({ mainFields: ['module', 'browser'] }),
     common(),
     esbuild(),
-    styles(),
+    css(),
 
     ...(SERVE
       ? [

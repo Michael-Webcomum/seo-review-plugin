@@ -33188,8 +33188,8 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           });
       }); };
 
-      var name = "seo-review-plugin";
-      var version = "0.0.1";
+      var name = "@michael44/seo-review-plugin";
+      var version = "0.0.3";
       var description = "SEO Review Plugin for Builder.io";
       var keywords = [
       	"SEO",
@@ -33210,21 +33210,15 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	node: ">=6.0.0"
       };
       var scripts = {
-      	postinstall: "patch-package",
       	lint: "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
       	prebuild: "rimraf dist",
       	build: "rollup -c rollup.config.ts",
+      	"release:patch": "npm run build && npm version patch --no-git-tag-version && npm publish",
       	"release:dev": "npm run build && npm version prerelease --no-git-tag-version && npm publish --tag dev",
       	start: "SERVE=true rollup -c rollup.config.ts -w",
       	test: "jest --coverage",
       	"test:watch": "jest --coverage --watch",
-      	"test:prod": "npm run lint && npm run test -- --no-cache",
-      	"deploy-docs": "ts-node tools/gh-pages-publish",
-      	"report-coverage": "cat ./coverage/lcov.info | coveralls",
-      	commit: "git-cz",
-      	"semantic-release": "semantic-release",
-      	"semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-      	"travis-deploy-once": "travis-deploy-once"
+      	"test:prod": "npm run lint && npm run test -- --no-cache"
       };
       var config = {
       	commitizen: {
@@ -33264,34 +33258,36 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	]
       };
       var devDependencies = {
-      	"@builder.io/react": "^2.0.4",
+      	"@builder.io/react": "^1.1.29",
       	"@commitlint/cli": "^7.1.2",
       	"@commitlint/config-conventional": "^7.1.2",
+      	"@emotion/core": "^10.0.22",
+      	"@emotion/styled": "^10.3.0",
+      	"@material-ui/icons": "^1.1.1",
       	"@rollup/plugin-commonjs": "^19.0.1",
       	"@rollup/plugin-json": "^4.1.0",
       	"@rollup/plugin-node-resolve": "^13.0.2",
-      	"@types/chec__commerce.js": "^2.7.2",
       	"@types/jest": "^23.3.2",
       	"@types/node": "^10.17.5",
-      	"@types/qs": "^6.9.7",
-      	"@types/react": "^16.14.34",
-      	"@types/shopify-buy": "^2.10.4",
+      	"@types/react": "^16.9.11",
+      	"@types/traverse": "^0.6.32",
+      	"@types/uuid": "^8.3.4",
       	colors: "^1.3.2",
       	commitizen: "^3.0.0",
       	coveralls: "^3.0.2",
       	"cross-env": "^5.2.0",
       	"cz-conventional-changelog": "^2.1.0",
       	esbuild: "^0.12.15",
-      	husky: "^1.0.1",
+      	husky: "^4.3.8",
       	i: "^0.3.6",
       	jest: "^23.6.0",
       	"jest-config": "^23.6.0",
       	"lint-staged": "^8.0.0",
-      	"lodash.camelcase": "^4.3.0",
-      	"patch-package": "^6.4.7",
+      	mobx: "^6.6.1",
+      	"mobx-react": "^7.5.1",
+      	"mobx-state-tree": "^5.1.5",
       	prettier: "^1.14.3",
       	prompt: "^1.0.0",
-      	"react-dom": "^18.2.0",
       	"replace-in-file": "^3.4.2",
       	rimraf: "^2.6.2",
       	rollup: "^2.53.2",
@@ -33310,7 +33306,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	"tslint-config-prettier": "^1.15.0",
       	"tslint-config-standard": "^8.0.1",
       	typedoc: "^0.12.0",
-      	typescript: "^3.0.3"
+      	typescript: "^4.8.3"
       };
       var dependencies = {
       	"@builder.io/commerce-plugin-tools": "^0.3.0",
@@ -33321,8 +33317,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	axios: "^0.27.2",
       	"framer-motion": "^7.3.6",
       	lodash: "^4.17.21",
-      	react: "^18.2.0",
-      	"rollup-plugin-styles": "^4.0.0",
+      	"rollup-plugin-import-css": "^3.1.0",
       	traverse: "^0.6.6",
       	uuid: "^8.3.2"
       };
@@ -33520,11 +33515,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         return formattedData;
       }
 
-      var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
-
-      var css = "/*\n* Prefixed by https://autoprefixer.github.io\n* PostCSS: v8.4.14,\n* Autoprefixer: v10.4.7\n* Browsers: last 4 version\n*/\n\n/* @font-face {\n\tfont-family: \"Walkway Black\";\n\tsrc: url(\"fonts/Walkway.ttf\");\n} */\n\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n}\n\n.modalStyles {\n\tposition: fixed;\n\tz-index: 1;\n\ttop: 50%;\n\tleft: 50%;\n\toverflow-y: scroll;\n\t-webkit-transform: translate(-50%, -54%);\n\t-ms-transform: translate(-50%, -54%);\n\ttransform: translate(-50%, -54%);\n\theight: 85vh;\n\twidth: 50vw;\n\tborder: 1px solid #4e4d4db0;\n\tbackground: #f2fcfe;\n\t-webkit-box-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\tbox-shadow: 20px 15px 20px 0px rgb(255 255 255 / 20%);\n\topacity: 0.9;\n\tpadding: 20px 30px 30px 30px;\n\tmargin-bottom: 50px;\n\tfont-family: Ubuntu;\n\tline-height: 1.8;\n}\n\n.modalStyles::-webkit-scrollbar {\n\twidth: 10px;\n}\n\n.modalStyles::-webkit-scrollbar-thumb {\n\tbackground: #6f91bd;\n\tborder-radius: 20px;\n}\n\n.container {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-ms-flex-direction: row;\n\tflex-direction: row;\n\tfont-size: 18px;\n\twidth: 100%;\n\tbackground: #e5e5e5e0;\n\tmargin: 0px 0px 10px 0px;\n\tborder-radius: 20px;\n}\n\n.container::after {\n\tcontent: \"\";\n\tdisplay: table;\n\tclear: both;\n}\n\n.leftContainer {\n\tfloat: left;\n\twidth: 30%;\n\tpadding: 10px 10px 10px 23px;\n}\n\n.rightContainer {\n\tposition: relative;\n\theight: 149px;\n\tleft: 14px;\n\twidth: 60%;\n\tpadding: 11px 10px 10px 10px;\n\ttext-align: justify;\n}\n\n.bottomContainer {\n\tposition: relative;\n\twidth: 886px;\n\tmargin: 20px 0px 0px 20px;\n}\n\n.borderBox {\n\tborder-right: 1px solid #999999;\n}\n\n@media screen and (max-width: 600px) {\n\t.container {\n\t\twidth: 100%;\n\t}\n}\n\n.feedbackSummary {\n\tfloat: right;\n\tposition: relative;\n\ttop: -35%;\n\tleft: 11%;\n}\n\n.modalTitle {\n\tfont-size: 40px;\n\tfont-weight: 600;\n\tpadding: 0px 0px 10px 0px;\n}\n\nh1 {\n\ttext-align: left;\n\tfont-size: 24px;\n\tfont-weight: 500;\n}\n\np {\n\tposition: relative;\n\tline-height: 21px;\n}\n\n.feedbackDetailTitle {\n\tfont-size: 18px;\n\tfont-weight: 500;\n}\n\n.feedbackDetails {\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: space-between;\n\tfont-size: 17px;\n\theight: 110px;\n}\n\n.feedbackDetailExtra {\n\ttext-indent: 30px;\n\tfont-size: 16px;\n\twidth: 70vh;\n\tdisplay: inline;\n}\n\n.pbwrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-align: center;\n\t-ms-flex-align: center;\n\talign-items: center;\n\t-webkit-box-pack: justify;\n\t-ms-flex-pack: justify;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\ttext-align: center;\n}\n\n.progressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.progressBarFill {\n\tdisplay: block;\n\theight: 2.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.maxSeoScore {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\twidth: 34.5vw;\n\tpadding: 0px 0px 0px 20px;\n}\n\n.maxSeoScoreProgress {\n\tdisplay: flex;\n\tposition: relative;\n\talign-items: center;\n\tjustify-content: space-between;\n\tmax-width: 55vw;\n\twidth: 225px;\n\ttext-align: center;\n\tright: 200px;\n}\n\n.maxSeoScoreProgressBar {\n\tmax-width: 27vw;\n\twidth: 100%;\n\tbackground-color: #e0e0e0;\n\tborder-radius: 20px;\n}\n\n.maxSeoScoreProgressBarFill {\n\tdisplay: block;\n\theight: 3.4vh;\n\n\t/* remove this width to test the progress bar filling */\n\twidth: 100%;\n\tbackground-image: -o-repeating-linear-gradient(\n\t\tright,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tbackground-image: repeating-linear-gradient(\n\t\tto left,\n\t\t#1172f9,\n\t\t#4892f9,\n\t\t#4892f9\n\t);\n\tborder-radius: 20px;\n\ttransition: width 0.5s ease-in;\n}\n\n.summaryDotRed {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ff3333;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding: 0px 0px 30px 4px;\n}\n\n.summaryDotYellow {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #ffcc00;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tleft: 0.3vw;\n\tpadding-left: 7.5px;\n\tpadding: 0px 0px 29px 7.5px;\n}\n\n.summaryDotGreen {\n\theight: 25px;\n\twidth: 28px;\n\tbackground-color: #4bb543;\n\tborder-radius: 50%;\n\tdisplay: inline-block;\n\tposition: relative;\n\tright: -0.3vw;\n\tpadding: 0px 0px 28px 7.5px;\n}\n\n/* MODAL STYLING */\n\n.modal-overlay {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1040;\n\twidth: 100vw;\n\theight: 100vh;\n\tbackground-color: #000;\n\topacity: 0.5;\n}\n\n.modal-wrapper {\n\tposition: fixed;\n\ttop: 0;\n\tleft: 0;\n\tz-index: 1050;\n\twidth: 100%;\n\theight: 100%;\n\toverflow-x: hidden;\n\toverflow-y: auto;\n\toutline: 0;\n}\n\n.modal {\n\tz-index: 100;\n\tbackground: white;\n\tposition: relative;\n\tmargin: 1.75rem auto;\n\tborder-radius: 3px;\n\tmax-width: 500px;\n\tpadding: 2rem;\n}\n\n.modal-header {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n}\n\n.modal-close-button {\n\tfont-size: 1.4rem;\n\tfont-weight: 700;\n\tline-height: 1;\n\tcolor: #000;\n\topacity: 0.3;\n\tcursor: pointer;\n\tborder: none;\n}\n\n.button-default {\n\tbackground: #247ba0;\n\tcolor: #fff;\n}\n";
-      n(css,{});
-
       const registerContentAction = (contentAction) => {
         Builder.register("content.action", contentAction);
       };
@@ -33720,7 +33710,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "summaryDotRed"
         })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScore"
-        }, "Max SEO Score Available =", " ", data.metaDescription.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
+        }, "Max SEO Score Available = ", data.metaDescription.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScoreProgress"
         }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
           className: "maxSeoScoreProgressBar"
@@ -33812,7 +33802,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "feedbackDetails"
         }, /* @__PURE__ */ React.createElement("div", null, "On Page Links Summary"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? -", " ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
+        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? - ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotGreen"
         }) : /* @__PURE__ */ React.createElement("div", {
           className: "summaryDotRed"
@@ -33914,42 +33904,44 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         const apiKey = "as-sdf-fvhgffdgjkh87349hlm768";
         const iframeHTMLContent = await getIframeHTMLContent();
         console.log("plugin: iframeHTMLContent", iframeHTMLContent);
-        try {
-          const response = await fetch(`${baseURL}?content=1&keyword=${keyword}&key=${apiKey}`, {
-            method: "POST",
-            body: JSON.stringify({
-              data: iframeHTMLContent
-            }),
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json"
+        if (keyword) {
+          try {
+            const response = await fetch(`${baseURL}?content=1&keyword=${keyword}&key=${apiKey}`, {
+              method: "POST",
+              body: JSON.stringify({
+                data: iframeHTMLContent
+              }),
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              }
+            });
+            if (!response.ok) {
+              throw new Error(`Error! status: ${response.status}`);
             }
-          });
-          if (!response.ok) {
-            throw new Error(`Error! status: ${response.status}`);
-          }
-          const result = (await response.json()).data;
-          console.log("result is: ", JSON.stringify(result, null, 2));
-          return result;
-        } catch (error) {
-          if (error instanceof Error) {
-            console.log("error message", error.message);
-            return error.message;
-          } else {
-            console.log("unexpected error: ", error);
-            return "An unexpected error occurred;";
+            const result = (await response.json()).data;
+            console.log("result is: ", JSON.stringify(result, null, 2));
+            return result;
+          } catch (error) {
+            if (error instanceof Error) {
+              console.log("error message", error.message);
+              return error.message;
+            } else {
+              console.log("unexpected error: ", error);
+              return "An unexpected error occurred;";
+            }
           }
         }
       }
 
       registerCommercePlugin({
-        name: "SEO Review",
+        name: "SEOReview",
         id: pkg.name,
         settings: [
           {
             name: "apiKey",
             type: "string",
-            helperText: "Obtain the api key from your builder.io account settings",
+            helperText: "get the api key from your builder.io account settings",
             required: true
           }
         ],

@@ -17,19 +17,16 @@ export async function prepareSeoData() {
   if (keyword) {
     try {
       // Fetching SEO data from SEO Review Tools API
-      const response = await fetch(
-        `${baseURL}?content=1&keyword=${keyword}&key=${apiKey}`,
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            data: iframeHTMLContent,
-          }),
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-        }
-      );
+      const response = await fetch(`${baseURL}?content=1&keyword=${keyword}&key=${apiKey}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          data: iframeHTMLContent,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
