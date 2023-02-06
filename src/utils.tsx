@@ -96,6 +96,7 @@ export const expandSeoReview = (dataToFormat: any) => {
             <div>Available SEO Points</div>
             <div>Earned SEO Pointssssss</div>
             <div>i am a div let me deploy</div>
+            <div>i am a div 2 let me deploy</div>
           </div>
         </div>
 
