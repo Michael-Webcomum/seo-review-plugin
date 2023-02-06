@@ -33583,7 +33583,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           className: "leftContainer"
         }, /* @__PURE__ */ React.createElement("div", {
           className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Keyword"), /* @__PURE__ */ React.createElement("div", null, "Overall SEO Score"), /* @__PURE__ */ React.createElement("div", null, "Available SEO Points"), /* @__PURE__ */ React.createElement("div", null, "Earned SEO Points"))), /* @__PURE__ */ React.createElement("div", {
+        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Keyword"), /* @__PURE__ */ React.createElement("div", null, "Overall SEO Score"), /* @__PURE__ */ React.createElement("div", null, "Available SEO Points"), /* @__PURE__ */ React.createElement("div", null, "Earned SEO Pointssssss"), /* @__PURE__ */ React.createElement("div", null, "i am a div let me deploy"), /* @__PURE__ */ React.createElement("div", null, "i am a div 2 let me deploy"))), /* @__PURE__ */ React.createElement("div", {
           className: "rightContainer"
         }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", {
           className: "feedbackSummary"
