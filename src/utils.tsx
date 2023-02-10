@@ -1,10 +1,618 @@
+/** @jsx jsx */
+
 import React from 'react';
 // import * as ReactDOM from 'react-dom';
 import appState, { globalState } from '@builder.io/app-context';
 import { Builder } from '@builder.io/react';
 import { Button } from '@material-ui/core';
 import { formatSeoData } from './formatSeoData';
-import './styles.css';
+import { css } from '@emotion/react';
+import { jsx } from '@emotion/core';
+
+const breakpoints = [600];
+
+const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
+
+const modalWrapper = {
+  wrapper: css({
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+  }),
+};
+
+const modalStyles = {
+  modalStyles: css({
+    position: 'fixed',
+    zIndex: 1,
+    top: '50%',
+    left: '50%',
+    overflowY: 'scroll',
+    WebkitTransform: 'translate(-50%, -54%)',
+    msTransform: 'translate(-50%, -54%)',
+    transform: 'translate(-50%, -54%)',
+    height: '85vh',
+    width: '50vw',
+    border: '1px solid #4e4d4db0',
+    background: '#ffffff',
+    WebkitBoxShadow: '20px 15px 20px 0px rgb(255 255 255 / 20%)',
+    boxShadow: '20px 15px 20px 0px rgb(255 255 255 / 20%)',
+    opacity: '0.9',
+    padding: '20px 30px 30px 30px',
+    marginBottom: '50px',
+    fontFamily: 'Ubuntu',
+    lineHeight: 1.8,
+    '&::-webkit-scrollbar': {
+      width: '10px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: '#6f91bd',
+      borderRadius: '20px',
+    },
+  }),
+};
+
+const container = {
+  container: css({
+    display: ['-webkit-box', '-ms-flexbox', 'flex'],
+    flexWrap: 'wrap',
+    WebkitBoxOrient: 'vertical',
+    WebkitBoxDirection: 'normal',
+    msFlexDirection: 'row',
+    flexDirection: 'row',
+    fontSize: '18px',
+    width: '100%',
+    borderBottom: '1px solid black',
+    padding: '15px 10px 15px 10px',
+    '&:after': {
+      content: '',
+      display: 'table',
+      clear: 'both',
+    },
+    [mq[0]]: {
+      width: '100%',
+    },
+  }),
+};
+
+const leftContainer = {
+  leftContainer: css({
+    float: 'left',
+    width: '30%',
+    padding: '0px 10px 10px 10px',
+  }),
+};
+
+const rightContainer = {
+  rightContainer: css({
+    position: 'relative',
+    height: '175px',
+    left: '14px',
+    width: '60%',
+    maxWidth: '31.25rem',
+    textAlign: 'justify',
+  }),
+};
+
+const bottomContainer = {
+  bottomContainer: css({
+    position: 'relative',
+    width: '886px',
+    margin: '20px 0px 0px 20px',
+    paddingBottom: '20px',
+  }),
+};
+
+const borderBox = {
+  borderBox: css({
+    borderRight: '1px solid #999999',
+  }),
+};
+
+const feedbackSummary = {
+  feedbackSummary: css({
+    float: 'right',
+    position: 'relative',
+    top: '-26%',
+    left: '11%',
+    borderLeft: '1px solid rgb(153, 153, 153)',
+    padding: '10px 10px 10px 20px',
+    height: '10rem',
+  }),
+};
+
+const summaryWrapper = {
+  summaryWrapper: css({
+    display: 'flex',
+    flexDirection: 'row',
+    textAlign: 'center',
+    justifyContent: 'space-between',
+  }),
+};
+
+const modalTitle = {
+  modalTitle: css({
+    fontSize: '40px',
+    fontWeight: '600',
+    textAlign: 'center',
+    margin: '0',
+    padding: '0',
+  }),
+};
+
+const h1 = {
+  h1: css({
+    textAlign: 'left',
+    fontSize: '30px',
+    fontWeight: '500',
+    paddingTop: '20px !important',
+    margin: '0',
+  }),
+};
+
+const h2 = {
+  h2: css({
+    margin: '0',
+    fontSize: '24px',
+  }),
+};
+
+const h5 = {
+  h5: css({
+    width: '10rem',
+    height: '0rem',
+    textAlign: 'center',
+  }),
+};
+
+const p = {
+  p: css({
+    position: 'relative',
+    lineHeight: '21px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  }),
+};
+
+const feedbackDetailTitle = {
+  feedbackDetailTitle: css({
+    fontSize: '18px',
+    fontWeight: '500',
+  }),
+};
+
+const feedbackDetails = {
+  feedbackDetails: css({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    fontSize: '17px',
+    height: '110px',
+    width: '51.25rem',
+    borderBottom: '1px solid rgb(153, 153, 153)',
+  }),
+};
+
+const feedbackDetailExtra = {
+  feedbackDetailExtra: css({
+    fontSize: '16px',
+    width: '70vh',
+    display: 'inline',
+    paddingLeft: '38px',
+  }),
+};
+
+const pbwrapper = {
+  pbwrapper: css({
+    display: ['-webkit-box', '-ms-flexbox', 'flex'],
+    WebkitBoxAlign: 'center',
+    msFlexAlign: 'center',
+    alignItems: 'center',
+    WebkitBoxPack: 'justify',
+    msFlexPack: 'justify',
+    justifyContent: 'space-between',
+    maxWidth: '27vw',
+    height: '2.063rem',
+    textAlign: 'center',
+  }),
+};
+
+const progressBar = {
+  progressBar: css({
+    maxWidth: '27vw',
+    width: '100%',
+    borderRadius: '20px',
+  }),
+};
+
+const progressBarFill = {
+  progressBarFill: css({
+    display: 'block',
+    height: '2.4vh',
+    width: '100%',
+    background: ['repeating-linear-gradient(right, #70e000, #38b000, #008000)'],
+    backgroundImage: ['repeating-linear-gradient(to left, #70e000, #38b000, #008000)'],
+    borderRadius: '20px',
+    transition: 'width 0.5s ease-in',
+    lineHeight: '1.3',
+  }),
+};
+
+const SeoScore = {
+  SeoScore: css({
+    paddingRight: '15px',
+  }),
+};
+
+const maxSeoScore = {
+  maxSeoScore: css({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '25vw',
+    padding: '0px 0px 0px 20px',
+  }),
+};
+
+const maxSeoScoreProgress = {
+  maxSeoScoreProgress: css({
+    display: 'flex',
+    position: 'relative',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    maxWidth: '25vw',
+    textAlign: 'center',
+  }),
+};
+
+const maxSeoScoreProgressBar = {
+  maxSeoScoreProgressBar: css({
+    maxWidth: '27vw',
+    width: '250px',
+    backgroundColor: '#e0e0e0',
+    borderRadius: '20px',
+  }),
+};
+
+const maxSeoScoreProgressBarFill = {
+  maxSeoScoreProgressBarFill: css({
+    display: 'block',
+    height: '3.4vh',
+    width: '100%',
+    background: ['repeating-linear-gradient(right, #70e000, #38b000, #008000)'],
+    backgroundImage: ['repeating-linear-gradient(to left, #70e000, #38b000, #008000)'],
+    borderRadius: '20px',
+    transition: 'width 0.5s ease-in',
+  }),
+};
+
+const dotWrapper = {
+  dotWrapper: css({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingLeft: '25px',
+    paddingBottom: '50px',
+    width: '150px',
+  }),
+};
+
+const dotMinus = {
+  dotMinus: css({
+    height: '25px',
+    width: '28px',
+    backgroundColor: '#ff3333',
+    borderRadius: '50%',
+    display: 'inline-block',
+    position: 'relative',
+    padding: '0px 8px 28px 7.5px',
+    marginLeft: '37px',
+    top: '7px',
+  }),
+};
+
+const dotPlus = {
+  dotPlus: css({
+    height: '25px',
+    width: '28px',
+    backgroundColor: '#4bb543',
+    borderRadius: '50%',
+    display: 'inline-block',
+    position: 'relative',
+    padding: '0px 8px 28px 7.5px',
+    marginLeft: '37px',
+    top: '7px',
+  }),
+};
+
+const summaryDotRed = {
+  summaryDotRed: css({
+    height: '25px',
+    width: '28px',
+    backgroundColor: '#ff3333',
+    borderRadius: '50%',
+    display: 'inline-block',
+    position: 'relative',
+    padding: '0px 8px 30px 4px',
+    marginLeft: '10px',
+  }),
+};
+
+const summaryDotGreen = {
+  summaryDotGreen: css({
+    height: '25px',
+    width: '28px',
+    backgroundColor: '#4bb543',
+    borderRadius: '50%',
+    display: 'inline-block',
+    position: 'relative',
+    padding: '0px 8px 28px 7.5px',
+    marginLeft: '10px',
+  }),
+};
+
+const summaryDotYellow = {
+  summaryDotYellow: css({
+    height: '25px',
+    width: '28px',
+    backgroundColor: '#ffcc00',
+    borderRadius: '50%',
+    display: 'inline-block',
+    position: 'relative',
+    padding: '0px 8px 29px 7.5px',
+    marginLeft: '10px',
+  }),
+};
+
+const imagePadding = {
+  imagePadding: css({
+    paddingRight: '318px',
+  }),
+};
+
+// const styles: any = {
+//   modalWrapper: {
+//     margin: '0',
+//     padding: '0',
+//     boxSizing: 'border-box',
+//   },
+
+//   modalStyles: {
+//     position: 'fixed',
+//     zIndex: 1,
+//     top: '50%',
+//     left: '50%',
+//     overflowY: 'scroll',
+//     WebKitTransform: 'translate(-50%, -54%)',
+//     msTransform: 'translate(-50%, -54%)',
+//     height: '85vh',
+//     width: '50vw',
+//     border: '1px solid #4e4d4db0',
+//     background: '#f2fcfe',
+//     WebkitBoxShadow: '20px 15px 20px 0px rgb(255, 255, 255 / 20%)',
+//     boxShadow: '20px 15px 20px 0px rgba(255, 255, 255 / 20%)',
+//     opacity: 0.9,
+//     padding: '20px 30px 30px 30px',
+//     marginBottom: '50px',
+//     fontFamily: 'Ubuntu',
+//     lineHeight: 1.8,
+//   },
+
+//   '.modalStyles::-webkit-scrollbar': {
+//     width: '10px',
+//   },
+
+//   '.modalStyles::-webkit-scrollbar-thumb': {
+//     background: '#6f91bd',
+//     borderRadius: '20px',
+//   },
+
+//   container: {
+//     display: ['-webkit-box', '-ms-flexbox', 'flex'],
+//     flexWrap: 'wrap',
+//     WebkitBoxOrient: 'vertical',
+//     WebkitBoxDirection: 'normal',
+//     msFlexDirection: 'row',
+//     flexDirection: 'row',
+//     fontSize: '18px',
+//     width: '100%',
+//     background: '#e5e5e5e0',
+//     margin: '0px 0px 0px 10 0px',
+//     borderRadius: '20px',
+//   },
+
+//   '.container::after': {
+//     content: "''",
+//     display: 'table',
+//     clear: 'both',
+//   },
+
+//   leftContainer: {
+//     cssFloat: 'left',
+//     width: '30%',
+//     padding: '10px 10px 10px 23px',
+//   },
+
+//   rightContainer: {
+//     position: 'relative',
+//     height: '149px',
+//     left: '14px',
+//     width: '60%',
+//     padding: '11px 10px 10px 10px',
+//     textAlign: 'justify',
+//   },
+
+//   bottomContainer: {
+//     position: 'relative',
+//     width: '886px',
+//     margin: '20px 0px 0px 20px',
+//   },
+
+//   borderBox: {
+//     borderRight: '1px solid #999999',
+//   },
+
+//   '@media screen and (max-width: 600px)': {
+//     container: {
+//       width: '100%',
+//     },
+//   },
+
+//   feedbackSummary: {
+//     cssFloat: 'right',
+//     position: 'relative',
+//     top: '-35%',
+//     left: '11%',
+//   },
+
+//   modalTitle: {
+//     fontSize: '40px',
+//     fontWeight: 600,
+//     padding: '0px 0px 10px 0px',
+//   },
+
+//   h1: {
+//     textAlign: 'left',
+//     fontSize: '24px',
+//     fontWeight: 500,
+//   },
+
+//   p: {
+//     position: 'relative',
+//     lineHeight: '21px',
+//   },
+
+//   feedbackDetailTitle: {
+//     fontSize: '18px',
+//     fontWeight: 500,
+//   },
+
+//   feedbackDetails: {
+//     display: 'flex',
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     justifyContent: 'space-between',
+//     fontSize: '17px',
+//     height: '110px',
+//   },
+
+//   feedbackDetailExtra: {
+//     textIndent: '30px',
+//     fontSize: '16px',
+//     width: '70vh',
+//     display: 'inline',
+//   },
+
+//   pbwrapper: {
+//     display: ['-webkit-box', '-ms-flexbox', 'flex'],
+//     WebkitBoxAlign: 'center',
+//     msFlexAlign: 'center',
+//     alignItems: 'center',
+//     WebkitBoxPack: 'justify',
+//     msFlexPack: 'justify',
+//     justifyContent: 'space-between',
+//     maxWidth: '55vw',
+//     textAlign: 'center',
+//   },
+
+//   progressBar: {
+//     maxWidth: '27vw',
+//     width: '100%',
+//     backgroundColor: '#e0e0e0',
+//     borderRadius: '20px',
+//   },
+
+//   progressBarFill: {
+//     display: 'block',
+//     height: '2.4vh',
+//     //remove this width to test the progress bar filling //
+//     width: '100%',
+//     backgroundImage: [
+//       '-o-repeating-linear-gradient(right, #1172f9, #4892f9, #4892f9)',
+//       '-o-repeating-linear-gradient(left, #1172f9, #4892f9, #4892f0)',
+//     ],
+//     borderRadius: '20px',
+//     transition: 'width 0.5s ease-in',
+//   },
+
+//   maxSeoScore: {
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     width: '34.5vw',
+//     padding: '0px 0px 0px 20px',
+//   },
+
+//   maxSeoScoreProgress: {
+//     display: 'flex',
+//     position: 'relative',
+//     alignItems: 'center',
+//     justifyContent: 'space-between',
+//     maxWidth: '55vw',
+//     width: '225px',
+//     textAlign: 'center',
+//     right: '200px',
+//   },
+
+//   maxSeoScoreProgressBar: {
+//     maxWidth: '27vw',
+//     width: '100%',
+//     backgroundColor: '#e0e0e0',
+//     borderRadius: '20px',
+//   },
+
+//   maxSeoScoreProgressBarFill: {
+//     display: 'block',
+//     height: '3.4vh',
+//     width: '100%',
+//     backgroundImage: [
+//       '-o-repeating-linear-gradient(right, #1172f9, #4892f9, #4892f9)',
+//       'repeating-linear-gradient(to left, #1172f9, #4892f9, #4892f9)',
+//     ],
+//     borderRadius: '20px',
+//     transition: 'width 0.5s ease-in',
+//   },
+
+//   summaryDotRed: {
+//     height: '25px',
+//     width: '28px',
+//     backgroundColor: '#ff3333',
+//     borderRadius: '50%',
+//     display: 'inline-block',
+//     position: 'relative',
+//     left: '0.3vw',
+//     padding: '0px 0px 30px 4px',
+//   },
+
+//   summaryDotYellow: {
+//     height: '25px',
+//     width: '28px',
+//     backgroundColor: '#ffcc00',
+//     borderRadius: '50%',
+//     display: 'inline-block',
+//     position: 'relative',
+//     left: '0.3vw',
+//     padding: '0px 0px 29px 7.5px',
+//   },
+
+//   summaryGreenDot: {
+//     height: '25px',
+//     width: '28px',
+//     backgroundColor: '#4bb543',
+//     borderRadius: '50%',
+//     display: 'inline-block',
+//     position: 'relative',
+//     right: '0.3vw',
+//     padding: '0px 0px 28px 7.5px',
+//   },
+
+//   test: {
+//     backgroundColor: 'red',
+//     fontWeight: '900',
+//   },
+// t};
 
 export const registerContentAction = (contentAction: {
   label: string;
@@ -81,640 +689,663 @@ export const expandSeoReview = (dataToFormat: any) => {
   const data = formatSeoData(dataToFormat);
 
   appState.globalState.openDialog(
-    <div className="modalStyles" id="element0">
-      {/* <button className="button-default" onClick={closeModal}>
+    <div css={modalWrapper}>
+      <div css={modalStyles.modalStyles} id="element0">
+        {/* <button className="button-default" onClick={closeModal}>
 				Show Modal
 			</button> */}
-      <div className="modalTitle">SEO Review Results</div>
-      <h1>Overview</h1>
-      <div className="container">
-        <div className="leftContainer">
-          <div className="borderBox">
-            <h2>Category</h2>
-            <div>Keyword</div>
-            <div>Overall SEO Score</div>
-            <div>Available SEO Points</div>
-            <div>Earned SEO Pointssssss</div>
-            <div>i am a div let me deploy</div>
-            <div>i am a div 2 let me deploy</div>
+        <div css={modalTitle.modalTitle}>SEO Review Results</div>
+        <h1 css={h1.h1}>Overview</h1>
+        <div css={container.container}>
+          <div css={leftContainer.leftContainer}>
+            <div css={borderBox.borderBox}>
+              <h2 css={h2.h2}>Category</h2>
+              <div>Keyword</div>
+              <div>Overall SEO Score</div>
+              <div>Available SEO Points</div>
+              <div>Earned SEO Points</div>
+            </div>
           </div>
-        </div>
 
-        <div className="rightContainer">
-          <h2>Results</h2>
-          <div className="feedbackSummary">
-            <div className="feedbackDetailTitle">Feedback Summary</div>
+          <div css={rightContainer.rightContainer}>
+            <h2 css={h2.h2}>Results</h2>
+            <div css={feedbackSummary.feedbackSummary}>
+              <div css={feedbackDetailTitle.feedbackDetailTitle}>Feedback Summary</div>
 
-            <div>
               <div>
-                Optimized
-                <div className="summaryDotGreen">{data.overview.summary.optimized}</div>
+                <div css={summaryWrapper.summaryWrapper}>
+                  Optimized
+                  <div css={summaryDotGreen.summaryDotGreen}>{data.overview.summary.optimized}</div>
+                </div>
+                <div css={summaryWrapper.summaryWrapper}>
+                  Warnings
+                  <div css={summaryDotYellow.summaryDotYellow}>
+                    {data.overview.summary.warnings}
+                  </div>
+                </div>
+                <div css={summaryWrapper.summaryWrapper}>
+                  Errors
+                  <div css={summaryDotRed.summaryDotRed}>{data.overview.summary.errors}</div>
+                </div>
               </div>
-              <div>
-                Warnings
-                <div className="summaryDotYellow">{data.overview.summary.warnings}</div>
+            </div>
+
+            <div>{data.overview.keyword}</div>
+            <div css={pbwrapper.pbwrapper}>
+              <div css={progressBar.progressBar}>
+                <p css={progressBarFill.progressBarFill} id="myProgressBar">
+                  {data.overview.overallSeoScore}/100
+                </p>
               </div>
-              <div>
-                Errors
-                <div className="summaryDotRed">{data.overview.summary.errors}</div>
+            </div>
+            <div>{data.overview.availableSeoPoints}</div>
+            <div css={pbwrapper.pbwrapper}>
+              <div css={progressBar.progressBar}>
+                <p css={progressBarFill.progressBarFill}>
+                  {data.overview.earnedSeoPoints}/{data.overview.availableSeoPoints}
+                </p>
               </div>
             </div>
           </div>
-
-          <div>{data.overview.keyword}</div>
-          <div className="pbwrapper">
-            <div className="progressBar">
-              <p className="progressBarFill" id="myProgressBar">
-                {data.overview.overallSeoScore}/100
-              </p>
-            </div>
-          </div>
-          <div>{data.overview.availableSeoPoints}</div>
-          <div className="pbwrapper">
-            <div className="progressBar">
-              <p className="progressBarFill">
-                {data.overview.earnedSeoPoints}/{data.overview.availableSeoPoints}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h1>Title Tag</h1>
-      <div className="container">
-        <div className="leftContainer">
-          <div className="borderBox">
-            <h2>Category</h2>
-            <div>Result</div>
-            <div>Title Found</div>
-            <div>Title Tag</div>
-            <div>Title Length</div>
-            <div>Title Tag Number</div>
-            <div>Focus Keywords Position</div>
-            <div>Focus Keywords Found</div>
-            <div>Keyword</div>
-          </div>
         </div>
 
-        <div className="rightContainer">
-          <h2>Results</h2>
-          <div>{data.titleTag.Result}</div>
-          <div>{data.titleTag.titleFound}</div>
-          <div>{data.titleTag.titleTag}</div>
-          <div>{data.titleTag.titleLength}</div>
-          <div>{data.titleTag.titleTagNumber}</div>
-          <div>{data.titleTag.focusKeywordsPosition}</div>
-          <div>{data.titleTag.focusKeywordsFound}</div>
-          <div>{data.titleTag.keyword}</div>
-        </div>
-
-        <div className="bottomContainer">
-          <h3>Feedback Details</h3>
-          <h5>Positive or Negative?</h5>
-          <div>
-            <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-            <div className="summaryDotRed"></div>
-          </div>
-
-          <div className="feedbackDetails">
-            <div>
-              {data.titleTag.feedbackDetails.found.text ==
-              data.titleTag.feedbackDetails.found.text ? (
-                <div>Title Tag Not Found</div>
-              ) : (
-                <div>Title Tag Found - {data.titleTag.feedbackDetails.found.text}</div>
-              )}
-            </div>
-            <div className="feedbackDetailExtra">
-              <p>
-                {' '}
-                {data.titleTag.feedbackDetails.found.class}
-                {data.titleTag.feedbackDetails.found.class == 'positive' ? (
-                  <div className="summaryDotGreen"></div>
-                ) : (
-                  <div className="summaryDotRed"></div>
-                )}
-              </p>
-              <p>{data.titleTag.feedbackDetails.found.text}</p>
-            </div>
-          </div>
-          <div className="feedbackDetails">
-            <div>Length</div>
-            <div className="feedbackDetailExtra">
-              <p>
-                {' '}
-                {data.titleTag.feedbackDetails.length.class}
-                {data.titleTag.feedbackDetails.length.class == 'positive' ? (
-                  <div className="summaryDotGreen"></div>
-                ) : (
-                  <div className="summaryDotRed"></div>
-                )}
-              </p>
-              <p>{data.titleTag.feedbackDetails.length.text}</p>
-            </div>
-          </div>
-          <div className="feedbackDetails">
-            <div>Focus Keyword</div>
-            <div className="feedbackDetailExtra">
-              <p>
-                {' '}
-                {data.titleTag.feedbackDetails.focusKeyword.class}
-                {data.titleTag.feedbackDetails.focusKeyword.class == 'positive' ? (
-                  <div className="summaryDotGreen"></div>
-                ) : (
-                  <div className="summaryDotRed"></div>
-                )}
-              </p>
-              <p>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
-            </div>
-          </div>
-          <div className="feedbackDetails">
-            <div>Focus Keyword Position</div>
-            <div className="feedbackDetailExtra">
-              <p>
-                {' '}
-                {data.titleTag.feedbackDetails.focusKeywordsPosition.class}
-                {data.titleTag.feedbackDetails.focusKeywordsPosition.class == 'positive' ? (
-                  <div className="summaryDotGreen"></div>
-                ) : (
-                  <div className="summaryDotRed"></div>
-                )}
-              </p>
-              <p>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
-            </div>
-          </div>
-        </div>
-        <div className="maxSeoScore">
-          Max SEO Score Available = {data.titleTag.maxSeoScoreAvailable}
-        </div>
-        <div className="maxSeoScoreProgress">
-          <div>SEO Score</div>
-          <div className="maxSeoScoreProgressBar">
-            <div className="maxSeoScoreProgressBarFill">
-              {data.titleTag.seoScore}/{data.titleTag.maxSeoScoreAvailable}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h1>Meta Description</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
+        <h1 css={h1.h1}>Title Tag</h1>
+        <div css={container.container}>
+          <div css={leftContainer.leftContainer}>
+            <div css={borderBox.borderBox}>
+              <h2 css={h2.h2}>Category</h2>
               <div>Result</div>
-              <div>Meta Description Found?</div>
-              <div>Meta Description</div>
-              <div>Meta Description Length</div>
-              <div>Meta Description Number</div>
+              <div>Title Found</div>
+              <div>Title Tag</div>
+              <div>Title Length</div>
+              <div>Title Tag Number</div>
               <div>Focus Keywords Position</div>
               <div>Focus Keywords Found</div>
               <div>Keyword</div>
             </div>
           </div>
 
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.metaDescription.result}</div>
-            <div>{data.metaDescription.metaDescriptionFound}</div>
-            <div>{data.metaDescription.metaDescription}</div>
-            <div>{data.metaDescription.metaDescriptionLength}</div>
-            <div>{data.metaDescription.metaDescriptionNumber}</div>
-            <div>{data.metaDescription.focusKeywordsPosition}</div>
-            <div>{data.metaDescription.focusKeywordsFound}</div>
-            <div>{data.metaDescription.keyword}</div>
+          <div css={rightContainer.rightContainer}>
+            <h2 css={h2.h2}>Results</h2>
+            <div>{data.titleTag.Result}</div>
+            <div>{data.titleTag.titleFound}</div>
+            <div>{data.titleTag.titleTag}</div>
+            <div>{data.titleTag.titleLength}</div>
+            <div>{data.titleTag.titleTagNumber}</div>
+            <div>{data.titleTag.focusKeywordsPosition}</div>
+            <div>{data.titleTag.focusKeywordsFound}</div>
+            <div>{data.titleTag.keyword}</div>
           </div>
 
-          <div className="bottomContainer">
+          <div css={bottomContainer.bottomContainer}>
             <h3>Feedback Details</h3>
-            <h5>Positive or Negative?</h5>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
+            <div css={dotWrapper.dotWrapper}>
+              <h5 css={h5.h5}>
+                Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+              </h5>
+              <h5 css={h5.h5}>
+                Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+              </h5>
             </div>
 
-            <div className="feedbackDetails">
+            <div css={feedbackDetails.feedbackDetails}>
               <div>
-                {data.metaDescription.feedbackDetails.found.text ==
-                data.metaDescription.feedbackDetails.found.text ? (
-                  <div>Meta Description Not Found</div>
+                {data.titleTag.feedbackDetails.found.text ==
+                data.titleTag.feedbackDetails.found.text ? (
+                  <div>Title Tag Not Found</div>
                 ) : (
-                  <div>Meta Description Found -{data.titleTag.feedbackDetails.found.text}</div>
+                  <div>Title Tag Found - {data.titleTag.feedbackDetails.found.text}</div>
                 )}
               </div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.metaDescription.feedbackDetails.found.class}
-                  {data.metaDescription.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
+              <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                <p css={p.p}>
+                  {' '}
+                  {data.titleTag.feedbackDetails.found.class}
+                  {data.titleTag.feedbackDetails.found.class == 'positive' ? (
+                    <div css={summaryDotGreen.summaryDotGreen}></div>
                   ) : (
-                    <div className="summaryDotRed"></div>
+                    <div css={summaryDotRed.summaryDotRed}></div>
                   )}
                 </p>
-                <p>{data.metaDescription.feedbackDetails.found.text}</p>
+                <p css={p.p}>{data.titleTag.feedbackDetails.found.text}</p>
               </div>
             </div>
-            <div className="feedbackDetails">
+            <div css={feedbackDetails.feedbackDetails}>
               <div>Length</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.metaDescription.feedbackDetails.length.class}
-                  {data.metaDescription.feedbackDetails.length.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
+              <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                <p css={p.p}>
+                  {' '}
+                  {data.titleTag.feedbackDetails.length.class}
+                  {data.titleTag.feedbackDetails.length.class == 'positive' ? (
+                    <div css={summaryDotGreen.summaryDotGreen}></div>
                   ) : (
-                    <div className="summaryDotRed"></div>
+                    <div css={summaryDotRed.summaryDotRed}></div>
                   )}
                 </p>
-                <p>{data.metaDescription.feedbackDetails.length.text}</p>
+                <p css={p.p}>{data.titleTag.feedbackDetails.length.text}</p>
               </div>
             </div>
-            <div className="feedbackDetails">
+            <div css={feedbackDetails.feedbackDetails}>
               <div>Focus Keyword</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.metaDescription.feedbackDetails.focusKeyword.class}
-                  {data.metaDescription.feedbackDetails.focusKeyword.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
+              <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                <p css={p.p}>
+                  {' '}
+                  {data.titleTag.feedbackDetails.focusKeyword.class}
+                  {data.titleTag.feedbackDetails.focusKeyword.class == 'positive' ? (
+                    <div css={summaryDotGreen.summaryDotGreen}></div>
                   ) : (
-                    <div className="summaryDotRed"></div>
+                    <div css={summaryDotRed.summaryDotRed}></div>
                   )}
                 </p>
-                <p>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
+                <p css={p.p}>{data.titleTag.feedbackDetails.focusKeyword.text}</p>
               </div>
             </div>
-            <div className="feedbackDetails">
-              <div>Focus Keywords Position</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.metaDescription.feedbackDetails.focusKeywordsPosition.class}
-                  {data.metaDescription.feedbackDetails.focusKeywordsPosition.class ==
-                  'positive' ? (
-                    <div className="summaryDotGreen"></div>
+            <div css={feedbackDetails.feedbackDetails}>
+              <div>Focus Keyword Position</div>
+              <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                <p css={p.p}>
+                  {' '}
+                  {data.titleTag.feedbackDetails.focusKeywordsPosition.class}
+                  {data.titleTag.feedbackDetails.focusKeywordsPosition.class == 'positive' ? (
+                    <div css={summaryDotGreen.summaryDotGreen}></div>
                   ) : (
-                    <div className="summaryDotRed"></div>
+                    <div css={summaryDotRed.summaryDotRed}></div>
                   )}
                 </p>
-                <p>{data.metaDescription.feedbackDetails.focusKeywordsPosition.text}</p>
+                <p css={p.p}>{data.titleTag.feedbackDetails.focusKeywordsPosition.text}</p>
               </div>
             </div>
           </div>
-
-          <div className="maxSeoScore">
-            Max SEO Score Available = {data.metaDescription.maxSeoScoreAvailable}
+          <div css={maxSeoScore.maxSeoScore}>
+            Max SEO Score Available = {data.titleTag.maxSeoScoreAvailable}
           </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.metaDescription.seoScore}/{data.metaDescription.maxSeoScoreAvailable}
+          <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+            <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+            <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+              <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                {data.titleTag.seoScore}/{data.titleTag.maxSeoScoreAvailable}
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h1>Page Headings Summary</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
-              <div>H1</div>
-              <div>H2</div>
-              <div>H3</div>
-              <div>H4</div>
-              <div>H5</div>
-              <div>H6</div>
-              <div>H1 Count</div>
-              <div>H1 Content</div>
-              <div>Focus Keywords Found</div>
-              <div>Keyword</div>
-            </div>
-          </div>
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.pageHeadingsSummary.h1}</div>
-            <div>{data.pageHeadingsSummary.h2}</div>
-            <div>{data.pageHeadingsSummary.h3}</div>
-            <div>{data.pageHeadingsSummary.h4}</div>
-            <div>{data.pageHeadingsSummary.h5}</div>
-            <div>{data.pageHeadingsSummary.h6}</div>
-            <div>{data.pageHeadingsSummary.h1Count}</div>
-            <div>{data.pageHeadingsSummary.h1Content}</div>
-            <div>{data.pageHeadingsSummary.focusKeywordsFound}</div>
-            <div>{data.pageHeadingsSummary.keyword}</div>
-          </div>
-
-          <div className="bottomContainer">
-            <h3>Feedback Details</h3>
-            <h5>Positive or Negative?</h5>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
-            </div>
-            <div className="feedbackDetails">
-              <div>Page Headings Summary</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.pageHeadingsSummary.feedbackDetails.notFound.class}
-                  {data.pageHeadingsSummary.feedbackDetails.notFound.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.pageHeadingsSummary.feedbackDetails.notFound.text}</p>
+        <div>
+          <h1 css={h1.h1}>Meta Description</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>Result</div>
+                <div>Meta Description Found?</div>
+                <div>Meta Description</div>
+                <div>Meta Description Length</div>
+                <div>Meta Description Number</div>
+                <div>Focus Keywords Position</div>
+                <div>Focus Keywords Found</div>
+                <div>Keyword</div>
               </div>
             </div>
-            <div className="feedbackDetails">
-              <div>Focus Keyword</div>
-              <div className="feedbackDetailExtra">
-                <p>{data.pageHeadingsSummary.feedbackDetails.focusKeyword.text}</p>
-                <p>
-                  {data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
-                  {data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
+
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.metaDescription.result}</div>
+              <div>{data.metaDescription.metaDescriptionFound}</div>
+              <div>{data.metaDescription.metaDescription}</div>
+              <div>{data.metaDescription.metaDescriptionLength}</div>
+              <div>{data.metaDescription.metaDescriptionNumber}</div>
+              <div>{data.metaDescription.focusKeywordsPosition}</div>
+              <div>{data.metaDescription.focusKeywordsFound}</div>
+              <div>{data.metaDescription.keyword}</div>
+            </div>
+
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>
+                  {data.metaDescription.feedbackDetails.found.text ==
+                  data.metaDescription.feedbackDetails.found.text ? (
+                    <div>Not Found</div>
                   ) : (
-                    <div className="summaryDotRed"></div>
+                    <div>Meta Description Found -{data.titleTag.feedbackDetails.found.text}</div>
                   )}
-                </p>
+                </div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.metaDescription.feedbackDetails.found.class}
+                    {data.metaDescription.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.metaDescription.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Length</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.metaDescription.feedbackDetails.length.class}
+                    {data.metaDescription.feedbackDetails.length.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.metaDescription.feedbackDetails.length.text}</p>
+                </div>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Focus Keyword</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.metaDescription.feedbackDetails.focusKeyword.class}
+                    {data.metaDescription.feedbackDetails.focusKeyword.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.metaDescription.feedbackDetails.focusKeyword.text}</p>
+                </div>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Focus Keywords Position</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.metaDescription.feedbackDetails.focusKeywordsPosition.class}
+                    {data.metaDescription.feedbackDetails.focusKeywordsPosition.class ==
+                    'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.metaDescription.feedbackDetails.focusKeywordsPosition.text}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="maxSeoScore">
-            Max SEO Score Available
-            {data.pageHeadingsSummary.maxSeoScoreAvailable}
-          </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.pageHeadingsSummary.seoScore}/{data.pageHeadingsSummary.maxSeoScoreAvailable}
+
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available = {data.metaDescription.maxSeoScoreAvailable}
+            </div>
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.metaDescription.seoScore}/{data.metaDescription.maxSeoScoreAvailable}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h1>Word Count</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
-              <div>Word Count Total</div>
-              <div>Corrected Word Count</div>
-              <div>Anchor Text Words</div>
-              <div>Anchor Percentage</div>
-            </div>
-          </div>
-
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.wordCount.wordCountTotal}</div>
-            <div>{data.wordCount.correctedWordCount}</div>
-            <div>{data.wordCount.anchorTextWords}</div>
-            <div>{data.wordCount.anchorPercentage}</div>
-          </div>
-
-          <div className="bottomContainer">
-            <h3>Feedback Details</h3>
-            <h5>Positive or Negative?</h5>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
-            </div>
-            <div className="feedbackDetails">
-              <div>Word Count</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.wordCount.feedbackDetails.found.class}
-                  {data.wordCount.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.wordCount.feedbackDetails.found.text}</p>
+        <div>
+          <h1 css={h1.h1}>Page Headings Summary</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>H1</div>
+                <div>H2</div>
+                <div>H3</div>
+                <div>H4</div>
+                <div>H5</div>
+                <div>H6</div>
+                <div>H1 Count</div>
+                <div>H1 Content</div>
+                <div>Focus Keywords Found</div>
+                <div>Keyword</div>
               </div>
             </div>
-          </div>
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.pageHeadingsSummary.h1}</div>
+              <div>{data.pageHeadingsSummary.h2}</div>
+              <div>{data.pageHeadingsSummary.h3}</div>
+              <div>{data.pageHeadingsSummary.h4}</div>
+              <div>{data.pageHeadingsSummary.h5}</div>
+              <div>{data.pageHeadingsSummary.h6}</div>
+              <div>{data.pageHeadingsSummary.h1Count}</div>
+              <div>{data.pageHeadingsSummary.h1Content}</div>
+              <div>{data.pageHeadingsSummary.focusKeywordsFound}</div>
+              <div>{data.pageHeadingsSummary.keyword}</div>
+            </div>
 
-          <div className="maxSeoScore">
-            Max SEO Score Available
-            {data.wordCount.maxSeoScoreAvailable}
-          </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Page Headings Summary</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.pageHeadingsSummary.feedbackDetails.notFound.class}
+                    {data.pageHeadingsSummary.feedbackDetails.notFound.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                </div>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Focus Keyword</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>{data.pageHeadingsSummary.feedbackDetails.focusKeyword.text}</p>
+                  <p css={p.p}>
+                    {data.pageHeadingsSummary.feedbackDetails.focusKeyword.class}
+                    {data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h1>On Page Links Summary</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
-              <div>Total Links</div>
-              <div>External Links</div>
-              <div>Internal Links</div>
-              <div>No Follow Count</div>
-              <div>Duplicate Links</div>
-              <div>No Alt Tag</div>
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available
+              {data.pageHeadingsSummary.maxSeoScoreAvailable}
             </div>
-          </div>
-
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.onPageLinksSummary.totalLinks}</div>
-            <div>{data.onPageLinksSummary.externalLinks}</div>
-            <div>{data.onPageLinksSummary.internalLinks}</div>
-            <div>{data.onPageLinksSummary.noFollowCount}</div>
-            <div>{data.onPageLinksSummary.duplicateLinks}</div>
-            <div>{data.onPageLinksSummary.noAltTag}</div>
-          </div>
-
-          <div className="bottomContainer">
-            <h3>Feedback Details</h3>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
-            </div>
-            <div className="feedbackDetails">
-              <div>On Page Links Summary</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  Positive or Negative? - {data.onPageLinksSummary.feedbackDetails.found.class}
-                  {data.onPageLinksSummary.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="maxSeoScore">
-            Max SEO Score Available
-            {data.onPageLinksSummary.maxSeoScoreAvailable}
-          </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.onPageLinksSummary.seoScore}/{data.onPageLinksSummary.maxSeoScoreAvailable}
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.pageHeadingsSummary.seoScore}/
+                  {data.pageHeadingsSummary.maxSeoScoreAvailable}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h1>Image Analysis</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
-              <div>Number of Images</div>
-              <div>Image Contains Keyword</div>
-              <div>Alt Tag Contains Keyword</div>
-              <div>Keyword</div>
-            </div>
-          </div>
-
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.imageAnalysis.numberOfImages}</div>
-            <div>{data.imageAnalysis.imageNameContainsKeyword}</div>
-            <div>{data.imageAnalysis.imageAltTagContainsKeyword}</div>
-            <div>{data.imageAnalysis.keyword}</div>
-          </div>
-
-          <div className="bottomContainer">
-            <h3>Feedback Details</h3>
-            <h5>Positive or Negative</h5>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
-            </div>
-            <div className="feedbackDetails">
-              <div>Image Analysis</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.imageAnalysis.feedbackDetails.found.class}
-                  {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.imageAnalysis.feedbackDetails.found.text}</p>
+        <div>
+          <h1 css={h1.h1}>Word Count</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>Word Count Total</div>
+                <div>Corrected Word Count</div>
+                <div>Anchor Text Words</div>
+                <div>Anchor Percentage</div>
               </div>
             </div>
 
-            <div className="feedbackDetails">
-              <div>Image Name Contains Keyword</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.imageAnalysis.feedbackDetails.found.class}
-                  {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.imageAnalysis.feedbackDetails.found.text}</p>
-              </div>
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.wordCount.wordCountTotal}</div>
+              <div>{data.wordCount.correctedWordCount}</div>
+              <div>{data.wordCount.anchorTextWords}</div>
+              <div>{data.wordCount.anchorPercentage}</div>
             </div>
-            <div className="feedbackDetails">
-              <div>Image Alt Tag Contains Keyword</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.imageAnalysis.feedbackDetails.found.class}
-                  {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.imageAnalysis.feedbackDetails.found.text}</p>
-              </div>
-            </div>
-          </div>
 
-          <div className="maxSeoScore">
-            Max SEO Score Available
-            {data.imageAnalysis.maxSeoScoreAvailable}
-          </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.imageAnalysis.seoScore}/{data.imageAnalysis.maxSeoScoreAvailable}
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Word Count</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.wordCount.feedbackDetails.found.class}
+                    {data.wordCount.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.wordCount.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+            </div>
+
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available
+              {data.wordCount.maxSeoScoreAvailable}
+            </div>
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h1>Keyword Density</h1>
-        <div className="container">
-          <div className="leftContainer">
-            <div className="borderBox">
-              <h2>Category</h2>
-              <div>Keyword</div>
-              <div>Keyword Density</div>
+        <div>
+          <h1 css={h1.h1}>On Page Links Summary</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>Total Links</div>
+                <div>External Links</div>
+                <div>Internal Links</div>
+                <div>No Follow Count</div>
+                <div>Duplicate Links</div>
+                <div>No Alt Tag</div>
+              </div>
             </div>
-          </div>
 
-          <div className="rightContainer">
-            <h2>Results</h2>
-            <div>{data.keywordDensity.keyword}</div>
-            <div>{data.keywordDensity.keywordDensity}</div>
-          </div>
-
-          <div className="bottomContainer">
-            <h3>Feedback Details</h3>
-            <h5>Positive or Negative?</h5>
-            <div>
-              <div className="summaryDotGreen"></div>&nbsp;&nbsp; or &nbsp;
-              <div className="summaryDotRed"></div>
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.onPageLinksSummary.totalLinks}</div>
+              <div>{data.onPageLinksSummary.externalLinks}</div>
+              <div>{data.onPageLinksSummary.internalLinks}</div>
+              <div>{data.onPageLinksSummary.noFollowCount}</div>
+              <div>{data.onPageLinksSummary.duplicateLinks}</div>
+              <div>{data.onPageLinksSummary.noAltTag}</div>
             </div>
-            <div className="feedbackDetails">
-              <div>Keyword Density</div>
-              <div className="feedbackDetailExtra">
-                <p>
-                  {data.keywordDensity.feedbackDetails.found.class}
-                  {data.keywordDensity.feedbackDetails.found.class == 'positive' ? (
-                    <div className="summaryDotGreen"></div>
-                  ) : (
-                    <div className="summaryDotRed"></div>
-                  )}
-                </p>
-                <p>{data.keywordDensity.feedbackDetails.found.text}</p>
+
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>On Page Links Summary</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    Positive or Negative? - {data.onPageLinksSummary.feedbackDetails.found.class}
+                    {data.onPageLinksSummary.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.onPageLinksSummary.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+            </div>
+
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available
+              {data.onPageLinksSummary.maxSeoScoreAvailable}
+            </div>
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.onPageLinksSummary.seoScore}/{data.onPageLinksSummary.maxSeoScoreAvailable}
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="maxSeoScore">
-            Max SEO Score Available
-            <div>{data.keywordDensity.maxSeoScoreAvailable}</div>
+        <div>
+          <h1 css={h1.h1}>Image Analysis</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>Number of Images</div>
+                <div>Image Contains Keyword</div>
+                <div>Alt Tag Contains Keyword</div>
+                <div>Keyword</div>
+              </div>
+            </div>
+
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.imageAnalysis.numberOfImages}</div>
+              <div>{data.imageAnalysis.imageNameContainsKeyword}</div>
+              <div>{data.imageAnalysis.imageAltTagContainsKeyword}</div>
+              <div>{data.imageAnalysis.keyword}</div>
+            </div>
+
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Image Analysis Found</div>
+                <div css={imagePadding.imagePadding}>
+                  <p>
+                    {data.imageAnalysis.feedbackDetails.found.class}
+                    {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.imageAnalysis.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Image Name Contains Keyword</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.imageAnalysis.feedbackDetails.found.class}
+                    {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.imageAnalysis.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Image Alt Contains Keyword</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.imageAnalysis.feedbackDetails.found.class}
+                    {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.imageAnalysis.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+            </div>
+
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available
+              {data.imageAnalysis.maxSeoScoreAvailable}
+            </div>
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.imageAnalysis.seoScore}/{data.imageAnalysis.maxSeoScoreAvailable}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="maxSeoScoreProgress">
-            <div>SEO Score</div>
-            <div className="maxSeoScoreProgressBar">
-              <div className="maxSeoScoreProgressBarFill">
-                {data.keywordDensity.seoScore}/{data.keywordDensity.maxSeoScoreAvailable}
+        </div>
+
+        <div>
+          <h1 css={h1.h1}>Keyword Density</h1>
+          <div css={container.container}>
+            <div css={leftContainer.leftContainer}>
+              <div css={borderBox.borderBox}>
+                <h2 css={h2.h2}>Category</h2>
+                <div>Keyword</div>
+                <div>Keyword Density</div>
+              </div>
+            </div>
+
+            <div css={rightContainer.rightContainer}>
+              <h2 css={h2.h2}>Results</h2>
+              <div>{data.keywordDensity.keyword}</div>
+              <div>{data.keywordDensity.keywordDensity}</div>
+            </div>
+
+            <div css={bottomContainer.bottomContainer}>
+              <h3>Feedback Details</h3>
+              <div css={dotWrapper.dotWrapper}>
+                <h5 css={h5.h5}>
+                  Positive &nbsp;&nbsp;&nbsp;=<div css={dotPlus.dotPlus}></div>
+                </h5>
+                <h5 css={h5.h5}>
+                  Negative &nbsp;=<div css={dotMinus.dotMinus}></div>
+                </h5>
+              </div>
+              <div css={feedbackDetails.feedbackDetails}>
+                <div>Keyword Density</div>
+                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                  <p css={p.p}>
+                    {data.keywordDensity.feedbackDetails.found.class}
+                    {data.keywordDensity.feedbackDetails.found.class == 'positive' ? (
+                      <div css={summaryDotGreen.summaryDotGreen}></div>
+                    ) : (
+                      <div css={summaryDotRed.summaryDotRed}></div>
+                    )}
+                  </p>
+                  <p css={p.p}>{data.keywordDensity.feedbackDetails.found.text}</p>
+                </div>
+              </div>
+            </div>
+
+            <div css={maxSeoScore.maxSeoScore}>
+              Max SEO Score Available {data.keywordDensity.maxSeoScoreAvailable}
+            </div>
+            <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
+              <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
+              <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
+                <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
+                  {data.keywordDensity.seoScore}/{data.keywordDensity.maxSeoScoreAvailable}
+                </div>
               </div>
             </div>
           </div>

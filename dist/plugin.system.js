@@ -876,7 +876,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
 
       var gOPD$1 = Object.getOwnPropertyDescriptor;
 
-      var f = _descriptors ? gOPD$1 : function getOwnPropertyDescriptor(O, P) {
+      var f$7 = _descriptors ? gOPD$1 : function getOwnPropertyDescriptor(O, P) {
         O = _toIobject(O);
         P = _toPrimitive(P, true);
         if (_ie8DomDefine) try {
@@ -886,7 +886,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       };
 
       var _objectGopd = {
-      	f: f
+      	f: f$7
       };
 
       // ECMAScript 6 symbols shim
@@ -1059,7 +1059,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
       ).split(','), j = 0; es6Symbols.length > j;)_wks(es6Symbols[j++]);
 
-      for (var wellKnownSymbols = _objectKeys(_wks.store), k = 0; wellKnownSymbols.length > k;) _wksDefine(wellKnownSymbols[k++]);
+      for (var wellKnownSymbols = _objectKeys(_wks.store), k$1 = 0; wellKnownSymbols.length > k$1;) _wksDefine(wellKnownSymbols[k$1++]);
 
       _export(_export.S + _export.F * !USE_NATIVE, 'Symbol', {
         // 19.4.2.1 Symbol.for(key)
@@ -1631,7 +1631,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
 
       var objectWithoutProperties = _objectWithoutProperties;
 
-      var reactIs_production_min = createCommonjsModule(function (module, exports) {
+      var reactIs_production_min$1 = createCommonjsModule(function (module, exports) {
       Object.defineProperty(exports,"__esModule",{value:!0});
       var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?Symbol.for("react.suspense_list"):
       60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.fundamental"):60117,w=b?Symbol.for("react.responder"):60118,x=b?Symbol.for("react.scope"):60119;function y(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function z(a){return y(a)===m}
@@ -1640,35 +1640,35 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       exports.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return y(a)===n};exports.isFragment=function(a){return y(a)===e};exports.isLazy=function(a){return y(a)===t};exports.isMemo=function(a){return y(a)===r};exports.isPortal=function(a){return y(a)===d};exports.isProfiler=function(a){return y(a)===g};exports.isStrictMode=function(a){return y(a)===f};exports.isSuspense=function(a){return y(a)===p};
       });
 
-      unwrapExports(reactIs_production_min);
-      reactIs_production_min.typeOf;
-      reactIs_production_min.AsyncMode;
-      reactIs_production_min.ConcurrentMode;
-      reactIs_production_min.ContextConsumer;
-      reactIs_production_min.ContextProvider;
-      reactIs_production_min.Element;
-      reactIs_production_min.ForwardRef;
-      reactIs_production_min.Fragment;
-      reactIs_production_min.Lazy;
-      reactIs_production_min.Memo;
-      reactIs_production_min.Portal;
-      reactIs_production_min.Profiler;
-      reactIs_production_min.StrictMode;
-      reactIs_production_min.Suspense;
-      reactIs_production_min.isValidElementType;
-      reactIs_production_min.isAsyncMode;
-      reactIs_production_min.isConcurrentMode;
-      reactIs_production_min.isContextConsumer;
-      reactIs_production_min.isContextProvider;
-      reactIs_production_min.isElement;
-      reactIs_production_min.isForwardRef;
-      reactIs_production_min.isFragment;
-      reactIs_production_min.isLazy;
-      reactIs_production_min.isMemo;
-      reactIs_production_min.isPortal;
-      reactIs_production_min.isProfiler;
-      reactIs_production_min.isStrictMode;
-      reactIs_production_min.isSuspense;
+      unwrapExports(reactIs_production_min$1);
+      reactIs_production_min$1.typeOf;
+      reactIs_production_min$1.AsyncMode;
+      reactIs_production_min$1.ConcurrentMode;
+      reactIs_production_min$1.ContextConsumer;
+      reactIs_production_min$1.ContextProvider;
+      reactIs_production_min$1.Element;
+      reactIs_production_min$1.ForwardRef;
+      reactIs_production_min$1.Fragment;
+      reactIs_production_min$1.Lazy;
+      reactIs_production_min$1.Memo;
+      reactIs_production_min$1.Portal;
+      reactIs_production_min$1.Profiler;
+      reactIs_production_min$1.StrictMode;
+      reactIs_production_min$1.Suspense;
+      reactIs_production_min$1.isValidElementType;
+      reactIs_production_min$1.isAsyncMode;
+      reactIs_production_min$1.isConcurrentMode;
+      reactIs_production_min$1.isContextConsumer;
+      reactIs_production_min$1.isContextProvider;
+      reactIs_production_min$1.isElement;
+      reactIs_production_min$1.isForwardRef;
+      reactIs_production_min$1.isFragment;
+      reactIs_production_min$1.isLazy;
+      reactIs_production_min$1.isMemo;
+      reactIs_production_min$1.isPortal;
+      reactIs_production_min$1.isProfiler;
+      reactIs_production_min$1.isStrictMode;
+      reactIs_production_min$1.isSuspense;
 
       var reactIs_development = createCommonjsModule(function (module, exports) {
       });
@@ -1703,10 +1703,10 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       reactIs_development.isStrictMode;
       reactIs_development.isSuspense;
 
-      var reactIs = createCommonjsModule(function (module) {
+      var reactIs$2 = createCommonjsModule(function (module) {
 
       {
-        module.exports = reactIs_production_min;
+        module.exports = reactIs_production_min$1;
       }
       });
 
@@ -2232,14 +2232,14 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         arguments: true,
         arity: true
       };
-      var FORWARD_REF_STATICS = {
+      var FORWARD_REF_STATICS$1 = {
         '$$typeof': true,
         render: true,
         defaultProps: true,
         displayName: true,
         propTypes: true
       };
-      var MEMO_STATICS = {
+      var MEMO_STATICS$1 = {
         '$$typeof': true,
         compare: true,
         defaultProps: true,
@@ -2247,15 +2247,15 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         propTypes: true,
         type: true
       };
-      var TYPE_STATICS = {};
-      TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+      var TYPE_STATICS$1 = {};
+      TYPE_STATICS$1[reactIs$2.ForwardRef] = FORWARD_REF_STATICS$1;
 
       function getStatics(component) {
-        if (reactIs.isMemo(component)) {
-          return MEMO_STATICS;
+        if (reactIs$2.isMemo(component)) {
+          return MEMO_STATICS$1;
         }
 
-        return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+        return TYPE_STATICS$1[component['$$typeof']] || REACT_STATICS;
       }
 
       var defineProperty$1 = Object.defineProperty;
@@ -33305,13 +33305,14 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	tslint: "^5.11.0",
       	"tslint-config-prettier": "^1.15.0",
       	"tslint-config-standard": "^8.0.1",
-      	typedoc: "^0.12.0",
+      	typedoc: "^0.23.24",
       	typescript: "^4.8.3"
       };
       var dependencies = {
       	"@builder.io/commerce-plugin-tools": "^0.3.0",
       	"@chakra-ui/react": "^2.3.4",
-      	"@emotion/react": "^11.10.4",
+      	"@emotion/css": "^11.10.5",
+      	"@emotion/react": "^11.10.5",
       	"@mui/material": "^5.10.6",
       	"@nextui-org/react": "^1.0.0-beta.10",
       	axios: "^0.27.2",
@@ -33320,6 +33321,9 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	"rollup-plugin-import-css": "^3.1.0",
       	traverse: "^0.6.6",
       	uuid: "^8.3.2"
+      };
+      var volta = {
+      	node: "16.19.0"
       };
       var pkg = {
       	name: name,
@@ -33344,7 +33348,8 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       	jest: jest,
       	commitlint: commitlint,
       	devDependencies: devDependencies,
-      	dependencies: dependencies
+      	dependencies: dependencies,
+      	volta: volta
       };
 
       function formatSeoData(data) {
@@ -33435,7 +33440,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             keyword: data["Page Headings summary"].Keyword,
             feedbackDetails: {
               notFound: {
-                text: data["Page Headings summary"]["Feedback details"]["Not found"].text,
                 class: data["Page Headings summary"]["Feedback details"]["Not found"].class
               },
               focusKeyword: {
@@ -33515,6 +33519,717 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         return formattedData;
       }
 
+      function memoize(fn) {
+        var cache = Object.create(null);
+        return function (arg) {
+          if (cache[arg] === undefined) cache[arg] = fn(arg);
+          return cache[arg];
+        };
+      }
+
+      var reactIs$1 = {exports: {}};
+
+      var reactIs_production_min = {};
+
+      /** @license React v16.13.1
+       * react-is.production.min.js
+       *
+       * Copyright (c) Facebook, Inc. and its affiliates.
+       *
+       * This source code is licensed under the MIT license found in the
+       * LICENSE file in the root directory of this source tree.
+       */
+      var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p$1=b?Symbol.for("react.suspense"):60113,q=b?
+      Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+      function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p$1:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min.AsyncMode=l;reactIs_production_min.ConcurrentMode=m;reactIs_production_min.ContextConsumer=k;reactIs_production_min.ContextProvider=h;reactIs_production_min.Element=c;reactIs_production_min.ForwardRef=n;reactIs_production_min.Fragment=e;reactIs_production_min.Lazy=t;reactIs_production_min.Memo=r;reactIs_production_min.Portal=d;
+      reactIs_production_min.Profiler=g;reactIs_production_min.StrictMode=f;reactIs_production_min.Suspense=p$1;reactIs_production_min.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min.isConcurrentMode=A;reactIs_production_min.isContextConsumer=function(a){return z(a)===k};reactIs_production_min.isContextProvider=function(a){return z(a)===h};reactIs_production_min.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min.isForwardRef=function(a){return z(a)===n};reactIs_production_min.isFragment=function(a){return z(a)===e};reactIs_production_min.isLazy=function(a){return z(a)===t};
+      reactIs_production_min.isMemo=function(a){return z(a)===r};reactIs_production_min.isPortal=function(a){return z(a)===d};reactIs_production_min.isProfiler=function(a){return z(a)===g};reactIs_production_min.isStrictMode=function(a){return z(a)===f};reactIs_production_min.isSuspense=function(a){return z(a)===p$1};
+      reactIs_production_min.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p$1||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min.typeOf=z;
+
+      {
+        reactIs$1.exports = reactIs_production_min;
+      }
+
+      var reactIs = reactIs$1.exports;
+      var FORWARD_REF_STATICS = {
+        '$$typeof': true,
+        render: true,
+        defaultProps: true,
+        displayName: true,
+        propTypes: true
+      };
+      var MEMO_STATICS = {
+        '$$typeof': true,
+        compare: true,
+        defaultProps: true,
+        displayName: true,
+        propTypes: true,
+        type: true
+      };
+      var TYPE_STATICS = {};
+      TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+      TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+
+      /* eslint-disable */
+      // Inspired by https://github.com/garycourt/murmurhash-js
+      // Ported from https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash2.cpp#L37-L86
+      function murmur2(str) {
+        // 'm' and 'r' are mixing constants generated offline.
+        // They're not really 'magic', they just happen to work well.
+        // const m = 0x5bd1e995;
+        // const r = 24;
+        // Initialize the hash
+        var h = 0; // Mix 4 bytes at a time into the hash
+
+        var k,
+            i = 0,
+            len = str.length;
+
+        for (; len >= 4; ++i, len -= 4) {
+          k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
+          k =
+          /* Math.imul(k, m): */
+          (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16);
+          k ^=
+          /* k >>> r: */
+          k >>> 24;
+          h =
+          /* Math.imul(k, m): */
+          (k & 0xffff) * 0x5bd1e995 + ((k >>> 16) * 0xe995 << 16) ^
+          /* Math.imul(h, m): */
+          (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+        } // Handle the last few bytes of the input array
+
+
+        switch (len) {
+          case 3:
+            h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
+
+          case 2:
+            h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
+
+          case 1:
+            h ^= str.charCodeAt(i) & 0xff;
+            h =
+            /* Math.imul(h, m): */
+            (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+        } // Do a few final mixes of the hash to ensure the last few
+        // bytes are well-incorporated.
+
+
+        h ^= h >>> 13;
+        h =
+        /* Math.imul(h, m): */
+        (h & 0xffff) * 0x5bd1e995 + ((h >>> 16) * 0xe995 << 16);
+        return ((h ^ h >>> 15) >>> 0).toString(36);
+      }
+
+      var unitlessKeys = {
+        animationIterationCount: 1,
+        borderImageOutset: 1,
+        borderImageSlice: 1,
+        borderImageWidth: 1,
+        boxFlex: 1,
+        boxFlexGroup: 1,
+        boxOrdinalGroup: 1,
+        columnCount: 1,
+        columns: 1,
+        flex: 1,
+        flexGrow: 1,
+        flexPositive: 1,
+        flexShrink: 1,
+        flexNegative: 1,
+        flexOrder: 1,
+        gridRow: 1,
+        gridRowEnd: 1,
+        gridRowSpan: 1,
+        gridRowStart: 1,
+        gridColumn: 1,
+        gridColumnEnd: 1,
+        gridColumnSpan: 1,
+        gridColumnStart: 1,
+        msGridRow: 1,
+        msGridRowSpan: 1,
+        msGridColumn: 1,
+        msGridColumnSpan: 1,
+        fontWeight: 1,
+        lineHeight: 1,
+        opacity: 1,
+        order: 1,
+        orphans: 1,
+        tabSize: 1,
+        widows: 1,
+        zIndex: 1,
+        zoom: 1,
+        WebkitLineClamp: 1,
+        // SVG-related properties
+        fillOpacity: 1,
+        floodOpacity: 1,
+        stopOpacity: 1,
+        strokeDasharray: 1,
+        strokeDashoffset: 1,
+        strokeMiterlimit: 1,
+        strokeOpacity: 1,
+        strokeWidth: 1
+      };
+
+      var hyphenateRegex = /[A-Z]|^ms/g;
+      var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
+
+      var isCustomProperty = function isCustomProperty(property) {
+        return property.charCodeAt(1) === 45;
+      };
+
+      var isProcessableValue = function isProcessableValue(value) {
+        return value != null && typeof value !== 'boolean';
+      };
+
+      var processStyleName = /* #__PURE__ */memoize(function (styleName) {
+        return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, '-$&').toLowerCase();
+      });
+
+      var processStyleValue = function processStyleValue(key, value) {
+        switch (key) {
+          case 'animation':
+          case 'animationName':
+            {
+              if (typeof value === 'string') {
+                return value.replace(animationRegex, function (match, p1, p2) {
+                  cursor = {
+                    name: p1,
+                    styles: p2,
+                    next: cursor
+                  };
+                  return p1;
+                });
+              }
+            }
+        }
+
+        if (unitlessKeys[key] !== 1 && !isCustomProperty(key) && typeof value === 'number' && value !== 0) {
+          return value + 'px';
+        }
+
+        return value;
+      };
+
+      var noComponentSelectorMessage = 'Component selectors can only be used in conjunction with ' + '@emotion/babel-plugin, the swc Emotion plugin, or another Emotion-aware ' + 'compiler transform.';
+
+      function handleInterpolation(mergedProps, registered, interpolation) {
+        if (interpolation == null) {
+          return '';
+        }
+
+        if (interpolation.__emotion_styles !== undefined) {
+
+          return interpolation;
+        }
+
+        switch (typeof interpolation) {
+          case 'boolean':
+            {
+              return '';
+            }
+
+          case 'object':
+            {
+              if (interpolation.anim === 1) {
+                cursor = {
+                  name: interpolation.name,
+                  styles: interpolation.styles,
+                  next: cursor
+                };
+                return interpolation.name;
+              }
+
+              if (interpolation.styles !== undefined) {
+                var next = interpolation.next;
+
+                if (next !== undefined) {
+                  // not the most efficient thing ever but this is a pretty rare case
+                  // and there will be very few iterations of this generally
+                  while (next !== undefined) {
+                    cursor = {
+                      name: next.name,
+                      styles: next.styles,
+                      next: cursor
+                    };
+                    next = next.next;
+                  }
+                }
+
+                var styles = interpolation.styles + ";";
+
+                return styles;
+              }
+
+              return createStringFromObject(mergedProps, registered, interpolation);
+            }
+
+          case 'function':
+            {
+              if (mergedProps !== undefined) {
+                var previousCursor = cursor;
+                var result = interpolation(mergedProps);
+                cursor = previousCursor;
+                return handleInterpolation(mergedProps, registered, result);
+              }
+
+              break;
+            }
+        } // finalize string values (regular strings and functions interpolated into css calls)
+
+
+        if (registered == null) {
+          return interpolation;
+        }
+
+        var cached = registered[interpolation];
+        return cached !== undefined ? cached : interpolation;
+      }
+
+      function createStringFromObject(mergedProps, registered, obj) {
+        var string = '';
+
+        if (Array.isArray(obj)) {
+          for (var i = 0; i < obj.length; i++) {
+            string += handleInterpolation(mergedProps, registered, obj[i]) + ";";
+          }
+        } else {
+          for (var _key in obj) {
+            var value = obj[_key];
+
+            if (typeof value !== 'object') {
+              if (registered != null && registered[value] !== undefined) {
+                string += _key + "{" + registered[value] + "}";
+              } else if (isProcessableValue(value)) {
+                string += processStyleName(_key) + ":" + processStyleValue(_key, value) + ";";
+              }
+            } else {
+              if (_key === 'NO_COMPONENT_SELECTOR' && "production" !== 'production') {
+                throw new Error(noComponentSelectorMessage);
+              }
+
+              if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
+                for (var _i = 0; _i < value.length; _i++) {
+                  if (isProcessableValue(value[_i])) {
+                    string += processStyleName(_key) + ":" + processStyleValue(_key, value[_i]) + ";";
+                  }
+                }
+              } else {
+                var interpolated = handleInterpolation(mergedProps, registered, value);
+
+                switch (_key) {
+                  case 'animation':
+                  case 'animationName':
+                    {
+                      string += processStyleName(_key) + ":" + interpolated + ";";
+                      break;
+                    }
+
+                  default:
+                    {
+
+                      string += _key + "{" + interpolated + "}";
+                    }
+                }
+              }
+            }
+          }
+        }
+
+        return string;
+      }
+
+      var labelPattern = /label:\s*([^\s;\n{]+)\s*(;|$)/g;
+      // keyframes are stored on the SerializedStyles object as a linked list
+
+
+      var cursor;
+      var serializeStyles = function serializeStyles(args, registered, mergedProps) {
+        if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
+          return args[0];
+        }
+
+        var stringMode = true;
+        var styles = '';
+        cursor = undefined;
+        var strings = args[0];
+
+        if (strings == null || strings.raw === undefined) {
+          stringMode = false;
+          styles += handleInterpolation(mergedProps, registered, strings);
+        } else {
+
+          styles += strings[0];
+        } // we start at 1 since we've already handled the first arg
+
+
+        for (var i = 1; i < args.length; i++) {
+          styles += handleInterpolation(mergedProps, registered, args[i]);
+
+          if (stringMode) {
+
+            styles += strings[i];
+          }
+        }
+
+
+        labelPattern.lastIndex = 0;
+        var identifierName = '';
+        var match; // https://esbench.com/bench/5b809c2cf2949800a0f61fb5
+
+        while ((match = labelPattern.exec(styles)) !== null) {
+          identifierName += '-' + // $FlowFixMe we know it's not null
+          match[1];
+        }
+
+        var name = murmur2(styles) + identifierName;
+
+        return {
+          name: name,
+          styles: styles,
+          next: cursor
+        };
+      };
+
+      function css() {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        return serializeStyles(args);
+      }
+
+      const breakpoints = [600];
+      const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+      const modalWrapper = {
+        wrapper: css({
+          margin: 0,
+          padding: 0,
+          boxSizing: "border-box"
+        })
+      };
+      const modalStyles = {
+        modalStyles: css({
+          position: "fixed",
+          zIndex: 1,
+          top: "50%",
+          left: "50%",
+          overflowY: "scroll",
+          WebkitTransform: "translate(-50%, -54%)",
+          msTransform: "translate(-50%, -54%)",
+          transform: "translate(-50%, -54%)",
+          height: "85vh",
+          width: "50vw",
+          border: "1px solid #4e4d4db0",
+          background: "#ffffff",
+          WebkitBoxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
+          boxShadow: "20px 15px 20px 0px rgb(255 255 255 / 20%)",
+          opacity: "0.9",
+          padding: "20px 30px 30px 30px",
+          marginBottom: "50px",
+          fontFamily: "Ubuntu",
+          lineHeight: 1.8,
+          "&::-webkit-scrollbar": {
+            width: "10px"
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#6f91bd",
+            borderRadius: "20px"
+          }
+        })
+      };
+      const container = {
+        container: css({
+          display: ["-webkit-box", "-ms-flexbox", "flex"],
+          flexWrap: "wrap",
+          WebkitBoxOrient: "vertical",
+          WebkitBoxDirection: "normal",
+          msFlexDirection: "row",
+          flexDirection: "row",
+          fontSize: "18px",
+          width: "100%",
+          borderBottom: "1px solid black",
+          padding: "15px 10px 15px 10px",
+          "&:after": {
+            content: "",
+            display: "table",
+            clear: "both"
+          },
+          [mq[0]]: {
+            width: "100%"
+          }
+        })
+      };
+      const leftContainer = {
+        leftContainer: css({
+          float: "left",
+          width: "30%",
+          padding: "0px 10px 10px 10px"
+        })
+      };
+      const rightContainer = {
+        rightContainer: css({
+          position: "relative",
+          height: "175px",
+          left: "14px",
+          width: "60%",
+          maxWidth: "31.25rem",
+          textAlign: "justify"
+        })
+      };
+      const bottomContainer = {
+        bottomContainer: css({
+          position: "relative",
+          width: "886px",
+          margin: "20px 0px 0px 20px",
+          paddingBottom: "20px"
+        })
+      };
+      const borderBox = {
+        borderBox: css({
+          borderRight: "1px solid #999999"
+        })
+      };
+      const feedbackSummary = {
+        feedbackSummary: css({
+          float: "right",
+          position: "relative",
+          top: "-26%",
+          left: "11%",
+          borderLeft: "1px solid rgb(153, 153, 153)",
+          padding: "10px 10px 10px 20px",
+          height: "10rem"
+        })
+      };
+      const summaryWrapper = {
+        summaryWrapper: css({
+          display: "flex",
+          flexDirection: "row",
+          textAlign: "center",
+          justifyContent: "space-between"
+        })
+      };
+      const modalTitle = {
+        modalTitle: css({
+          fontSize: "40px",
+          fontWeight: "600",
+          textAlign: "center",
+          margin: "0",
+          padding: "0"
+        })
+      };
+      const h1 = {
+        h1: css({
+          textAlign: "left",
+          fontSize: "30px",
+          fontWeight: "500",
+          paddingTop: "20px !important",
+          margin: "0"
+        })
+      };
+      const h2 = {
+        h2: css({
+          margin: "0",
+          fontSize: "24px"
+        })
+      };
+      const h5 = {
+        h5: css({
+          width: "10rem",
+          height: "0rem",
+          textAlign: "center"
+        })
+      };
+      const p = {
+        p: css({
+          position: "relative",
+          lineHeight: "21px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center"
+        })
+      };
+      const feedbackDetailTitle = {
+        feedbackDetailTitle: css({
+          fontSize: "18px",
+          fontWeight: "500"
+        })
+      };
+      const feedbackDetails = {
+        feedbackDetails: css({
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          fontSize: "17px",
+          height: "110px",
+          width: "51.25rem",
+          borderBottom: "1px solid rgb(153, 153, 153)"
+        })
+      };
+      const feedbackDetailExtra = {
+        feedbackDetailExtra: css({
+          fontSize: "16px",
+          width: "70vh",
+          display: "inline",
+          paddingLeft: "38px"
+        })
+      };
+      const pbwrapper = {
+        pbwrapper: css({
+          display: ["-webkit-box", "-ms-flexbox", "flex"],
+          WebkitBoxAlign: "center",
+          msFlexAlign: "center",
+          alignItems: "center",
+          WebkitBoxPack: "justify",
+          msFlexPack: "justify",
+          justifyContent: "space-between",
+          maxWidth: "27vw",
+          height: "2.063rem",
+          textAlign: "center"
+        })
+      };
+      const progressBar = {
+        progressBar: css({
+          maxWidth: "27vw",
+          width: "100%",
+          borderRadius: "20px"
+        })
+      };
+      const progressBarFill = {
+        progressBarFill: css({
+          display: "block",
+          height: "2.4vh",
+          width: "100%",
+          background: ["repeating-linear-gradient(right, #70e000, #38b000, #008000)"],
+          backgroundImage: ["repeating-linear-gradient(to left, #70e000, #38b000, #008000)"],
+          borderRadius: "20px",
+          transition: "width 0.5s ease-in",
+          lineHeight: "1.3"
+        })
+      };
+      const SeoScore = {
+        SeoScore: css({
+          paddingRight: "15px"
+        })
+      };
+      const maxSeoScore = {
+        maxSeoScore: css({
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "25vw",
+          padding: "0px 0px 0px 20px"
+        })
+      };
+      const maxSeoScoreProgress = {
+        maxSeoScoreProgress: css({
+          display: "flex",
+          position: "relative",
+          alignItems: "center",
+          justifyContent: "space-between",
+          maxWidth: "25vw",
+          textAlign: "center"
+        })
+      };
+      const maxSeoScoreProgressBar = {
+        maxSeoScoreProgressBar: css({
+          maxWidth: "27vw",
+          width: "250px",
+          backgroundColor: "#e0e0e0",
+          borderRadius: "20px"
+        })
+      };
+      const maxSeoScoreProgressBarFill = {
+        maxSeoScoreProgressBarFill: css({
+          display: "block",
+          height: "3.4vh",
+          width: "100%",
+          background: ["repeating-linear-gradient(right, #70e000, #38b000, #008000)"],
+          backgroundImage: ["repeating-linear-gradient(to left, #70e000, #38b000, #008000)"],
+          borderRadius: "20px",
+          transition: "width 0.5s ease-in"
+        })
+      };
+      const dotWrapper = {
+        dotWrapper: css({
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          paddingLeft: "25px",
+          paddingBottom: "50px",
+          width: "150px"
+        })
+      };
+      const dotMinus = {
+        dotMinus: css({
+          height: "25px",
+          width: "28px",
+          backgroundColor: "#ff3333",
+          borderRadius: "50%",
+          display: "inline-block",
+          position: "relative",
+          padding: "0px 8px 28px 7.5px",
+          marginLeft: "37px",
+          top: "7px"
+        })
+      };
+      const dotPlus = {
+        dotPlus: css({
+          height: "25px",
+          width: "28px",
+          backgroundColor: "#4bb543",
+          borderRadius: "50%",
+          display: "inline-block",
+          position: "relative",
+          padding: "0px 8px 28px 7.5px",
+          marginLeft: "37px",
+          top: "7px"
+        })
+      };
+      const summaryDotRed = {
+        summaryDotRed: css({
+          height: "25px",
+          width: "28px",
+          backgroundColor: "#ff3333",
+          borderRadius: "50%",
+          display: "inline-block",
+          position: "relative",
+          padding: "0px 8px 30px 4px",
+          marginLeft: "10px"
+        })
+      };
+      const summaryDotGreen = {
+        summaryDotGreen: css({
+          height: "25px",
+          width: "28px",
+          backgroundColor: "#4bb543",
+          borderRadius: "50%",
+          display: "inline-block",
+          position: "relative",
+          padding: "0px 8px 28px 7.5px",
+          marginLeft: "10px"
+        })
+      };
+      const summaryDotYellow = {
+        summaryDotYellow: css({
+          height: "25px",
+          width: "28px",
+          backgroundColor: "#ffcc00",
+          borderRadius: "50%",
+          display: "inline-block",
+          position: "relative",
+          padding: "0px 8px 29px 7.5px",
+          marginLeft: "10px"
+        })
+      };
+      const imagePadding = {
+        imagePadding: css({
+          paddingRight: "318px"
+        })
+      };
       const registerContentAction = (contentAction) => {
         Builder.register("content.action", contentAction);
       };
@@ -33550,9 +34265,9 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         hideFromUI: false
       });
       const showReviewNotifications = (jobId) => {
-        appState.snackBar.show(/* @__PURE__ */ React.createElement("div", {
+        appState.snackBar.show(/* @__PURE__ */ jsx("div", {
           style: { display: "flex", alignItems: "center" }
-        }, "Done!"), 1e5, /* @__PURE__ */ React.createElement(Button, {
+        }, "Done!"), 1e5, /* @__PURE__ */ jsx(Button, {
           color: "primary",
           style: {
             pointerEvents: "auto",
@@ -33572,325 +34287,497 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       };
       const expandSeoReview = (dataToFormat) => {
         const data = formatSeoData(dataToFormat);
-        appState.globalState.openDialog(/* @__PURE__ */ React.createElement("div", {
-          className: "modalStyles",
+        appState.globalState.openDialog(/* @__PURE__ */ jsx("div", {
+          css: modalWrapper
+        }, /* @__PURE__ */ jsx("div", {
+          css: modalStyles.modalStyles,
           id: "element0"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "modalTitle"
-        }, "SEO Review Results"), /* @__PURE__ */ React.createElement("h1", null, "Overview"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Keyword"), /* @__PURE__ */ React.createElement("div", null, "Overall SEO Score"), /* @__PURE__ */ React.createElement("div", null, "Available SEO Points"), /* @__PURE__ */ React.createElement("div", null, "Earned SEO Pointssssss"), /* @__PURE__ */ React.createElement("div", null, "i am a div let me deploy"), /* @__PURE__ */ React.createElement("div", null, "i am a div 2 let me deploy"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackSummary"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailTitle"
-        }, "Feedback Summary"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", null, "Optimized", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }, data.overview.summary.optimized)), /* @__PURE__ */ React.createElement("div", null, "Warnings", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotYellow"
-        }, data.overview.summary.warnings)), /* @__PURE__ */ React.createElement("div", null, "Errors", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        }, data.overview.summary.errors)))), /* @__PURE__ */ React.createElement("div", null, data.overview.keyword), /* @__PURE__ */ React.createElement("div", {
-          className: "pbwrapper"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "progressBar"
-        }, /* @__PURE__ */ React.createElement("p", {
-          className: "progressBarFill",
+        }, /* @__PURE__ */ jsx("div", {
+          css: modalTitle.modalTitle
+        }, "SEO Review Results"), /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Overview"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Keyword"), /* @__PURE__ */ jsx("div", null, "Overall SEO Score"), /* @__PURE__ */ jsx("div", null, "Available SEO Points"), /* @__PURE__ */ jsx("div", null, "Earned SEO Points"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", {
+          css: feedbackSummary.feedbackSummary
+        }, /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailTitle.feedbackDetailTitle
+        }, "Feedback Summary"), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("div", {
+          css: summaryWrapper.summaryWrapper
+        }, "Optimized", /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }, data.overview.summary.optimized)), /* @__PURE__ */ jsx("div", {
+          css: summaryWrapper.summaryWrapper
+        }, "Warnings", /* @__PURE__ */ jsx("div", {
+          css: summaryDotYellow.summaryDotYellow
+        }, data.overview.summary.warnings)), /* @__PURE__ */ jsx("div", {
+          css: summaryWrapper.summaryWrapper
+        }, "Errors", /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        }, data.overview.summary.errors)))), /* @__PURE__ */ jsx("div", null, data.overview.keyword), /* @__PURE__ */ jsx("div", {
+          css: pbwrapper.pbwrapper
+        }, /* @__PURE__ */ jsx("div", {
+          css: progressBar.progressBar
+        }, /* @__PURE__ */ jsx("p", {
+          css: progressBarFill.progressBarFill,
           id: "myProgressBar"
-        }, data.overview.overallSeoScore, "/100"))), /* @__PURE__ */ React.createElement("div", null, data.overview.availableSeoPoints), /* @__PURE__ */ React.createElement("div", {
-          className: "pbwrapper"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "progressBar"
-        }, /* @__PURE__ */ React.createElement("p", {
-          className: "progressBarFill"
-        }, data.overview.earnedSeoPoints, "/", data.overview.availableSeoPoints))))), /* @__PURE__ */ React.createElement("h1", null, "Title Tag"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Result"), /* @__PURE__ */ React.createElement("div", null, "Title Found"), /* @__PURE__ */ React.createElement("div", null, "Title Tag"), /* @__PURE__ */ React.createElement("div", null, "Title Length"), /* @__PURE__ */ React.createElement("div", null, "Title Tag Number"), /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Position"), /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Found"), /* @__PURE__ */ React.createElement("div", null, "Keyword"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.titleTag.Result), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleFound), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleTag), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleLength), /* @__PURE__ */ React.createElement("div", null, data.titleTag.titleTagNumber), /* @__PURE__ */ React.createElement("div", null, data.titleTag.focusKeywordsPosition), /* @__PURE__ */ React.createElement("div", null, data.titleTag.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.titleTag.keyword)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, data.titleTag.feedbackDetails.found.text == data.titleTag.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Title Tag Not Found") : /* @__PURE__ */ React.createElement("div", null, "Title Tag Found - ", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.found.class, data.titleTag.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Length"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.length.class, data.titleTag.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.length.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeyword.class, data.titleTag.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword Position"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, " ", data.titleTag.feedbackDetails.focusKeywordsPosition.class, data.titleTag.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.titleTag.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available = ", data.titleTag.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Meta Description"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Result"), /* @__PURE__ */ React.createElement("div", null, "Meta Description Found?"), /* @__PURE__ */ React.createElement("div", null, "Meta Description"), /* @__PURE__ */ React.createElement("div", null, "Meta Description Length"), /* @__PURE__ */ React.createElement("div", null, "Meta Description Number"), /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Position"), /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Found"), /* @__PURE__ */ React.createElement("div", null, "Keyword"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.result), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionFound), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescription), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionLength), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.metaDescriptionNumber), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.focusKeywordsPosition), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.metaDescription.keyword)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, data.metaDescription.feedbackDetails.found.text == data.metaDescription.feedbackDetails.found.text ? /* @__PURE__ */ React.createElement("div", null, "Meta Description Not Found") : /* @__PURE__ */ React.createElement("div", null, "Meta Description Found -", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.class, data.metaDescription.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Length"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.class, data.metaDescription.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.length.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.class, data.metaDescription.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Position"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.class, data.metaDescription.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.metaDescription.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available = ", data.metaDescription.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable))))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Page Headings Summary"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "H1"), /* @__PURE__ */ React.createElement("div", null, "H2"), /* @__PURE__ */ React.createElement("div", null, "H3"), /* @__PURE__ */ React.createElement("div", null, "H4"), /* @__PURE__ */ React.createElement("div", null, "H5"), /* @__PURE__ */ React.createElement("div", null, "H6"), /* @__PURE__ */ React.createElement("div", null, "H1 Count"), /* @__PURE__ */ React.createElement("div", null, "H1 Content"), /* @__PURE__ */ React.createElement("div", null, "Focus Keywords Found"), /* @__PURE__ */ React.createElement("div", null, "Keyword"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h2), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h3), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h4), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h5), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h6), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1Count), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.h1Content), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ React.createElement("div", null, data.pageHeadingsSummary.keyword)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Page Headings Summary"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.notFound.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Focus Keyword"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.text), /* @__PURE__ */ React.createElement("p", null, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        }))))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available", data.pageHeadingsSummary.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Word Count"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Word Count Total"), /* @__PURE__ */ React.createElement("div", null, "Corrected Word Count"), /* @__PURE__ */ React.createElement("div", null, "Anchor Text Words"), /* @__PURE__ */ React.createElement("div", null, "Anchor Percentage"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.wordCount.wordCountTotal), /* @__PURE__ */ React.createElement("div", null, data.wordCount.correctedWordCount), /* @__PURE__ */ React.createElement("div", null, data.wordCount.anchorTextWords), /* @__PURE__ */ React.createElement("div", null, data.wordCount.anchorPercentage)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Word Count"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.class, data.wordCount.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.wordCount.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available", data.wordCount.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable))))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "On Page Links Summary"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Total Links"), /* @__PURE__ */ React.createElement("div", null, "External Links"), /* @__PURE__ */ React.createElement("div", null, "Internal Links"), /* @__PURE__ */ React.createElement("div", null, "No Follow Count"), /* @__PURE__ */ React.createElement("div", null, "Duplicate Links"), /* @__PURE__ */ React.createElement("div", null, "No Alt Tag"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.totalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.externalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.internalLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noFollowCount), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.duplicateLinks), /* @__PURE__ */ React.createElement("div", null, data.onPageLinksSummary.noAltTag)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "On Page Links Summary"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, "Positive or Negative? - ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.onPageLinksSummary.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available", data.onPageLinksSummary.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Image Analysis"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Number of Images"), /* @__PURE__ */ React.createElement("div", null, "Image Contains Keyword"), /* @__PURE__ */ React.createElement("div", null, "Alt Tag Contains Keyword"), /* @__PURE__ */ React.createElement("div", null, "Keyword"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.numberOfImages), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.imageNameContainsKeyword), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.imageAltTagContainsKeyword), /* @__PURE__ */ React.createElement("div", null, data.imageAnalysis.keyword)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Image Analysis"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Image Name Contains Keyword"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Image Alt Tag Contains Keyword"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.imageAnalysis.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available", data.imageAnalysis.maxSeoScoreAvailable), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable))))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Keyword Density"), /* @__PURE__ */ React.createElement("div", {
-          className: "container"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "leftContainer"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "borderBox"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Category"), /* @__PURE__ */ React.createElement("div", null, "Keyword"), /* @__PURE__ */ React.createElement("div", null, "Keyword Density"))), /* @__PURE__ */ React.createElement("div", {
-          className: "rightContainer"
-        }, /* @__PURE__ */ React.createElement("h2", null, "Results"), /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.keyword), /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.keywordDensity)), /* @__PURE__ */ React.createElement("div", {
-          className: "bottomContainer"
-        }, /* @__PURE__ */ React.createElement("h3", null, "Feedback Details"), /* @__PURE__ */ React.createElement("h5", null, "Positive or Negative?"), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }), "\xA0\xA0 or \xA0", /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetails"
-        }, /* @__PURE__ */ React.createElement("div", null, "Keyword Density"), /* @__PURE__ */ React.createElement("div", {
-          className: "feedbackDetailExtra"
-        }, /* @__PURE__ */ React.createElement("p", null, data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotGreen"
-        }) : /* @__PURE__ */ React.createElement("div", {
-          className: "summaryDotRed"
-        })), /* @__PURE__ */ React.createElement("p", null, data.keywordDensity.feedbackDetails.found.text)))), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScore"
-        }, "Max SEO Score Available", /* @__PURE__ */ React.createElement("div", null, data.keywordDensity.maxSeoScoreAvailable)), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgress"
-        }, /* @__PURE__ */ React.createElement("div", null, "SEO Score"), /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBar"
-        }, /* @__PURE__ */ React.createElement("div", {
-          className: "maxSeoScoreProgressBarFill"
-        }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable))))))), console.log("I am a working modal");
+        }, data.overview.overallSeoScore, "/100"))), /* @__PURE__ */ jsx("div", null, data.overview.availableSeoPoints), /* @__PURE__ */ jsx("div", {
+          css: pbwrapper.pbwrapper
+        }, /* @__PURE__ */ jsx("div", {
+          css: progressBar.progressBar
+        }, /* @__PURE__ */ jsx("p", {
+          css: progressBarFill.progressBarFill
+        }, data.overview.earnedSeoPoints, "/", data.overview.availableSeoPoints))))), /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Title Tag"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Result"), /* @__PURE__ */ jsx("div", null, "Title Found"), /* @__PURE__ */ jsx("div", null, "Title Tag"), /* @__PURE__ */ jsx("div", null, "Title Length"), /* @__PURE__ */ jsx("div", null, "Title Tag Number"), /* @__PURE__ */ jsx("div", null, "Focus Keywords Position"), /* @__PURE__ */ jsx("div", null, "Focus Keywords Found"), /* @__PURE__ */ jsx("div", null, "Keyword"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.titleTag.Result), /* @__PURE__ */ jsx("div", null, data.titleTag.titleFound), /* @__PURE__ */ jsx("div", null, data.titleTag.titleTag), /* @__PURE__ */ jsx("div", null, data.titleTag.titleLength), /* @__PURE__ */ jsx("div", null, data.titleTag.titleTagNumber), /* @__PURE__ */ jsx("div", null, data.titleTag.focusKeywordsPosition), /* @__PURE__ */ jsx("div", null, data.titleTag.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.titleTag.keyword)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, data.titleTag.feedbackDetails.found.text == data.titleTag.feedbackDetails.found.text ? /* @__PURE__ */ jsx("div", null, "Title Tag Not Found") : /* @__PURE__ */ jsx("div", null, "Title Tag Found - ", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, " ", data.titleTag.feedbackDetails.found.class, data.titleTag.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.titleTag.feedbackDetails.found.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Length"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, " ", data.titleTag.feedbackDetails.length.class, data.titleTag.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.titleTag.feedbackDetails.length.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Focus Keyword"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, " ", data.titleTag.feedbackDetails.focusKeyword.class, data.titleTag.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.titleTag.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Focus Keyword Position"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, " ", data.titleTag.feedbackDetails.focusKeywordsPosition.class, data.titleTag.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.titleTag.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available = ", data.titleTag.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Meta Description"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Result"), /* @__PURE__ */ jsx("div", null, "Meta Description Found?"), /* @__PURE__ */ jsx("div", null, "Meta Description"), /* @__PURE__ */ jsx("div", null, "Meta Description Length"), /* @__PURE__ */ jsx("div", null, "Meta Description Number"), /* @__PURE__ */ jsx("div", null, "Focus Keywords Position"), /* @__PURE__ */ jsx("div", null, "Focus Keywords Found"), /* @__PURE__ */ jsx("div", null, "Keyword"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.metaDescription.result), /* @__PURE__ */ jsx("div", null, data.metaDescription.metaDescriptionFound), /* @__PURE__ */ jsx("div", null, data.metaDescription.metaDescription), /* @__PURE__ */ jsx("div", null, data.metaDescription.metaDescriptionLength), /* @__PURE__ */ jsx("div", null, data.metaDescription.metaDescriptionNumber), /* @__PURE__ */ jsx("div", null, data.metaDescription.focusKeywordsPosition), /* @__PURE__ */ jsx("div", null, data.metaDescription.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.metaDescription.keyword)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, data.metaDescription.feedbackDetails.found.text == data.metaDescription.feedbackDetails.found.text ? /* @__PURE__ */ jsx("div", null, "Not Found") : /* @__PURE__ */ jsx("div", null, "Meta Description Found -", data.titleTag.feedbackDetails.found.text)), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.found.class, data.metaDescription.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.found.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Length"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.length.class, data.metaDescription.feedbackDetails.length.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.length.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Focus Keyword"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.focusKeyword.class, data.metaDescription.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.focusKeyword.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Focus Keywords Position"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.focusKeywordsPosition.class, data.metaDescription.feedbackDetails.focusKeywordsPosition.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.metaDescription.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available = ", data.metaDescription.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Page Headings Summary"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "H1"), /* @__PURE__ */ jsx("div", null, "H2"), /* @__PURE__ */ jsx("div", null, "H3"), /* @__PURE__ */ jsx("div", null, "H4"), /* @__PURE__ */ jsx("div", null, "H5"), /* @__PURE__ */ jsx("div", null, "H6"), /* @__PURE__ */ jsx("div", null, "H1 Count"), /* @__PURE__ */ jsx("div", null, "H1 Content"), /* @__PURE__ */ jsx("div", null, "Focus Keywords Found"), /* @__PURE__ */ jsx("div", null, "Keyword"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h2), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h3), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h4), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h5), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h6), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Count), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Content), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.keyword)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Page Headings Summary"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Focus Keyword"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.pageHeadingsSummary.feedbackDetails.focusKeyword.text), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class, data.pageHeadingsSummary.feedbackDetails.focusKeyword.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        }))))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available", data.pageHeadingsSummary.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Word Count"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Word Count Total"), /* @__PURE__ */ jsx("div", null, "Corrected Word Count"), /* @__PURE__ */ jsx("div", null, "Anchor Text Words"), /* @__PURE__ */ jsx("div", null, "Anchor Percentage"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.wordCount.wordCountTotal), /* @__PURE__ */ jsx("div", null, data.wordCount.correctedWordCount), /* @__PURE__ */ jsx("div", null, data.wordCount.anchorTextWords), /* @__PURE__ */ jsx("div", null, data.wordCount.anchorPercentage)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Word Count"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.wordCount.feedbackDetails.found.class, data.wordCount.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.wordCount.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available", data.wordCount.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "On Page Links Summary"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Total Links"), /* @__PURE__ */ jsx("div", null, "External Links"), /* @__PURE__ */ jsx("div", null, "Internal Links"), /* @__PURE__ */ jsx("div", null, "No Follow Count"), /* @__PURE__ */ jsx("div", null, "Duplicate Links"), /* @__PURE__ */ jsx("div", null, "No Alt Tag"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.totalLinks), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.externalLinks), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.internalLinks), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.noFollowCount), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.duplicateLinks), /* @__PURE__ */ jsx("div", null, data.onPageLinksSummary.noAltTag)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "On Page Links Summary"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, "Positive or Negative? - ", data.onPageLinksSummary.feedbackDetails.found.class, data.onPageLinksSummary.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.onPageLinksSummary.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available", data.onPageLinksSummary.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Image Analysis"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Number of Images"), /* @__PURE__ */ jsx("div", null, "Image Contains Keyword"), /* @__PURE__ */ jsx("div", null, "Alt Tag Contains Keyword"), /* @__PURE__ */ jsx("div", null, "Keyword"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.imageAnalysis.numberOfImages), /* @__PURE__ */ jsx("div", null, data.imageAnalysis.imageNameContainsKeyword), /* @__PURE__ */ jsx("div", null, data.imageAnalysis.imageAltTagContainsKeyword), /* @__PURE__ */ jsx("div", null, data.imageAnalysis.keyword)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Image Analysis Found"), /* @__PURE__ */ jsx("div", {
+          css: imagePadding.imagePadding
+        }, /* @__PURE__ */ jsx("p", null, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Image Name Contains Keyword"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Image Alt Contains Keyword"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.imageAnalysis.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available", data.imageAnalysis.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+          css: h1.h1
+        }, "Keyword Density"), /* @__PURE__ */ jsx("div", {
+          css: container.container
+        }, /* @__PURE__ */ jsx("div", {
+          css: leftContainer.leftContainer
+        }, /* @__PURE__ */ jsx("div", {
+          css: borderBox.borderBox
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Category"), /* @__PURE__ */ jsx("div", null, "Keyword"), /* @__PURE__ */ jsx("div", null, "Keyword Density"))), /* @__PURE__ */ jsx("div", {
+          css: rightContainer.rightContainer
+        }, /* @__PURE__ */ jsx("h2", {
+          css: h2.h2
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.keywordDensity.keyword), /* @__PURE__ */ jsx("div", null, data.keywordDensity.keywordDensity)), /* @__PURE__ */ jsx("div", {
+          css: bottomContainer.bottomContainer
+        }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
+          css: dotWrapper.dotWrapper
+        }, /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Positive \xA0\xA0\xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotPlus.dotPlus
+        })), /* @__PURE__ */ jsx("h5", {
+          css: h5.h5
+        }, "Negative \xA0=", /* @__PURE__ */ jsx("div", {
+          css: dotMinus.dotMinus
+        }))), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetails.feedbackDetails
+        }, /* @__PURE__ */ jsx("div", null, "Keyword Density"), /* @__PURE__ */ jsx("div", {
+          css: feedbackDetailExtra.feedbackDetailExtra
+        }, /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.keywordDensity.feedbackDetails.found.class, data.keywordDensity.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
+          css: summaryDotGreen.summaryDotGreen
+        }) : /* @__PURE__ */ jsx("div", {
+          css: summaryDotRed.summaryDotRed
+        })), /* @__PURE__ */ jsx("p", {
+          css: p.p
+        }, data.keywordDensity.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScore.maxSeoScore
+        }, "Max SEO Score Available ", data.keywordDensity.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgress.maxSeoScoreProgress
+        }, /* @__PURE__ */ jsx("div", {
+          css: SeoScore
+        }, "SEO Score\xA0\xA0"), /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
+        }, /* @__PURE__ */ jsx("div", {
+          css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
+        }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable)))))))), console.log("I am a working modal");
       };
       const getIframeHTMLContent = () => {
         return appState.designerState.evaluateInFrame(() => new XMLSerializer().serializeToString(document));

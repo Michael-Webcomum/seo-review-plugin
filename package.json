@@ -122,13 +122,14 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.12.0",
+    "typedoc": "^0.23.24",
     "typescript": "^4.8.3"
   },
   "dependencies": {
     "@builder.io/commerce-plugin-tools": "^0.3.0",
     "@chakra-ui/react": "^2.3.4",
-    "@emotion/react": "^11.10.4",
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
     "@mui/material": "^5.10.6",
     "@nextui-org/react": "^1.0.0-beta.10",
     "axios": "^0.27.2",
@@ -137,5 +138,8 @@
     "rollup-plugin-import-css": "^3.1.0",
     "traverse": "^0.6.6",
     "uuid": "^8.3.2"
+  },
+  "volta": {
+    "node": "16.19.0"
   }
 }

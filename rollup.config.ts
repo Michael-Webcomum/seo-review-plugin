@@ -44,7 +44,6 @@ export default {
     common(),
     esbuild(),
     css(),
-
     ...(SERVE
       ? [
           serve({

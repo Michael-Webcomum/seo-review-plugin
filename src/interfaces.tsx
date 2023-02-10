@@ -1,5 +1,4 @@
 export interface seoAPIdata {
-
   Overview?: {
     keyword?: string;
     overallSEOScore?: number;
@@ -48,7 +47,6 @@ export interface seoAPIdata {
     inputUrl?: string;
     metaDescription?: string;
     metaDescriptionNumber?: number;
-    // focusKeywordsPosition?: number;
     focusKeywordsFound?: number;
     keyword?: string;
     feedbackDetails?: {
