@@ -1035,8 +1035,8 @@ export const expandSeoReview = (dataToFormat: any) => {
                 <div>Page Headings Summary</div>
                 <div css={feedbackDetailExtra.feedbackDetailExtra}>
                   <p css={p.p}>
-                    {data.pageHeadingsSummary.feedbackDetails.notFound.class}
-                    {data.pageHeadingsSummary.feedbackDetails.notFound.class == 'positive' ? (
+                    {data.pageHeadingsSummary.feedbackDetails.Found.class}
+                    {data.pageHeadingsSummary.feedbackDetails.Found.class == 'positive' ? (
                       <div css={summaryDotGreen.summaryDotGreen}></div>
                     ) : (
                       <div css={summaryDotRed.summaryDotRed}></div>
