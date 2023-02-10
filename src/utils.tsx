@@ -1035,8 +1035,8 @@ export const expandSeoReview = (dataToFormat: any) => {
                 <div>Page Headings Summary</div>
                 <div css={feedbackDetailExtra.feedbackDetailExtra}>
                   <p css={p.p}>
-                    {data.pageHeadingsSummary.feedbackDetails.found.class}
-                    {data.pageHeadingsSummary.feedbackDetails.found.class == 'positive' ? (
+                    {data.pageHeadingsSummary.feedbackDetails.notFound.text}
+                    {data.pageHeadingsSummary.feedbackDetails.notFound.class == 'positive' ? (
                       <div css={summaryDotGreen.summaryDotGreen}></div>
                     ) : (
                       <div css={summaryDotRed.summaryDotRed}></div>
@@ -1265,7 +1265,7 @@ export const expandSeoReview = (dataToFormat: any) => {
               </div>
               <div css={feedbackDetails.feedbackDetails}>
                 <div>Image Alt Contains Keyword</div>
-                <div css={feedbackDetailExtra.feedbackDetailExtra}>
+                <div css={imagePadding.imagePadding}>
                   <p css={p.p}>
                     {data.imageAnalysis.feedbackDetails.found.class}
                     {data.imageAnalysis.feedbackDetails.found.class == 'positive' ? (

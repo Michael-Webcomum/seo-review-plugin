@@ -33440,6 +33440,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             keyword: data["Page Headings summary"].Keyword,
             feedbackDetails: {
               notFound: {
+                text: data["Page Headings summary"]["Feedback details"]["Not found"].text,
                 class: data["Page Headings summary"]["Feedback details"]["Not found"].class
               },
               focusKeyword: {
@@ -34537,7 +34538,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: feedbackDetailExtra.feedbackDetailExtra
         }, /* @__PURE__ */ jsx("p", {
           css: p.p
-        }, data.pageHeadingsSummary.feedbackDetails.notFound.class, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ jsx("div", {
+        }, data.pageHeadingsSummary.feedbackDetails.notFound.text, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ jsx("div", {
           css: summaryDotGreen.summaryDotGreen
         }) : /* @__PURE__ */ jsx("div", {
           css: summaryDotRed.summaryDotRed
@@ -34710,7 +34711,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         }, data.imageAnalysis.feedbackDetails.found.text))), /* @__PURE__ */ jsx("div", {
           css: feedbackDetails.feedbackDetails
         }, /* @__PURE__ */ jsx("div", null, "Image Alt Contains Keyword"), /* @__PURE__ */ jsx("div", {
-          css: feedbackDetailExtra.feedbackDetailExtra
+          css: imagePadding.imagePadding
         }, /* @__PURE__ */ jsx("p", {
           css: p.p
         }, data.imageAnalysis.feedbackDetails.found.class, data.imageAnalysis.feedbackDetails.found.class == "positive" ? /* @__PURE__ */ jsx("div", {
