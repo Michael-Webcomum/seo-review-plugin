@@ -98,7 +98,6 @@ const bottomContainer = {
   bottomContainer: css({
     position: 'relative',
     width: '886px',
-    margin: '20px 0px 0px 20px',
     paddingBottom: '20px',
   }),
 };
