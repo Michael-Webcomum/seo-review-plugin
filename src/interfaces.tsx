@@ -82,10 +82,10 @@ export interface seoAPIdata {
     focusKeywordsFound?: number;
     keyword?: string;
     feedbackDetails?: {
-      found?: {
-        text?: string;
-        class?: string;
-      };
+      // found?: {
+      //   text?: string;
+      //   class?: string;
+      // };
       focusKeyword?: {
         text?: string;
         class?: string;
