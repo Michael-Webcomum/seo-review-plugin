@@ -82,6 +82,10 @@ export interface seoAPIdata {
     focusKeywordsFound?: number;
     keyword?: string;
     feedbackDetails?: {
+      found?: {
+        text?: string;
+        class?: string;
+      };
       focusKeyword?: {
         text?: string;
         class?: string;
@@ -144,10 +148,7 @@ export interface seoAPIdata {
     seoScore?: number;
   };
   keywordDensity?: {
-    result?: number;
     keyword?: string;
-    keywordType?: string;
-    frequency?: number;
     keywordDensity?: number;
     feedbackDetails?: {
       found?: {

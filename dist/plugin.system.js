@@ -33439,10 +33439,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             focusKeywordsFound: data["Page Headings summary"]["Focus keywords found"],
             keyword: data["Page Headings summary"].Keyword,
             feedbackDetails: {
-              notFound: {
-                text: data["Page Headings summary"]["Feedback details"]["Not found"].text,
-                class: data["Page Headings summary"]["Feedback details"]["Not found"].class
-              },
+              found: {},
               focusKeyword: {
                 text: data["Page Headings summary"]["Feedback details"]["Focus keyword"].text,
                 class: data["Page Headings summary"]["Feedback details"]["Focus keyword"].class
@@ -34520,7 +34517,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: rightContainer.rightContainer
         }, /* @__PURE__ */ jsx("h2", {
           css: h2.h2
-        }, "Results"), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h2), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h3), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h4), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h5), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h6), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Count), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Content), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.keyword)), /* @__PURE__ */ jsx("div", {
+        }, "Results"), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h2), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h3), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h4), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h5), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h6), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Count), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.h1Content), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.focusKeywordsFound), /* @__PURE__ */ jsx("div", null, data.pageHeadingsSummary.keyword)), /* @__PURE__ */ jsx("div", {
           css: bottomContainer.bottomContainer
         }, /* @__PURE__ */ jsx("h3", null, "Feedback Details"), /* @__PURE__ */ jsx("div", {
           css: dotWrapper.dotWrapper
@@ -34534,15 +34531,11 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: dotMinus.dotMinus
         }))), /* @__PURE__ */ jsx("div", {
           css: feedbackDetails.feedbackDetails
-        }, /* @__PURE__ */ jsx("div", null, "Page Headings Summary"), /* @__PURE__ */ jsx("div", {
+        }, /* @__PURE__ */ jsx("div", {
           css: feedbackDetailExtra.feedbackDetailExtra
         }, /* @__PURE__ */ jsx("p", {
           css: p.p
-        }, data.pageHeadingsSummary.feedbackDetails.notFound.text, data.pageHeadingsSummary.feedbackDetails.notFound.class == "positive" ? /* @__PURE__ */ jsx("div", {
-          css: summaryDotGreen.summaryDotGreen
-        }) : /* @__PURE__ */ jsx("div", {
-          css: summaryDotRed.summaryDotRed
-        })))), /* @__PURE__ */ jsx("div", {
+        }))), /* @__PURE__ */ jsx("div", {
           css: feedbackDetails.feedbackDetails
         }, /* @__PURE__ */ jsx("div", null, "Focus Keyword"), /* @__PURE__ */ jsx("div", {
           css: feedbackDetailExtra.feedbackDetailExtra

@@ -1018,6 +1018,7 @@ export const expandSeoReview = (dataToFormat: any) => {
               <div>{data.pageHeadingsSummary.h1Count}</div>
               <div>{data.pageHeadingsSummary.h1Content}</div>
               <div>{data.pageHeadingsSummary.focusKeywordsFound}</div>
+              <div>{data.pageHeadingsSummary.focusKeywordsFound}</div>
               <div>{data.pageHeadingsSummary.keyword}</div>
             </div>
 
@@ -1032,15 +1033,15 @@ export const expandSeoReview = (dataToFormat: any) => {
                 </h5>
               </div>
               <div css={feedbackDetails.feedbackDetails}>
-                <div>Page Headings Summary</div>
+                {/* <div>Page Headings Summary</div> */}
                 <div css={feedbackDetailExtra.feedbackDetailExtra}>
                   <p css={p.p}>
-                    {data.pageHeadingsSummary.feedbackDetails.notFound.text}
-                    {data.pageHeadingsSummary.feedbackDetails.notFound.class == 'positive' ? (
+                    {/* {data.pageHeadingsSummary.feedbackDetails.found.text} */}
+                    {/* {data.pageHeadingsSummary.feedbackDetails.found.class == 'positive' ? (
                       <div css={summaryDotGreen.summaryDotGreen}></div>
                     ) : (
                       <div css={summaryDotRed.summaryDotRed}></div>
-                    )}
+                    )} */}
                   </p>
                 </div>
               </div>
