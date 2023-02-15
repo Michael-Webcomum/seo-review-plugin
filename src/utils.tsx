@@ -199,7 +199,7 @@ const feedbackDetailExtra = {
     fontSize: '16px',
     width: '70vh',
     display: 'inline',
-    paddingLeft: '38px',
+    paddingLeft: '62px',
   }),
 };
 
