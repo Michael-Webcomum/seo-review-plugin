@@ -615,13 +615,13 @@ export const expandSeoReview = (dataToFormat: any) => {
             </div>
           </div>
           <div css={maxSeoScore.maxSeoScore}>
-            Max SEO Score Available = {data.titleTag.maxSeoScoreAvailable}
+            Max SEO Score Available = {data.titleTag.maxSeoScoreAvailable.toFixed(2)};
           </div>
           <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
             <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
             <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
               <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                {data.titleTag.seoScore}/{data.titleTag.maxSeoScoreAvailable}
+                {data.titleTag.seoScore.toFixed(2)}/{data.titleTag.maxSeoScoreAvailable.toFixed(2)}
               </div>
             </div>
           </div>
@@ -734,13 +734,14 @@ export const expandSeoReview = (dataToFormat: any) => {
             </div>
 
             <div css={maxSeoScore.maxSeoScore}>
-              Max SEO Score Available = {data.metaDescription.maxSeoScoreAvailable}
+              Max SEO Score Available = {data.metaDescription.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.metaDescription.seoScore}/{data.metaDescription.maxSeoScoreAvailable}
+                  {data.metaDescription.seoScore.toFixed(2)}/
+                  {data.metaDescription.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
@@ -820,14 +821,14 @@ export const expandSeoReview = (dataToFormat: any) => {
             </div>
             <div css={maxSeoScore.maxSeoScore}>
               Max SEO Score Available
-              {data.pageHeadingsSummary.maxSeoScoreAvailable}
+              {data.pageHeadingsSummary.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.pageHeadingsSummary.seoScore}/
-                  {data.pageHeadingsSummary.maxSeoScoreAvailable}
+                  {data.pageHeadingsSummary.seoScore.toFixed(2)}/
+                  {data.pageHeadingsSummary.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
@@ -883,13 +884,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 
             <div css={maxSeoScore.maxSeoScore}>
               Max SEO Score Available
-              {data.wordCount.maxSeoScoreAvailable}
+              {data.wordCount.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.wordCount.seoScore}/{data.wordCount.maxSeoScoreAvailable}
+                  {data.wordCount.seoScore.toFixed(2)}/
+                  {data.wordCount.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
@@ -949,13 +951,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 
             <div css={maxSeoScore.maxSeoScore}>
               Max SEO Score Available
-              {data.onPageLinksSummary.maxSeoScoreAvailable}
+              {data.onPageLinksSummary.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.onPageLinksSummary.seoScore}/{data.onPageLinksSummary.maxSeoScoreAvailable}
+                  {data.onPageLinksSummary.seoScore.toFixed(2)}/
+                  {data.onPageLinksSummary.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
@@ -1040,13 +1043,14 @@ export const expandSeoReview = (dataToFormat: any) => {
 
             <div css={maxSeoScore.maxSeoScore}>
               Max SEO Score Available
-              {data.imageAnalysis.maxSeoScoreAvailable}
+              {data.imageAnalysis.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.imageAnalysis.seoScore}/{data.imageAnalysis.maxSeoScoreAvailable}
+                  {data.imageAnalysis.seoScore.toFixed(2)}/
+                  {data.imageAnalysis.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
@@ -1097,13 +1101,14 @@ export const expandSeoReview = (dataToFormat: any) => {
             </div>
 
             <div css={maxSeoScore.maxSeoScore}>
-              Max SEO Score Available {data.keywordDensity.maxSeoScoreAvailable}
+              Max SEO Score Available {data.keywordDensity.maxSeoScoreAvailable.toFixed(2)}
             </div>
             <div css={maxSeoScoreProgress.maxSeoScoreProgress}>
               <div css={SeoScore}>SEO Score&nbsp;&nbsp;</div>
               <div css={maxSeoScoreProgressBar.maxSeoScoreProgressBar}>
                 <div css={maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill}>
-                  {data.keywordDensity.seoScore}/{data.keywordDensity.maxSeoScoreAvailable}
+                  {data.keywordDensity.seoScore.toFixed(2)}/
+                  {data.keywordDensity.maxSeoScoreAvailable.toFixed(2)}
                 </div>
               </div>
             </div>
