@@ -86,10 +86,10 @@ export function formatSeoData(data: any) {
       focusKeywordsFound: data['Page Headings summary']['Focus keywords found'],
       keyword: data['Page Headings summary'].Keyword,
       feedbackDetails: {
-        found: {
-          // text: data['Page Headings summary']['Feedback details']['Found'].text,
-          // class: data['Page Headings summary']['Feedback details']['Found'].class,
-        },
+        // found: {
+        //   text: data['Page Headings summary']['Feedback details']['Found'].text,
+        //   class: data['Page Headings summary']['Feedback details']['Found'].class,
+        // },
         focusKeyword: {
           text: data['Page Headings summary']['Feedback details']['Focus keyword'].text,
           class: data['Page Headings summary']['Feedback details']['Focus keyword'].class,
