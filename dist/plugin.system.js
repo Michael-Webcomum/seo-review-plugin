@@ -33439,7 +33439,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             focusKeywordsFound: data["Page Headings summary"]["Focus keywords found"],
             keyword: data["Page Headings summary"].Keyword,
             feedbackDetails: {
-              found: {},
               focusKeyword: {
                 text: data["Page Headings summary"]["Feedback details"]["Focus keyword"].text,
                 class: data["Page Headings summary"]["Feedback details"]["Focus keyword"].class
