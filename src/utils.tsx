@@ -40,7 +40,7 @@ const modalStyles = {
     opacity: '0.9',
     padding: '20px 30px 30px 30px',
     marginBottom: '50px',
-    fontFamily: 'Ubuntu, sans-serif',
+    fontFamily: 'Inter, sans-serif',
     lineHeight: 1.8,
     '&::-webkit-scrollbar': {
       width: '10px',
