@@ -12,7 +12,6 @@ export async function prepareSeoData() {
 
   //Read innerHTML content to be sent for SEO review
   const iframeHTMLContent = await getIframeHTMLContent();
-  console.log('plugin: iframeHTMLContent', iframeHTMLContent);
 
   if (keyword) {
     try {
@@ -34,8 +33,6 @@ export async function prepareSeoData() {
 
       //Received data is checked with corresponding interface - seoAPIdata
       const result = (await response.json()).data as seoAPIdata;
-
-      console.log('result is: ', JSON.stringify(result, null, 2));
 
       return result;
     } catch (error) {
