@@ -1116,7 +1116,6 @@ export const expandSeoReview = (dataToFormat: any) => {
       </div>
     </div>
   ),
-    console.log('I am a working modal'),
     10000;
 };
 

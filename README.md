@@ -12,11 +12,11 @@ The plugin then displays the SEO data organised and visually clear.
 
    - https://cdn.jsdelivr.net/gh/Michael-Webcomum/seo-review-plugin/dist/plugin.system.js?pluginId=seo-review-plugin
 
-   - Note, the plugin works best when specifying the most recent version. This refers to the latest commit of the plugin on Github.
-   - Simply add the commit on the end of the plugin repository name in the plugin link. /seo-review-plugin@12c848a/
-   - Here is a full link example:
+     - Note, the plugin works best when specifying the most recent version. This refers to the latest commit of the plugin on Github.
+     - Simply add the commit on the end of the plugin repository name in the plugin link. /seo-review-plugin@6283466/
+     - Here is a full link example:
 
-     https://cdn.jsdelivr.net/gh/Michael-Webcomum/seo-review-plugin@12c848a/dist/plugin.system.js?pluginId=seo-review-plugin
+     https://cdn.jsdelivr.net/gh/Michael-Webcomum/seo-review-plugin@6283466/dist/plugin.system.js?pluginId=seo-review-plugin
 
 2. Copy your Builder.io Public API Key also found in your Builder.io account settings.
 
