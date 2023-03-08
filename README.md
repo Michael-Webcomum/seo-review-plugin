@@ -16,7 +16,7 @@ The plugin then displays the SEO data organised and visually clear.
      - Simply add the commit on the end of the plugin repository name in the plugin link. /seo-review-plugin@6283466/
      - Here is a full link example:
 
-     https://cdn.jsdelivr.net/gh/Michael-Webcomum/seo-review-plugin@6283466/dist/plugin.system.js?pluginId=seo-review-plugin
+     https://cdn.jsdelivr.net/gh/Michael-Webcomum/seo-review-plugin@5aec1a9/dist/plugin.system.js?pluginId=seo-review-plugin
 
 2. Copy your Builder.io Public API Key also found in your Builder.io account settings.
 
