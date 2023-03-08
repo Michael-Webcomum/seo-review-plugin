@@ -33189,7 +33189,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       }); };
 
       var name = "@michael44/seo-review-plugin";
-      var version = "0.0.3";
+      var version = "1.0.0";
       var description = "SEO Review Plugin for Builder.io";
       var keywords = [
       	"SEO",
@@ -33926,7 +33926,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           opacity: "0.9",
           padding: "20px 30px 30px 30px",
           marginBottom: "50px",
-          fontFamily: "Ubuntu",
+          fontFamily: "Inter, sans-serif",
           lineHeight: 1.8,
           "&::-webkit-scrollbar": {
             width: "10px"
@@ -33980,7 +33980,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         bottomContainer: css({
           position: "relative",
           width: "886px",
-          margin: "20px 0px 0px 20px",
           paddingBottom: "20px"
         })
       };
@@ -34071,7 +34070,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           fontSize: "16px",
           width: "70vh",
           display: "inline",
-          paddingLeft: "38px"
+          paddingLeft: "62px"
         })
       };
       const pbwrapper = {
@@ -34410,7 +34409,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.titleTag.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available = ", data.titleTag.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available = ", data.titleTag.maxSeoScoreAvailable.toFixed(2), ";"), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34418,7 +34417,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.titleTag.seoScore, "/", data.titleTag.maxSeoScoreAvailable)))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.titleTag.seoScore.toFixed(2), "/", data.titleTag.maxSeoScoreAvailable.toFixed(2))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "Meta Description"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34494,7 +34493,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.metaDescription.feedbackDetails.focusKeywordsPosition.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available = ", data.metaDescription.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available = ", data.metaDescription.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34502,7 +34501,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.metaDescription.seoScore, "/", data.metaDescription.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.metaDescription.seoScore.toFixed(2), "/", data.metaDescription.maxSeoScoreAvailable.toFixed(2)))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "Page Headings Summary"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34548,7 +34547,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: summaryDotRed.summaryDotRed
         }))))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available", data.pageHeadingsSummary.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available", data.pageHeadingsSummary.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34556,7 +34555,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.pageHeadingsSummary.seoScore, "/", data.pageHeadingsSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.pageHeadingsSummary.seoScore.toFixed(2), "/", data.pageHeadingsSummary.maxSeoScoreAvailable.toFixed(2)))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "Word Count"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34596,7 +34595,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.wordCount.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available", data.wordCount.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available", data.wordCount.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34604,7 +34603,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.wordCount.seoScore, "/", data.wordCount.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.wordCount.seoScore.toFixed(2), "/", data.wordCount.maxSeoScoreAvailable.toFixed(2)))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "On Page Links Summary"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34644,7 +34643,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.onPageLinksSummary.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available", data.onPageLinksSummary.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available", data.onPageLinksSummary.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34652,7 +34651,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.onPageLinksSummary.seoScore, "/", data.onPageLinksSummary.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.onPageLinksSummary.seoScore.toFixed(2), "/", data.onPageLinksSummary.maxSeoScoreAvailable.toFixed(2)))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "Image Analysis"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34714,7 +34713,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.imageAnalysis.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available", data.imageAnalysis.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available", data.imageAnalysis.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34722,7 +34721,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.imageAnalysis.seoScore, "/", data.imageAnalysis.maxSeoScoreAvailable))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
+        }, data.imageAnalysis.seoScore.toFixed(2), "/", data.imageAnalysis.maxSeoScoreAvailable.toFixed(2)))))), /* @__PURE__ */ jsx("div", null, /* @__PURE__ */ jsx("h1", {
           css: h1.h1
         }, "Keyword Density"), /* @__PURE__ */ jsx("div", {
           css: container.container
@@ -34762,7 +34761,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: p.p
         }, data.keywordDensity.feedbackDetails.found.text)))), /* @__PURE__ */ jsx("div", {
           css: maxSeoScore.maxSeoScore
-        }, "Max SEO Score Available ", data.keywordDensity.maxSeoScoreAvailable), /* @__PURE__ */ jsx("div", {
+        }, "Max SEO Score Available ", data.keywordDensity.maxSeoScoreAvailable.toFixed(2)), /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgress.maxSeoScoreProgress
         }, /* @__PURE__ */ jsx("div", {
           css: SeoScore
@@ -34770,7 +34769,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
           css: maxSeoScoreProgressBar.maxSeoScoreProgressBar
         }, /* @__PURE__ */ jsx("div", {
           css: maxSeoScoreProgressBarFill.maxSeoScoreProgressBarFill
-        }, data.keywordDensity.seoScore, "/", data.keywordDensity.maxSeoScoreAvailable)))))))), console.log("I am a working modal");
+        }, data.keywordDensity.seoScore.toFixed(2), "/", data.keywordDensity.maxSeoScoreAvailable.toFixed(2)))))))));
       };
       const getIframeHTMLContent = () => {
         return appState.designerState.evaluateInFrame(() => new XMLSerializer().serializeToString(document));
@@ -34783,7 +34782,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
         const baseURL = `https://api.seoreviewtools.com/seo-content-analysis/`;
         const apiKey = "as-sdf-fvhgffdgjkh87349hlm768";
         const iframeHTMLContent = await getIframeHTMLContent();
-        console.log("plugin: iframeHTMLContent", iframeHTMLContent);
         if (keyword) {
           try {
             const response = await fetch(`${baseURL}?content=1&keyword=${keyword}&key=${apiKey}`, {
@@ -34800,7 +34798,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
               throw new Error(`Error! status: ${response.status}`);
             }
             const result = (await response.json()).data;
-            console.log("result is: ", JSON.stringify(result, null, 2));
             return result;
           } catch (error) {
             if (error instanceof Error) {
