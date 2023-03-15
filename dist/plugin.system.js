@@ -34229,58 +34229,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
       const registerContentAction = (contentAction) => {
         Builder.register("content.action", contentAction);
       };
-      const fastClone = (obj) => obj === void 0 ? void 0 : JSON.parse(JSON.stringify(obj));
-      const seoReviewModelName = "seo-review-history";
-      const getSEOReviewModel = () => appState.models.result.find((m) => m.name === seoReviewModelName);
-      const getSEOReviewModelTemplate = () => ({
-        "@version": 2,
-        name: seoReviewModelName,
-        kind: "data",
-        subType: "",
-        schema: {},
-        publishText: "Authorize",
-        unPublishText: "Cancel",
-        fields: [
-          {
-            "@type": "@builder.io/core:Field",
-            name: "description",
-            type: "text",
-            required: false,
-            helperText: "Example field"
-          }
-        ],
-        helperText: "Seo Reviews History",
-        publicWritable: false,
-        publicReadable: false,
-        strictPrivateRead: true,
-        strictPrivateWrite: false,
-        showMetrics: false,
-        showAbTests: false,
-        showTargeting: false,
-        showScheduling: false,
-        hideFromUI: false
-      });
-      const showReviewNotifications = (jobId) => {
-        appState.snackBar.show(/* @__PURE__ */ jsx("div", {
-          style: { display: "flex", alignItems: "center" }
-        }, "Done!"), 1e5, /* @__PURE__ */ jsx(Button, {
-          color: "primary",
-          style: {
-            pointerEvents: "auto",
-            ...appState.document.small && {
-              width: "calc(100vw - 90px)",
-              marginRight: 45,
-              marginTop: 10,
-              marginBottom: 10
-            }
-          },
-          variant: "contained",
-          onClick: async () => {
-            appState.location.go(`/content/${jobId}`);
-            appState.snackBar.open = false;
-          }
-        }, "Go to review details"));
-      };
       const expandSeoReview = (dataToFormat) => {
         const data = formatSeoData(dataToFormat);
         appState.globalState.openDialog(/* @__PURE__ */ jsx("div", {
@@ -34822,11 +34770,6 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             required: true
           }
         ],
-        onSave: async (actions) => {
-          if (!getSEOReviewModel()) {
-            actions.addModel(getSEOReviewModelTemplate());
-          }
-        },
         ctaText: `Connect using your API key`
       }, async (settings) => {
         registerContentAction({
@@ -34836,26 +34779,7 @@ System.register(['@builder.io/react', '@emotion/core', '@material-ui/core', 'rea
             return model.kind === "page";
           },
           async onClick(content) {
-            const seoReviewModel = getSEOReviewModel();
-            const seoReviewsApiKey = settings.get("apiKey");
-            console.log("plugin: clicked action, the user entered api key is ", seoReviewsApiKey);
             let seoAPIDataFormatted = await prepareSeoData();
-            await appState.updateLatestDraft({
-              id: content.id,
-              modelId: content.modelId,
-              data: {
-                ...fastClone(content.data),
-                ...seoAPIDataFormatted
-              }
-            });
-            const seoReviewEntry = await appState.createContent(seoReviewModel.name, {
-              name: `Data entry for SEO review on content ${content.id}`,
-              meta: {
-                createdBy: pkg.name
-              },
-              data: seoAPIDataFormatted
-            });
-            showReviewNotifications(seoReviewEntry.id);
             expandSeoReview(seoAPIDataFormatted);
           }
         });
