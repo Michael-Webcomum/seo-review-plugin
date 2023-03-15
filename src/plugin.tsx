@@ -2,11 +2,11 @@ import { registerCommercePlugin as registerPlugin } from '@builder.io/commerce-p
 import pkg from '../package.json';
 import appState from '@builder.io/app-context';
 import {
-  getSEOReviewModel,
+  // getSEOReviewModel,
   // getSEOReviewModelTemplate,
   registerContentAction,
   showReviewNotifications,
-  fastClone,
+  // fastClone,
   expandSeoReview,
 } from './utils';
 import { prepareSeoData } from './prepareSeoData';

@@ -379,12 +379,12 @@ export const registerContentAction = (contentAction: {
   Builder.register('content.action', contentAction);
 };
 
-export const fastClone = (obj: any) =>
-  obj === undefined ? undefined : JSON.parse(JSON.stringify(obj));
+// export const fastClone = (obj: any) =>
+//   obj === undefined ? undefined : JSON.parse(JSON.stringify(obj));
 
-export const seoReviewModelName = 'seo-review-history';
-export const getSEOReviewModel = () =>
-  appState.models.result.find((m: any) => m.name === seoReviewModelName);
+// export const seoReviewModelName = 'seo-review-history';
+// export const getSEOReviewModel = () =>
+//   appState.models.result.find((m: any) => m.name === seoReviewModelName);
 // export const getSEOReviewModelTemplate = () => ({
 //   '@version': 2,
 //   name: seoReviewModelName,
