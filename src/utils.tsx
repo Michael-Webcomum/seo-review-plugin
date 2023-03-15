@@ -385,34 +385,34 @@ export const fastClone = (obj: any) =>
 export const seoReviewModelName = 'seo-review-history';
 export const getSEOReviewModel = () =>
   appState.models.result.find((m: any) => m.name === seoReviewModelName);
-export const getSEOReviewModelTemplate = () => ({
-  '@version': 2,
-  name: seoReviewModelName,
-  kind: 'data' as const,
-  subType: '',
-  schema: {},
-  publishText: 'Authorize',
-  unPublishText: 'Cancel',
-  fields: [
-    {
-      '@type': '@builder.io/core:Field',
-      name: 'description',
-      type: 'text',
-      required: false,
-      helperText: 'Example field',
-    },
-  ],
-  helperText: 'Seo Reviews History',
-  publicWritable: false,
-  publicReadable: false,
-  strictPrivateRead: true,
-  strictPrivateWrite: false,
-  showMetrics: false,
-  showAbTests: false,
-  showTargeting: false,
-  showScheduling: false,
-  hideFromUI: false,
-});
+// export const getSEOReviewModelTemplate = () => ({
+//   '@version': 2,
+//   name: seoReviewModelName,
+//   kind: 'data' as const,
+//   subType: '',
+//   schema: {},
+//   publishText: 'Authorize',
+//   unPublishText: 'Cancel',
+//   fields: [
+//     {
+//       '@type': '@builder.io/core:Field',
+//       name: 'description',
+//       type: 'text',
+//       required: false,
+//       helperText: 'Example field',
+//     },
+//   ],
+//   helperText: 'Seo Reviews History',
+//   publicWritable: false,
+//   publicReadable: false,
+//   strictPrivateRead: true,
+//   strictPrivateWrite: false,
+//   showMetrics: false,
+//   showAbTests: false,
+//   showTargeting: false,
+//   showScheduling: false,
+//   hideFromUI: false,
+// });
 
 //Displays popup confirming the review has been completed and provides path to review details.
 export const showReviewNotifications = (jobId: string) => {

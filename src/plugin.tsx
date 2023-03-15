@@ -3,7 +3,7 @@ import pkg from '../package.json';
 import appState from '@builder.io/app-context';
 import {
   getSEOReviewModel,
-  getSEOReviewModelTemplate,
+  // getSEOReviewModelTemplate,
   registerContentAction,
   showReviewNotifications,
   fastClone,
@@ -27,12 +27,12 @@ registerPlugin(
       },
     ],
     // Builder will notify plugin user to configure the settings above, and call this function when it's filled
-    onSave: async actions => {
-      // adds a new model, only once when the user has added their api key
-      if (!getSEOReviewModel()) {
-        actions.addModel(getSEOReviewModelTemplate());
-      }
-    },
+    // onSave: async actions => {
+    //   // adds a new model, only once when the user has added their api key
+    //   if (!getSEOReviewModel()) {
+    //     actions.addModel(getSEOReviewModelTemplate());
+    //   }
+    // },
     ctaText: `Connect using your API key`,
   },
   // settings is a map of the settings fields above
@@ -47,35 +47,35 @@ registerPlugin(
         return model.kind === 'page';
       },
       async onClick(content) {
-        const seoReviewModel = getSEOReviewModel();
-        const seoReviewsApiKey = settings.get('apiKey');
+        // const seoReviewModel = getSEOReviewModel();
+        // const seoReviewsApiKey = settings.get('apiKey');
 
-        console.log('plugin: clicked action, the user entered api key is ', seoReviewsApiKey);
+        // console.log('plugin: clicked action, the user entered api key is ', seoReviewsApiKey);
 
         // Data is prepared to have the same structure as Builder.io expects
         let seoAPIDataFormatted: any = await prepareSeoData();
 
         // adds the result to the latest draft
-        await appState.updateLatestDraft({
-          id: content.id,
-          modelId: content.modelId,
-          data: {
-            ...fastClone(content.data),
-            ...seoAPIDataFormatted,
-          },
-        });
+        // await appState.updateLatestDraft({
+        //   id: content.id,
+        //   modelId: content.modelId,
+        //   data: {
+        //     ...fastClone(content.data),
+        //     ...seoAPIDataFormatted,
+        //   },
+        // });
 
         // example for saving the result of seo review in a builder data model, for easier retrieval
-        const seoReviewEntry = await appState.createContent(seoReviewModel.name, {
-          name: `Data entry for SEO review on content ${content.id}`,
-          meta: {
-            createdBy: pkg.name,
-          },
-          data: seoAPIDataFormatted,
-        });
+        // const seoReviewEntry = await appState.createContent(seoReviewModel.name, {
+        //   name: `Data entry for SEO review on content ${content.id}`,
+        //   meta: {
+        //     createdBy: pkg.name,
+        //   },
+        //   data: seoAPIDataFormatted,
+        // });
 
         //Display notification of review completion
-        showReviewNotifications(seoReviewEntry.id);
+        // showReviewNotifications(seoReviewEntry.id);
         //Displays modal/popup with detailed and visualised data
         expandSeoReview(seoAPIDataFormatted);
       },
